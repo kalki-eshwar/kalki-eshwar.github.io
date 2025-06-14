@@ -1,0 +1,14 @@
+{
+  "name": "Kalki Eshwar D",
+  "short_name": "Kalki Eshwar D",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#dc2626",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

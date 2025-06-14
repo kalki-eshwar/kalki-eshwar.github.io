@@ -4,6 +4,7 @@
   "description": "Professional portfolio website for KalkiEshwar",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/generate-articles-data.js",
     "build": "next build",
     "export": "next export",
     "start": "next start",

@@ -27,7 +27,7 @@ export default function ProjectsSection() {
       <div className="container">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-medium text-gray-900 mb-3">
-            Featured <span className="text-green-600">Projects</span>
+            Featured <span className="text-red-600">Projects</span>
           </h2>
           <p className="text-gray-600">
             Some of the projects I've worked on recently
@@ -43,7 +43,7 @@ export default function ProjectsSection() {
                   <span className="text-sm text-gray-500">{project.tech}</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed text-sm">{project.description}</p>
-                <Link href={project.link} className="inline-block text-blue-600 hover:text-blue-700 text-sm">
+                <Link href={project.link} className="inline-block text-red-600 hover:text-red-700 text-sm">
                   View Project →
                 </Link>
               </div>
@@ -52,8 +52,11 @@ export default function ProjectsSection() {
         </div>
         
         <div className="text-center mt-6">
-          <Link href="/projects" className="btn">
-            View All Projects
+          <Link href="/projects" className="btn flex items-center justify-center space-x-2">
+            <span>View All Projects</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
         </div>
       </div>

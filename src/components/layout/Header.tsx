@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { NavigationItem } from '@/types';
 
 const navigation: NavigationItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Work', href: '/work' },
+  { label: 'Education', href: '/education' },
   { label: 'Projects', href: '/projects' },
   { label: 'Articles', href: '/articles' },
   { label: 'Contact', href: '/contact' },
@@ -26,9 +28,17 @@ export default function Header() {
     <header className="py-6 border-b border-gray-100">
       <nav className="container">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="text-lg font-medium text-gray-900">
-            Kalki Eshwar D
+          {/* Logo with Profile Image */}
+          <Link href="/" className="flex items-center space-x-3 text-lg font-medium text-gray-900">
+            <div className="relative w-8 h-8 rounded-full overflow-hidden">
+              <Image
+                src="/images/profile.png"
+                alt="Kalki Eshwar D"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <span>Kalki Eshwar D</span>
           </Link>
 
           {/* Desktop Navigation - spread out more */}
@@ -39,8 +49,8 @@ export default function Header() {
                 href={item.href}
                 className={`text-sm transition-colors duration-200 ${
                   isActiveRoute(item.href)
-                    ? 'text-blue-600 font-medium'
-                    : 'text-gray-600 hover:text-blue-600'
+                    ? 'text-red-600 font-medium'
+                    : 'text-gray-600 hover:text-red-600'
                 }`}
               >
                 {item.label}
@@ -73,8 +83,8 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block text-sm transition-colors duration-200 ${
                     isActiveRoute(item.href)
-                      ? 'text-blue-600 font-medium'
-                      : 'text-gray-600 hover:text-blue-600'
+                      ? 'text-red-600 font-medium'
+                      : 'text-gray-600 hover:text-red-600'
                   }`}
                 >
                   {item.label}
