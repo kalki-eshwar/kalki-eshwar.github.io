@@ -2,33 +2,31 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section className="section bg-gradient-to-br from-white via-primary-50/30 to-purple-50/50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+    <section className="section bg-white">
       <div className="container">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-2xl mx-auto text-center">
           {/* Hero Content */}
           <div className="space-y-8">
             {/* Greeting */}
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white">
-                Hi, I'm{' '}
-                <span className="text-gradient">KalkiEshwar</span>
+            <div className="space-y-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900">
+                Hi, I'm KalkiEshwar
               </h1>
-              <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 font-medium">
+              <p className="text-lg sm:text-xl text-gray-600">
                 Software Developer & Tech Writer
               </p>
             </div>
 
             {/* Description */}
-            <div className="max-w-2xl mx-auto">
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                I'm a passionate software developer who loves creating meaningful digital experiences. 
-                I share my journey through code, write about technology, and explore the intersection 
-                of programming and life.
+            <div className="max-w-lg mx-auto">
+              <p className="text-gray-600 leading-relaxed">
+                I create meaningful digital experiences and share insights
+                about technology, programming, and software development.
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
               <Link
                 href="/work"
                 className="btn-primary btn-lg w-full sm:w-auto"
@@ -44,48 +42,42 @@ export default function HeroSection() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-8 border-t border-gray-200">
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+                <div className="text-2xl font-medium text-gray-900">
                   5+
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                <div className="text-sm text-gray-600 mt-1">
                   Years Experience
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+                <div className="text-2xl font-medium text-gray-900">
                   50+
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                <div className="text-sm text-gray-600 mt-1">
                   Projects Built
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+                <div className="text-2xl font-medium text-gray-900">
                   20+
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                <div className="text-sm text-gray-600 mt-1">
                   Articles Written
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+                <div className="text-2xl font-medium text-gray-900">
                   10k+
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                <div className="text-sm text-gray-600 mt-1">
                   Lines of Code
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
       </div>
     </section>
   );

@@ -60,7 +60,7 @@ export default function Layout({ children, seo }: LayoutProps) {
         )}
       </Head>
 
-      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-950">
+      <div className="min-h-screen flex flex-col bg-white">
         <Header />
         <main className="flex-grow">
           {children}

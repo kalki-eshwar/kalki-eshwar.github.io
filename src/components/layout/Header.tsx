@@ -23,15 +23,12 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-safari border-b border-gray-200 dark:border-gray-800">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="border-b border-gray-200 bg-white">
+      <nav className="container">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">KE</span>
-            </div>
-            <span className="font-semibold text-lg text-gray-900 dark:text-white">
+          <Link href="/" className="flex items-center space-x-3">
+            <span className="font-medium text-xl text-gray-900">
               KalkiEshwar
             </span>
           </Link>
@@ -42,10 +39,10 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-primary-600 dark:hover:text-primary-400 ${
+                className={`text-sm font-medium transition-colors duration-200 ${
                   isActiveRoute(item.href)
-                    ? 'text-primary-600 dark:text-primary-400'
-                    : 'text-gray-700 dark:text-gray-300'
+                    ? 'text-gray-900'
+                    : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 {item.label}
@@ -57,18 +54,17 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+              className="inline-flex items-center justify-center p-2 text-gray-600 hover:text-gray-900 focus:outline-none"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
               {/* Hamburger icon */}
               <svg
-                className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
+                className={`${isMenuOpen ? 'hidden' : 'block'} h-5 w-5`}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -79,12 +75,11 @@ export default function Header() {
               </svg>
               {/* Close icon */}
               <svg
-                className={`${isMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
+                className={`${isMenuOpen ? 'block' : 'hidden'} h-5 w-5`}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -99,16 +94,16 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden pb-4`}>
-          <div className="space-y-2">
+          <div className="space-y-1">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 ${
+                className={`block px-4 py-2 text-sm font-medium transition-colors duration-200 ${
                   isActiveRoute(item.href)
-                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                    ? 'text-gray-900 bg-gray-50'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
               >
                 {item.label}

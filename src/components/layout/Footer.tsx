@@ -40,22 +40,19 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="border-t border-gray-200 bg-white">
+      <div className="container py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Brand Section */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">KE</span>
-              </div>
-              <span className="font-semibold text-lg text-gray-900 dark:text-white">
+          <div className="space-y-6">
+            <div>
+              <span className="font-medium text-lg text-gray-900">
                 KalkiEshwar
               </span>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-              Passionate software developer creating meaningful digital experiences. 
-              Sharing insights on technology, programming, and life through articles and projects.
+            <p className="text-gray-600 text-sm max-w-md leading-relaxed">
+              Software developer creating meaningful digital experiences.
+              Sharing insights on technology and programming.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -64,7 +61,7 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors duration-200"
+                  className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
                   aria-label={social.label}
                 >
                   <SocialIcon icon={social.icon} />
@@ -73,63 +70,28 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-gray-900 dark:text-white">Quick Links</h3>
-            <nav className="space-y-2">
+          {/* Links */}
+          <div className="space-y-6">
+            <h3 className="font-medium text-gray-900">Links</h3>
+            <nav className="grid grid-cols-2 gap-3">
               {quickLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors duration-200 text-sm"
+                  className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm"
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
           </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-gray-900 dark:text-white">Get In Touch</h3>
-            <div className="space-y-2 text-sm">
-              <p className="text-gray-600 dark:text-gray-400">
-                Available for freelance projects and full-time opportunities.
-              </p>
-              <p className="text-gray-600 dark:text-gray-400">
-                Response time: Within 24 hours
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium"
-              >
-                Start a conversation →
-              </Link>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-500 dark:text-gray-400 text-sm">
-              © {currentYear} KalkiEshwar. All rights reserved.
-            </p>
-            <div className="flex items-center space-x-4 text-sm">
-              <Link
-                href="/privacy"
-                className="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors duration-200"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors duration-200"
-              >
-                Terms of Service
-              </Link>
-            </div>
-          </div>
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <p className="text-gray-500 text-sm text-center">
+            © {currentYear} KalkiEshwar. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
