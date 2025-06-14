@@ -9,7 +9,7 @@ export default function HeroSection() {
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900">
-                Hi, I'm Kalki Eshwar D
+                Hi, I'm <span className="text-blue-600">Kalki Eshwar D</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600">
                 Computer Science Student at VIT Vellore
@@ -34,20 +34,20 @@ export default function HeroSection() {
 
           {/* Right side - Quick stats or info */}
           <div className="lg:justify-self-end">
-            <div className="grid grid-cols-2 gap-6 max-w-sm mx-auto lg:mx-0">
-              <div className="text-center p-4 border border-gray-200 rounded-lg">
+            <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto lg:mx-0">
+              <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-colors duration-200">
                 <div className="text-2xl font-medium text-gray-900">VIT</div>
                 <div className="text-sm text-gray-600 mt-1">University</div>
               </div>
-              <div className="text-center p-4 border border-gray-200 rounded-lg">
+              <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-colors duration-200">
                 <div className="text-2xl font-medium text-gray-900">CS</div>
                 <div className="text-sm text-gray-600 mt-1">Major</div>
               </div>
-              <div className="text-center p-4 border border-gray-200 rounded-lg">
+              <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-colors duration-200">
                 <div className="text-2xl font-medium text-gray-900">3+</div>
                 <div className="text-sm text-gray-600 mt-1">Projects</div>
               </div>
-              <div className="text-center p-4 border border-gray-200 rounded-lg">
+              <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-colors duration-200">
                 <div className="text-2xl font-medium text-gray-900">2</div>
                 <div className="text-sm text-gray-600 mt-1">Internships</div>
               </div>

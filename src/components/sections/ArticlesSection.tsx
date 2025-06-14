@@ -22,7 +22,9 @@ export default function ArticlesSection() {
     <section className="section border-t border-gray-100">
       <div className="container">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-medium text-gray-900 mb-3">Recent Articles</h2>
+          <h2 className="text-2xl font-medium text-gray-900 mb-3">
+            Recent <span className="text-purple-600">Articles</span>
+          </h2>
           <p className="text-gray-600">
             Thoughts on technology, programming, and development
           </p>

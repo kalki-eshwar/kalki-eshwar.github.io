@@ -39,8 +39,8 @@ export default function Header() {
                 href={item.href}
                 className={`text-sm transition-colors duration-200 ${
                   isActiveRoute(item.href)
-                    ? 'text-gray-900 font-medium'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-blue-600 font-medium'
+                    : 'text-gray-600 hover:text-blue-600'
                 }`}
               >
                 {item.label}
@@ -73,8 +73,8 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block text-sm transition-colors duration-200 ${
                     isActiveRoute(item.href)
-                      ? 'text-gray-900 font-medium'
-                      : 'text-gray-600 hover:text-gray-900'
+                      ? 'text-blue-600 font-medium'
+                      : 'text-gray-600 hover:text-blue-600'
                   }`}
                 >
                   {item.label}

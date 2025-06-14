@@ -5,7 +5,9 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
           {/* Title */}
           <div className="lg:col-span-1">
-            <h2 className="text-2xl font-medium text-gray-900 text-center lg:text-left">About Me</h2>
+            <h2 className="text-2xl font-medium text-gray-900 text-center lg:text-left">
+              About <span className="text-blue-600">Me</span>
+            </h2>
           </div>
           
           {/* Content */}
