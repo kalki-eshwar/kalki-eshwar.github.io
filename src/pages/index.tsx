@@ -1,16 +1,19 @@
 import Layout from '@/components/layout/Layout';
 import HeroSection from '@/components/sections/HeroSection';
+import AboutSection from '@/components/sections/AboutSection';
+import ProjectsSection from '@/components/sections/ProjectsSection';
+import ArticlesSection from '@/components/sections/ArticlesSection';
 import { SEOProps } from '@/types';
 
 const homeSEO: SEOProps = {
-  title: 'KalkiEshwar - Software Developer & Tech Writer',
-  description: 'Portfolio of KalkiEshwar, a passionate software developer sharing insights on technology, programming, and life.',
+  title: 'Kalki Eshwar D - Computer Science Student & Developer',
+  description: 'Portfolio of Kalki Eshwar D, a Computer Science student at VIT Vellore passionate about software development and technology.',
   canonical: 'https://kalkieshward.me',
   structuredData: {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'KalkiEshwar',
-    jobTitle: 'Software Developer',
+    name: 'Kalki Eshwar D',
+    jobTitle: 'Computer Science Student',
     url: 'https://kalkieshward.me',
     sameAs: [
       'https://github.com/KalkiEshwarD',
@@ -24,7 +27,9 @@ export default function Home() {
   return (
     <Layout seo={homeSEO}>
       <HeroSection />
-      {/* Additional sections will be added here */}
+      <AboutSection />
+      <ProjectsSection />
+      <ArticlesSection />
     </Layout>
   );
 }

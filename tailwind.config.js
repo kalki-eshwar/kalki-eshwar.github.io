@@ -7,35 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        gray: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#e5e5e5',
-          300: '#d4d4d4',
-          400: '#a3a3a3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
-        },
-      },
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        mono: ['ui-monospace', 'SFMono-Regular', 'Monaco', 'Consolas', 'monospace'],
       },
       maxWidth: {
-        '4xl': '56rem',
-      },
-      spacing: {
-        '18': '4.5rem',
-        '20': '5rem',
-        '32': '8rem',
+        '2xl': '42rem',
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [],
 }

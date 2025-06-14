@@ -28,69 +28,32 @@ const socialLinks: SocialLink[] = [
   },
 ];
 
-const quickLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Work', href: '/work' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Articles', href: '/articles' },
-  { label: 'Contact', href: '/contact' },
-];
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-gray-200 bg-white">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Brand Section */}
-          <div className="space-y-6">
-            <div>
-              <span className="font-medium text-lg text-gray-900">
-                KalkiEshwar
-              </span>
-            </div>
-            <p className="text-gray-600 text-sm max-w-md leading-relaxed">
-              Software developer creating meaningful digital experiences.
-              Sharing insights on technology and programming.
-            </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.platform}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
-                  aria-label={social.label}
-                >
-                  <SocialIcon icon={social.icon} />
-                </a>
-              ))}
-            </div>
+    <footer className="py-12 border-t border-gray-100">
+      <div className="container">
+        <div className="text-center space-y-6">
+          {/* Social Links */}
+          <div className="flex justify-center space-x-6">
+            {socialLinks.map((social) => (
+              <a
+                key={social.platform}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
+                aria-label={social.label}
+              >
+                <SocialIcon icon={social.icon} />
+              </a>
+            ))}
           </div>
 
-          {/* Links */}
-          <div className="space-y-6">
-            <h3 className="font-medium text-gray-900">Links</h3>
-            <nav className="grid grid-cols-2 gap-3">
-              {quickLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <p className="text-gray-500 text-sm text-center">
-            © {currentYear} KalkiEshwar. All rights reserved.
+          {/* Copyright */}
+          <p className="text-sm text-gray-500">
+            © {currentYear} KalkiEshwar
           </p>
         </div>
       </div>
@@ -98,7 +61,7 @@ export default function Footer() {
   );
 }
 
-// Social Icon Component
+// Simple Social Icon Component
 function SocialIcon({ icon }: { icon: string }) {
   const iconClass = "w-5 h-5";
   

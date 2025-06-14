@@ -23,25 +23,23 @@ export default function Header() {
   };
 
   return (
-    <header className="border-b border-gray-200 bg-white">
+    <header className="py-6 border-b border-gray-100">
       <nav className="container">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <span className="font-medium text-xl text-gray-900">
-              KalkiEshwar
-            </span>
+          <Link href="/" className="text-lg font-medium text-gray-900">
+            Kalki Eshwar D
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - spread out more */}
+          <div className="hidden md:flex items-center space-x-12">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`text-sm transition-colors duration-200 ${
                   isActiveRoute(item.href)
-                    ? 'text-gray-900'
+                    ? 'text-gray-900 font-medium'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -54,63 +52,37 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 text-gray-600 hover:text-gray-900 focus:outline-none"
-              aria-expanded="false"
+              className="text-gray-600 hover:text-gray-900"
             >
-              <span className="sr-only">Open main menu</span>
-              {/* Hamburger icon */}
-              <svg
-                className={`${isMenuOpen ? 'hidden' : 'block'} h-5 w-5`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              {/* Close icon */}
-              <svg
-                className={`${isMenuOpen ? 'block' : 'hidden'} h-5 w-5`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+              <span className="sr-only">Menu</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden pb-4`}>
-          <div className="space-y-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-                  isActiveRoute(item.href)
-                    ? 'text-gray-900 bg-gray-50'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 pt-4 border-t border-gray-100">
+            <div className="space-y-3">
+              {navigation.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block text-sm transition-colors duration-200 ${
+                    isActiveRoute(item.href)
+                      ? 'text-gray-900 font-medium'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </nav>
     </header>
   );
