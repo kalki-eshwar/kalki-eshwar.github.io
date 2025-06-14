@@ -1,0 +1,147 @@
+[
+  {
+    "id": "portfolio-website",
+    "title": "Portfolio Website",
+    "description": "A modern, responsive portfolio website built with Next.js and TypeScript",
+    "longDescription": "This portfolio website showcases my work and writing using modern web technologies. Built with Next.js for performance, TypeScript for type safety, and Tailwind CSS for beautiful styling. Features include article management, project showcases, and automated deployment.",
+    "technologies": [
+      {
+        "name": "Next.js",
+        "category": "frontend",
+        "icon": "nextjs"
+      },
+      {
+        "name": "TypeScript",
+        "category": "frontend",
+        "icon": "typescript"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "frontend",
+        "icon": "tailwind"
+      },
+      {
+        "name": "Framer Motion",
+        "category": "frontend",
+        "icon": "framer"
+      }
+    ],
+    "githubUrl": "https://github.com/KalkiEshwarD/KalkiEshwarD.github.io",
+    "liveUrl": "https://kalkieshward.me",
+    "images": [
+      {
+        "src": "/images/projects/portfolio-home.png",
+        "alt": "Portfolio website homepage",
+        "featured": true
+      }
+    ],
+    "featured": true,
+    "category": "web",
+    "status": "completed",
+    "startDate": "2024-12-01",
+    "endDate": "2024-12-31",
+    "highlights": [
+      "Responsive design with mobile-first approach",
+      "SEO optimized with structured data",
+      "Automated deployment with GitHub Actions",
+      "Component-based architecture for maintainability",
+      "MDX support for rich article content"
+    ]
+  },
+  {
+    "id": "task-management-app",
+    "title": "Task Management Application",
+    "description": "A full-stack task management app with real-time collaboration features",
+    "longDescription": "A comprehensive task management solution built for teams and individuals. Features include real-time collaboration, project organization, deadline tracking, and performance analytics. Built with React for the frontend and Node.js for the backend.",
+    "technologies": [
+      {
+        "name": "React",
+        "category": "frontend",
+        "icon": "react"
+      },
+      {
+        "name": "Node.js",
+        "category": "backend",
+        "icon": "nodejs"
+      },
+      {
+        "name": "MongoDB",
+        "category": "database",
+        "icon": "mongodb"
+      },
+      {
+        "name": "Socket.io",
+        "category": "tool",
+        "icon": "socketio"
+      }
+    ],
+    "githubUrl": "https://github.com/KalkiEshwarD/task-manager",
+    "liveUrl": "https://taskmanager-demo.com",
+    "images": [
+      {
+        "src": "/images/projects/task-manager-dashboard.png",
+        "alt": "Task manager dashboard",
+        "featured": true
+      }
+    ],
+    "featured": true,
+    "category": "web",
+    "status": "completed",
+    "startDate": "2024-08-01",
+    "endDate": "2024-11-15",
+    "highlights": [
+      "Real-time collaboration with WebSocket connections",
+      "Drag-and-drop task organization",
+      "Advanced filtering and search capabilities",
+      "Team performance analytics and reporting",
+      "Mobile-responsive progressive web app"
+    ]
+  },
+  {
+    "id": "ai-content-generator",
+    "title": "AI Content Generator",
+    "description": "An AI-powered tool for generating various types of content using OpenAI's GPT models",
+    "longDescription": "A sophisticated content generation platform that leverages AI to help creators produce high-quality content. Supports multiple content types including blog posts, social media content, and technical documentation. Features customizable templates and tone adjustment.",
+    "technologies": [
+      {
+        "name": "Python",
+        "category": "backend",
+        "icon": "python"
+      },
+      {
+        "name": "OpenAI API",
+        "category": "ai",
+        "icon": "openai"
+      },
+      {
+        "name": "Flask",
+        "category": "backend",
+        "icon": "flask"
+      },
+      {
+        "name": "React",
+        "category": "frontend",
+        "icon": "react"
+      }
+    ],
+    "githubUrl": "https://github.com/KalkiEshwarD/ai-content-generator",
+    "images": [
+      {
+        "src": "/images/projects/ai-generator-interface.png",
+        "alt": "AI content generator interface",
+        "featured": true
+      }
+    ],
+    "featured": false,
+    "category": "ai",
+    "status": "in-progress",
+    "startDate": "2024-10-01",
+    "highlights": [
+      "Multiple content type support",
+      "Customizable AI prompts and templates",
+      "Real-time content preview and editing",
+      "Export functionality in various formats",
+      "Usage analytics and content optimization suggestions"
+    ]
+  }
+]
