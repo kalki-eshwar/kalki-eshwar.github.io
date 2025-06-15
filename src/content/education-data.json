@@ -3,10 +3,10 @@
     {
       "degree": "Bachelor of Technology in Computer Science and Engineering",
       "institution": "Vellore Institute of Technology, Vellore",
-      "period": "2021 - 2025 (Expected)",
+      "period": "Septermber 2022 - July 2026 (Expected)",
       "location": "Vellore, Tamil Nadu, India",
-      "gpa": "8.5/10",
-      "description": "Comprehensive study of computer science fundamentals including algorithms, data structures, software engineering, and emerging technologies.",
+      "gpa": "8.65/10",
+      "description": "Studied computer science fundamentals including algorithms, data structures, software engineering, and emerging technologies.",
       "coursework": [
         "Data Structures and Algorithms",
         "Object-Oriented Programming",
@@ -16,125 +16,119 @@
         "Computer Networks",
         "Operating Systems",
         "Web Technologies",
-        "Mobile Application Development",
-        "Cybersecurity Fundamentals"
+        "Cloud Services"
       ],
       "achievements": [
-        "Maintained consistent academic performance with 8.5+ GPA",
-        "Active participant in technical clubs and coding competitions",
+        "Maintained consistent academic performance with 8+ GPA with no arrears",
+        "Served as Member Secretary of the Student Council for the academic year 2024-2025",
         "Completed multiple industry-relevant projects",
-        "Presented research work at college symposiums"
+        "Written and published conference papers in reputed journals"
       ],
       "type": "undergraduate"
-    },
-    {
-      "degree": "Higher Secondary Education (12th Grade)",
-      "institution": "St. Joseph's Higher Secondary School",
-      "period": "2019 - 2021",
-      "location": "Chennai, Tamil Nadu, India",
-      "gpa": "95.2%",
-      "description": "Specialized in Science stream with focus on Mathematics, Physics, Chemistry, and Computer Science.",
-      "coursework": [
-        "Mathematics",
-        "Physics",
-        "Chemistry",
-        "Computer Science",
-        "English Literature"
-      ],
-      "achievements": [
-        "Scored 95.2% in board examinations",
-        "School topper in Computer Science",
-        "Participated in state-level mathematics olympiad",
-        "Led the school's computer science club"
-      ],
-      "type": "secondary"
     }
   ],
   "certifications": [
     {
-      "title": "Flutter Development Certification",
-      "issuer": "Google Developers",
+      "title": "Cybersecurity Roles, Processes & Operating System Security",
+      "issuer": "IBM",
+      "issuerIcon": "/images/certification-issuers/ibm.svg",
+      "date": "July 2023",
+      "credentialId": "GFHMA28T4ZD9",
+      "description": "An online course by IBM on Coursera covering cybersecurity roles, processes, and operating system security.",
+      "skills": ["Cyber Security", "Operating Systems", "Information Security", "Information Lifecycle Management"],
+      "verified": true,
+      "category": "Cyber Security",
+      "certificateUrl": "https://www.coursera.org/account/accomplishments/certificate/GFHMA28T4ZD9?trk=public_profile_see-credential"
+    },
+    {
+      "title": "Prompt Engineering for ChatGPT",
+      "issuer": "Vanderbilt University",
+      "issuerIcon": "/images/certification-issuers/vanderbilt.svg",
       "date": "June 2023",
-      "credentialId": "FLT-2023-001",
-      "description": "Comprehensive certification covering Flutter framework, Dart programming, and mobile app development best practices.",
-      "skills": ["Flutter", "Dart", "Mobile Development", "UI/UX Design"],
+      "credentialId": "CWPQ8Z7WRAAD",
+      "description": "An online course on Coursera focusing on prompt engineering techniques for ChatGPT and other generative AI models.",
+      "skills": ["Generative AI", "ChatGPT", "Prompt Engineering", "Natural Language Processing"],
       "verified": true,
-      "category": "Mobile Development",
-      "certificateUrl": "/documents/flutter-certification.pdf"
+      "category": "Artificial Intelligence",
+      "certificateUrl": "https://www.coursera.org/account/accomplishments/certificate/CWPQ8Z7WRAAD?trk=public_profile_see-credential"
     },
     {
-      "title": "Machine Learning Specialization",
-      "issuer": "Coursera (Stanford University)",
-      "date": "March 2024",
-      "credentialId": "COURSERA-ML-2024",
-      "description": "Complete machine learning course covering supervised learning, unsupervised learning, and neural networks.",
-      "skills": ["Python", "Machine Learning", "TensorFlow", "Data Analysis"],
-      "verified": true,
-      "category": "Machine Learning",
-      "certificateUrl": "/documents/ml-specialization-certificate.pdf"
-    },
-    {
-      "title": "AWS Cloud Practitioner",
-      "issuer": "Amazon Web Services",
-      "date": "September 2023",
-      "credentialId": "AWS-CP-2023-789",
-      "description": "Foundational understanding of AWS cloud services, architecture, and best practices.",
-      "skills": ["AWS", "Cloud Computing", "DevOps", "Infrastructure"],
-      "verified": true,
-      "category": "Cloud Computing",
-      "certificateUrl": "/documents/aws-cloud-practitioner-certificate.pdf"
-    },
-    {
-      "title": "Cybersecurity Fundamentals",
-      "issuer": "Cisco Networking Academy",
+      "title": "Introduction to Cybersecurity Tools and Cyber Attacks",
+      "issuer": "IBM",
+      "issuerIcon": "/images/certification-issuers/ibm.svg",
       "date": "May 2023",
-      "credentialId": "CISCO-SEC-2023",
-      "description": "Comprehensive course on cybersecurity principles, threat analysis, and security protocols.",
-      "skills": ["Cybersecurity", "Network Security", "Risk Assessment", "Compliance"],
+      "credentialId": "LECTEHUJ6BJ5",
+      "description": "An introductory course on Coursera by IBM covering cybersecurity tools, cyber attacks, and defensive strategies.",
+      "skills": ["Cyber Security", "Information Security", "Endpoint Management", "Vulnerability Analysis", "Technical Documentation"],
       "verified": true,
-      "category": "Security",
-      "certificateUrl": "/documents/cybersecurity-fundamentals-certificate.pdf"
+      "category": "Cyber Security",
+      "certificateUrl": "https://www.coursera.org/account/accomplishments/certificate/LECTEHUJ6BJ5?trk=public_profile_see-credential"
     },
     {
-      "title": "React.js Developer Certification",
-      "issuer": "Meta (Facebook)",
-      "date": "January 2024",
-      "credentialId": "META-REACT-2024",
-      "description": "Advanced React.js development including hooks, context API, and modern React patterns.",
-      "skills": ["React.js", "JavaScript", "Frontend Development", "Component Architecture"],
+      "title": "Advanced Learning Algorithms",
+      "issuer": "Stanford & Deeplearning.ai",
+      "issuerIcon": "/images/certification-issuers/stanford.svg",
+      "date": "September 2022",
+      "credentialId": "K4FPSENH6MP9",
+      "description": "A basic course extensively covering advanced learning algorithms, including supervised and unsupervised learning techniques.",
+      "skills": ["Artificial Intelligence", "Supervised Learning", "Regression Analysis", "Unsupervised Learning", "Reinforcement Learning", "Neural Networks", "Deep Learning", "Machine Learning", "Decision Trees"],
+      "verified": true,
+      "category": "Artificial Intelligence",
+      "certificateUrl": "https://www.coursera.org/account/accomplishments/verify/K4FPSENH6MP9?trk=public_profile_see-credential"
+    },
+    {
+      "title": "Responsive Web Design",
+      "issuer": "FreeCodeCamp",
+      "issuerIcon": "/images/certification-issuers/freecodecamp.svg",
+      "date": "June 2022",
+      "description": "A basic course covering the fundamentals of responsive web design, including HTML, CSS, JavaScript, Bootstrap, and Flexbox.",
+      "skills": ["HTML", "CSS", "JavaScript", "Accessibility", "Responsive Design", "Bootstrap", "Flexbox"],
       "verified": true,
       "category": "Web Development",
-      "certificateUrl": "/documents/react-developer-certificate.pdf"
+      "certificateUrl": "https://www.freecodecamp.org/certification/fcc499af465-8423-4369-a0f1-4a373cf6fda7/responsive-web-design?trk=public_profile_see-credential"
     },
     {
-      "title": "Git and GitHub Professional",
-      "issuer": "GitHub",
-      "date": "November 2023",
-      "credentialId": "GITHUB-PRO-2023",
-      "description": "Advanced version control, collaboration workflows, and GitHub best practices.",
-      "skills": ["Git", "GitHub", "Version Control", "Collaboration"],
+      "title": "Python (Basic)",
+      "issuer": "HackerRank",
+      "issuerIcon": "/images/certification-issuers/hackerrank.svg",
+      "date": "October 2022",
+      "credentialId": "CD44E777898F",
+      "description": "A basic certification in Python programming from HackerRank, covering fundamental concepts and problem-solving skills.",
+      "skills": ["Python", "Problem Solving"],
       "verified": true,
-      "category": "Development Tools",
-      "certificateUrl": "/documents/github-professional-certificate.pdf"
+      "category": "Programming Languages",
+      "certificateUrl": "https://www.hackerrank.com/certificates/cd44e777898f?trk=public_profile_see-credential"
+    },
+    {
+      "title": "Exercising Leadership: Foundational Principles",
+      "issuer": "HarvardX",
+      "issuerIcon": "/images/certification-issuers/harvard.svg",
+      "date": "January 2024",
+      "credentialId": "9752bf9a32bb4f4bb9668a9c23bc69bb",
+      "description": "A course by HarvardX on edX that explores the foundational principles of leadership, including team management and decision-making.",
+      "skills": ["Leadership", "Team Management", "Communication", "Decision Making"],
+      "verified": true,
+      "category": "Others",
+      "certificateUrl": "https://courses.edx.org/certificates/9752bf9a32bb4f4bb9668a9c23bc69bb"
     }
   ],
   "skills": [
     {
       "category": "Programming Languages",
-      "items": ["Python", "Dart", "JavaScript", "TypeScript", "Java", "C++", "SQL"]
+      "items": ["Python", "Dart", "JavaScript", "Java", "SQL", "Ruby", "C++"]
     },
     {
       "category": "Frameworks & Technologies",
-      "items": ["Flutter", "React.js", "Next.js", "Node.js", "Express.js", "TensorFlow", "Firebase"]
+      "items": ["Tensorflow", "Sklearn", "React.js", "Flutter", "Firebase"]
     },
     {
       "category": "Tools & Platforms",
-      "items": ["Git", "GitHub", "AWS", "Docker", "VS Code", "Android Studio", "Figma"]
+      "items": ["AWS", "Azure", "Docker", "Linux", "Git", "GitHub"]
     },
     {
       "category": "Databases",
-      "items": ["MySQL", "MongoDB", "Firebase Firestore", "SQLite", "PostgreSQL"]
+      "items": ["Firebase Firestore", "SQLite", "MySQL", "NoSQL", "PostgreSQL"]
     }
   ],
-  "certificationCategories": ["All", "Mobile Development", "Machine Learning", "Web Development", "Cloud Computing", "Security", "Development Tools"]
+  "certificationCategories": ["All", "Artificial Intelligence", "Web Development", "Cloud Computing", "Cyber Security", "Others"]
 }

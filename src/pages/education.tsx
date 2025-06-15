@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { SEOProps } from '@/types';
 import { getEducationData } from '@/utils/data';
+import Image from 'next/image';
 
 const educationSEO: SEOProps = {
   title: 'Education & Certifications - Kalki Eshwar D',
@@ -119,7 +120,32 @@ export default function Education() {
                   </div>
                   
                   <h3 className="text-lg font-medium text-gray-900 mb-2">{cert.title}</h3>
-                  <p className="text-red-600 font-medium text-sm mb-1">{cert.issuer}</p>
+                  
+                  {/* Issuer with Icon */}
+                  <div className="flex items-center gap-2 mb-1">
+                    {cert.issuerIcon && (
+                      <div className="w-5 h-5 relative rounded overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <Image
+                          src={cert.issuerIcon}
+                          alt={`${cert.issuer} logo`}
+                          width={20}
+                          height={20}
+                          className="object-contain"
+                          onError={(e) => {
+                            // Fallback to a generic building icon if image fails to load
+                            e.currentTarget.style.display = 'none';
+                            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                            if (fallback) {
+                              fallback.style.display = 'block';
+                            }
+                          }}
+                        />
+                        <span className="text-xs hidden">🏛️</span>
+                      </div>
+                    )}
+                    <p className="text-red-600 font-medium text-sm">{cert.issuer}</p>
+                  </div>
+                  
                   <p className="text-gray-500 text-xs mb-3">{cert.date}</p>
                   
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">{cert.description}</p>

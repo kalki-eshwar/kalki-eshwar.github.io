@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Professional portfolio website for KalkiEshwar",
   "scripts": {
+    "site": "npm run dev -- --port 9000",
     "dev": "npm run article; next dev",
     "prebuild": "node scripts/generate-articles-data.js",
     "build": "next build",
