@@ -1,0 +1,30 @@
+{
+  "name": "Kalki Eshwar D",
+  "title": "Computer Science Student & Developer",
+  "bio": "Computer Science Student at VIT Vellore",
+  "description": "I'm passionate about software development, mobile applications, and creating meaningful digital experiences. Currently studying Computer Science and Engineering.",
+  "location": "Vellore, Tamil Nadu, India",
+  "website": "https://kalkieshward.me",
+  "profileImage": "/images/profile.png",
+  "backgroundImage": "/images/home_background.jpg",
+  "resumePath": "/documents/Resume.pdf",
+  "resumeFileName": "Kalki_Eshwar_D_Resume.pdf",
+  "aboutSections": [
+    "Hello there, I'm Kalki Eshwar D. I'm currently a student at Vellore Institute of Technology, Vellore, studying Computer Science and Engineering. My journey in technology began with a curiosity about how digital systems work and has evolved into a passion for creating meaningful software solutions.",
+    "I have hands-on experience working as a Flutter Developer at Monclarity Solutions Pvt. Ltd., where I developed finance applications using Flutter, integrated APIs to connect various services, and performed comprehensive debugging and testing to ensure quality assurance. I also managed projects across different teams to ensure efficient and timely completion of deliverables.",
+    "Additionally, I worked as a Security Compliance Intern at Valsco Technology Pvt Ltd, where I created security policies in adherence to data governance and compliance standards. I designed security protocols across systems to ensure confidentiality, integrity, and availability of information systems, and developed a tiered response system for security incidents and events.",
+    "I'm passionate about mobile app development, cybersecurity, machine learning, and creating innovative solutions to real-world problems. I enjoy working on projects that challenge me to learn new technologies and solve complex problems. When I'm not coding, I enjoy exploring new frameworks, contributing to open-source projects, and staying updated with the latest trends in technology."
+  ],
+  "seo": {
+    "title": "Kalki Eshwar D - Computer Science Student & Developer",
+    "description": "Portfolio of Kalki Eshwar D, a Computer Science student at VIT Vellore passionate about software development and technology.",
+    "canonical": "https://kalkieshward.me",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kalki Eshwar D",
+      "jobTitle": "Computer Science Student",
+      "url": "https://kalkieshward.me"
+    }
+  }
+}

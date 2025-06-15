@@ -1,0 +1,46 @@
+{
+  "achievements": [
+    {
+      "title": "Loan Default Prediction Model",
+      "description": "Ranked in the 88th percentile in Coursera's Dataset Challenge for developing a machine learning model to predict loan defaults.",
+      "category": "Data Science",
+      "year": "2024",
+      "icon": "🏆"
+    },
+    {
+      "title": "Flutter Developer at Monclarity Solutions",
+      "description": "Successfully developed and deployed finance applications using Flutter with API integrations and comprehensive testing.",
+      "category": "Professional",
+      "year": "2024",
+      "icon": "💼"
+    },
+    {
+      "title": "Security Compliance Intern",
+      "description": "Created security policies and protocols at Valsco Technology Pvt Ltd ensuring data governance and compliance standards.",
+      "category": "Security",
+      "year": "2024",
+      "icon": "🔒"
+    },
+    {
+      "title": "VIT Chess League Platform",
+      "description": "Developed a comprehensive chess platform for VIT students with Firebase integration for seamless player registration and gameplay.",
+      "category": "Development",
+      "year": "2023",
+      "icon": "♟️"
+    },
+    {
+      "title": "Computer Science Student at VIT",
+      "description": "Currently pursuing Computer Science and Engineering at Vellore Institute of Technology, maintaining strong academic performance.",
+      "category": "Academic",
+      "year": "2021-2025",
+      "icon": "🎓"
+    },
+    {
+      "title": "Studize Calendar Application",
+      "description": "Designed and developed a miniature calendar application to help students manage academic tasks and schedules efficiently.",
+      "category": "Development",
+      "year": "2023",
+      "icon": "📅"
+    }
+  ]
+}

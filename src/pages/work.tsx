@@ -1,5 +1,6 @@
 import Layout from '@/components/layout/Layout';
 import { SEOProps } from '@/types';
+import { getWorkExperience } from '@/utils/data';
 
 const workSEO: SEOProps = {
   title: 'Work Experience - Kalki Eshwar D',
@@ -7,40 +8,9 @@ const workSEO: SEOProps = {
   canonical: 'https://kalkieshward.me/work',
 };
 
-const workExperience = [
-  {
-    title: 'Flutter Developer',
-    company: 'Monclarity Solutions Pvt. Ltd.',
-    period: 'June 2023 - August 2023',
-    type: 'Internship',
-    location: 'Remote',
-    description: 'Developed finance applications using Flutter framework, integrated APIs to connect various services, and performed comprehensive debugging and testing to ensure quality assurance.',
-    achievements: [
-      'Built responsive mobile applications for financial services',
-      'Integrated RESTful APIs for seamless data connectivity',
-      'Implemented comprehensive testing strategies',
-      'Managed cross-team projects for timely delivery',
-    ],
-    technologies: ['Flutter', 'Dart', 'REST APIs', 'Firebase'],
-  },
-  {
-    title: 'Security Compliance Intern',
-    company: 'Valsco Technology Pvt Ltd',
-    period: 'March 2023 - May 2023',
-    type: 'Internship',
-    location: 'Remote',
-    description: 'Created security policies in adherence to data governance and compliance standards, designed security protocols across systems, and developed tiered response systems for security incidents.',
-    achievements: [
-      'Developed comprehensive security policies and procedures',
-      'Designed multi-layered security protocols for system protection',
-      'Created incident response frameworks for security events',
-      'Ensured compliance with data governance standards',
-    ],
-    technologies: ['Security Frameworks', 'Compliance Standards', 'Risk Assessment', 'Policy Development'],
-  },
-];
-
 export default function Work() {
+  const { workExperience } = getWorkExperience();
+  
   return (
     <Layout seo={workSEO}>
       <div className="section">
@@ -66,7 +36,9 @@ export default function Work() {
                   )}
                   
                   {/* Timeline dot */}
-                  <div className="absolute left-2 top-6 w-4 h-4 bg-red-600 rounded-full border-4 border-white shadow-sm" />
+                  <div className={`absolute left-2 top-6 w-4 h-4 rounded-full border-4 border-white shadow-sm ${
+                    job.current ? 'bg-green-600' : 'bg-red-600'
+                  }`} />
                   
                   {/* Content */}
                   <div className="ml-12">
@@ -74,13 +46,33 @@ export default function Work() {
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                         <div>
                           <h3 className="text-xl font-medium text-gray-900 mb-1">{job.title}</h3>
-                          <p className="text-lg text-red-600 font-medium">{job.company}</p>
+                          <div className="flex items-center gap-2 mb-1">
+                            <p className="text-lg text-red-600 font-medium">{job.company}</p>
+                            <a
+                              href={job.companyWebsite}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-gray-400 hover:text-red-600 transition-colors duration-200"
+                              title={`Visit ${job.company} website`}
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                            </a>
+                          </div>
                           <p className="text-sm text-gray-500">{job.location}</p>
                         </div>
                         <div className="mt-2 md:mt-0 md:text-right">
-                          <span className="inline-block px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">
-                            {job.type}
-                          </span>
+                          <div className="flex items-center gap-2 md:justify-end">
+                            <span className="inline-block px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">
+                              {job.type}
+                            </span>
+                            {job.current && (
+                              <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">
+                                Current
+                              </span>
+                            )}
+                          </div>
                           <p className="text-sm text-gray-600 mt-1">{job.period}</p>
                         </div>
                       </div>
@@ -96,7 +88,7 @@ export default function Work() {
                         </ul>
                       </div>
                       
-                      <div>
+                      <div className="mb-6">
                         <h4 className="text-sm font-medium text-gray-900 mb-2">Technologies:</h4>
                         <div className="flex flex-wrap gap-2">
                           {job.technologies.map((tech, idx) => (
@@ -105,6 +97,22 @@ export default function Work() {
                             </span>
                           ))}
                         </div>
+                      </div>
+                      
+                      <div className="flex justify-end">
+                        {job.certificateUrl && (
+                          <a
+                            href={job.certificateUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-red-600 hover:text-red-700 text-sm font-medium transition-colors duration-200"
+                          >
+                            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            View Certificate
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>

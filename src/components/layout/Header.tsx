@@ -8,6 +8,7 @@ const navigation: NavigationItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Work', href: '/work' },
   { label: 'Education', href: '/education' },
+  { label: 'Achievements', href: '/achievements' },
   { label: 'Projects', href: '/projects' },
   { label: 'Articles', href: '/articles' },
   { label: 'Contact', href: '/contact' },

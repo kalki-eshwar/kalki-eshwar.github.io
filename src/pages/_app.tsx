@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import Head from 'next/head';
 import '@/styles/globals.css';
 
 const inter = Inter({
@@ -16,8 +17,13 @@ const jetbrainsMono = JetBrains_Mono({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${inter.variable} ${jetbrainsMono.variable} font-sans`}>
-      <Component {...pageProps} />
-    </div>
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className={`${inter.variable} ${jetbrainsMono.variable} font-sans`}>
+        <Component {...pageProps} />
+      </div>
+    </>
   );
 }

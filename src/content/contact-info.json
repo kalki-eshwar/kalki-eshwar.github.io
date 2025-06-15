@@ -1,0 +1,64 @@
+{
+  "contactInfo": {
+    "location": "Vellore, Tamil Nadu, India",
+    "availability": "Available for opportunities",
+    "responseTime": "Usually within 24-48 hours",
+    "currentlyAvailable": true,
+    "availabilityMessage": "I'm currently open to new opportunities, internships, and exciting projects. Feel free to reach out through my social links below!"
+  },
+  "socialLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/KalkiEshwarD",
+      "icon": "github"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/kalki-eshwar-9b243a237/",
+      "icon": "linkedin"
+    }
+  ],
+  "contactSubjects": [
+    {
+      "value": "collaboration",
+      "label": "Collaboration Opportunity"
+    },
+    {
+      "value": "job",
+      "label": "Job Opportunity"
+    },
+    {
+      "value": "project",
+      "label": "Project Discussion"
+    },
+    {
+      "value": "mentorship",
+      "label": "Mentorship"
+    },
+    {
+      "value": "general",
+      "label": "General Inquiry"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    }
+  ],
+  "connectionTypes": [
+    {
+      "title": "Work Together",
+      "description": "Looking for collaboration on projects or need development expertise?",
+      "icon": "briefcase"
+    },
+    {
+      "title": "Mentorship",
+      "description": "Questions about getting started in tech or career advice?",
+      "icon": "book"
+    },
+    {
+      "title": "Just Chat",
+      "description": "Want to discuss technology, ideas, or just have a conversation?",
+      "icon": "chat"
+    }
+  ]
+}

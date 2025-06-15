@@ -1,0 +1,140 @@
+{
+  "education": [
+    {
+      "degree": "Bachelor of Technology in Computer Science and Engineering",
+      "institution": "Vellore Institute of Technology, Vellore",
+      "period": "2021 - 2025 (Expected)",
+      "location": "Vellore, Tamil Nadu, India",
+      "gpa": "8.5/10",
+      "description": "Comprehensive study of computer science fundamentals including algorithms, data structures, software engineering, and emerging technologies.",
+      "coursework": [
+        "Data Structures and Algorithms",
+        "Object-Oriented Programming",
+        "Database Management Systems",
+        "Software Engineering",
+        "Machine Learning",
+        "Computer Networks",
+        "Operating Systems",
+        "Web Technologies",
+        "Mobile Application Development",
+        "Cybersecurity Fundamentals"
+      ],
+      "achievements": [
+        "Maintained consistent academic performance with 8.5+ GPA",
+        "Active participant in technical clubs and coding competitions",
+        "Completed multiple industry-relevant projects",
+        "Presented research work at college symposiums"
+      ],
+      "type": "undergraduate"
+    },
+    {
+      "degree": "Higher Secondary Education (12th Grade)",
+      "institution": "St. Joseph's Higher Secondary School",
+      "period": "2019 - 2021",
+      "location": "Chennai, Tamil Nadu, India",
+      "gpa": "95.2%",
+      "description": "Specialized in Science stream with focus on Mathematics, Physics, Chemistry, and Computer Science.",
+      "coursework": [
+        "Mathematics",
+        "Physics",
+        "Chemistry",
+        "Computer Science",
+        "English Literature"
+      ],
+      "achievements": [
+        "Scored 95.2% in board examinations",
+        "School topper in Computer Science",
+        "Participated in state-level mathematics olympiad",
+        "Led the school's computer science club"
+      ],
+      "type": "secondary"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Flutter Development Certification",
+      "issuer": "Google Developers",
+      "date": "June 2023",
+      "credentialId": "FLT-2023-001",
+      "description": "Comprehensive certification covering Flutter framework, Dart programming, and mobile app development best practices.",
+      "skills": ["Flutter", "Dart", "Mobile Development", "UI/UX Design"],
+      "verified": true,
+      "category": "Mobile Development",
+      "certificateUrl": "/documents/flutter-certification.pdf"
+    },
+    {
+      "title": "Machine Learning Specialization",
+      "issuer": "Coursera (Stanford University)",
+      "date": "March 2024",
+      "credentialId": "COURSERA-ML-2024",
+      "description": "Complete machine learning course covering supervised learning, unsupervised learning, and neural networks.",
+      "skills": ["Python", "Machine Learning", "TensorFlow", "Data Analysis"],
+      "verified": true,
+      "category": "Machine Learning",
+      "certificateUrl": "/documents/ml-specialization-certificate.pdf"
+    },
+    {
+      "title": "AWS Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": "September 2023",
+      "credentialId": "AWS-CP-2023-789",
+      "description": "Foundational understanding of AWS cloud services, architecture, and best practices.",
+      "skills": ["AWS", "Cloud Computing", "DevOps", "Infrastructure"],
+      "verified": true,
+      "category": "Cloud Computing",
+      "certificateUrl": "/documents/aws-cloud-practitioner-certificate.pdf"
+    },
+    {
+      "title": "Cybersecurity Fundamentals",
+      "issuer": "Cisco Networking Academy",
+      "date": "May 2023",
+      "credentialId": "CISCO-SEC-2023",
+      "description": "Comprehensive course on cybersecurity principles, threat analysis, and security protocols.",
+      "skills": ["Cybersecurity", "Network Security", "Risk Assessment", "Compliance"],
+      "verified": true,
+      "category": "Security",
+      "certificateUrl": "/documents/cybersecurity-fundamentals-certificate.pdf"
+    },
+    {
+      "title": "React.js Developer Certification",
+      "issuer": "Meta (Facebook)",
+      "date": "January 2024",
+      "credentialId": "META-REACT-2024",
+      "description": "Advanced React.js development including hooks, context API, and modern React patterns.",
+      "skills": ["React.js", "JavaScript", "Frontend Development", "Component Architecture"],
+      "verified": true,
+      "category": "Web Development",
+      "certificateUrl": "/documents/react-developer-certificate.pdf"
+    },
+    {
+      "title": "Git and GitHub Professional",
+      "issuer": "GitHub",
+      "date": "November 2023",
+      "credentialId": "GITHUB-PRO-2023",
+      "description": "Advanced version control, collaboration workflows, and GitHub best practices.",
+      "skills": ["Git", "GitHub", "Version Control", "Collaboration"],
+      "verified": true,
+      "category": "Development Tools",
+      "certificateUrl": "/documents/github-professional-certificate.pdf"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "items": ["Python", "Dart", "JavaScript", "TypeScript", "Java", "C++", "SQL"]
+    },
+    {
+      "category": "Frameworks & Technologies",
+      "items": ["Flutter", "React.js", "Next.js", "Node.js", "Express.js", "TensorFlow", "Firebase"]
+    },
+    {
+      "category": "Tools & Platforms",
+      "items": ["Git", "GitHub", "AWS", "Docker", "VS Code", "Android Studio", "Figma"]
+    },
+    {
+      "category": "Databases",
+      "items": ["MySQL", "MongoDB", "Firebase Firestore", "SQLite", "PostgreSQL"]
+    }
+  ],
+  "certificationCategories": ["All", "Mobile Development", "Machine Learning", "Web Development", "Cloud Computing", "Security", "Development Tools"]
+}

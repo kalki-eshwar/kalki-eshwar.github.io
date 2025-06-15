@@ -23,6 +23,10 @@ const nextConfig = {
       test: /\.svg$/,
       use: ['@svgr/webpack']
     });
+    
+    // Disable problematic webpack caching strategy
+    config.cache = false;
+    
     return config;
   }
 }

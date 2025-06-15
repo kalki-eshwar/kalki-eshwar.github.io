@@ -1,0 +1,58 @@
+{
+  "workExperience": [
+    {
+      "title": "Development Intern",
+      "company": "Foradian Technologies",
+      "period": "May 2025 - Present",
+      "type": "Internship",
+      "location": "On-site, Bangalore, India",
+      "description": "Currently developing a full-stack mobile application using React Native to create internal tools for the company. Focused on enhancing user experience and integrating backend services.",
+      "achievements": [
+        "Developed a Ruby on Rails backend service api for internal tools",
+        "Developed a mobile application using React Native",
+        "Implamented user authentication and authorization features",
+        "Added api caching and performance optimizations",
+        "Developed extensive test suites for the application",
+        "Deployed application using Docker on Azure Cloud"
+      ],
+      "technologies": ["React Native", "Ruby on Rails", "Azure", "Docker", "TypeScript", "JavaScript", "Ruby"],
+      "companyWebsite": "https://www.foradian.com/",
+      "certificateUrl": "",
+      "current": true
+    },
+    {
+      "title": "Flutter Developer",
+      "company": "Monclarity Solutions Pvt. Ltd.",
+      "period": "June 2024 - July 2024",
+      "type": "Internship",
+      "location": "Remote",
+      "description": "Developed a front-end finance application using Flutter framework, integrated APIs to connect various services, and performed comprehensive debugging and testing to ensure quality assurance.",
+      "achievements": [
+        "Designed the layout for the application",
+        "Created core components to be used by the entire team",
+        "Developed integration across services using REST APIs",
+        "Tested and debugged the applicaiton across multiple devices to ensure quality"
+      ],
+      "technologies": ["Flutter", "Dart", "REST APIs"],
+      "companyWebsite": "https://finmitr.com",
+      "certificateUrl": "/documents/mon_clarity_intern_cert.pdf"
+    },
+    {
+      "title": "Security Compliance Intern",
+      "company": "Valsco Technologies",
+      "period": "October 2023 - December 2023",
+      "type": "Internship",
+      "location": "Remote",
+      "description": "Drafted security policies and protocols to ensure confidentiality, integrity and availability of information and information systems of the company.",
+      "achievements": [
+        "Developed comprehensive security policies and procedures",
+        "Designed multi-layered security protocols for system protection",
+        "Created incident response frameworks for security events",
+        "Ensured compliance with data governance standards"
+      ],
+      "technologies": ["Security Frameworks", "Compliance Standards", "Risk Assessment", "Policy Development", "NIST", "ISO 27001", "GDPR", "DPDP", "SANS"],
+      "companyWebsite": "https://www.valscotech.com",
+      "certificateUrl": "/documents/valsco_tech_intern_cert.pdf"
+    }
+  ]
+}
