@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getAchievementsData } from '@/utils/data';
 
 export default function AchievementsSection() {
@@ -16,23 +17,20 @@ export default function AchievementsSection() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {achievements.map((achievement, index) => (
+          {achievements.slice(0, 3).map((achievement, index) => (
             <div key={index} className="border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-all duration-200 hover:shadow-sm">
               <div className="space-y-4">
                 <div className="flex items-start justify-between">
                   <div className="space-y-2 flex-1">
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">{achievement.icon}</span>
-                      <div>
-                        <h3 className="text-lg font-medium text-gray-900 leading-tight">{achievement.title}</h3>
-                        <div className="flex items-center gap-2 mt-1">
-                          <span className="text-xs text-red-600 bg-red-50 px-2 py-1 rounded-full">
-                            {achievement.category}
-                          </span>
-                          <span className="text-xs text-gray-500">
-                            {achievement.year}
-                          </span>
-                        </div>
+                    <div>
+                      <h3 className="text-lg font-medium text-gray-900 leading-tight">{achievement.title}</h3>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-xs text-red-600 bg-red-50 px-2 py-1 rounded-full">
+                          {achievement.category}
+                        </span>
+                        <span className="text-xs text-gray-500">
+                          {achievement.year}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -42,6 +40,17 @@ export default function AchievementsSection() {
             </div>
           ))}
         </div>
+        
+        {achievements.length > 3 && (
+          <div className="text-center mt-6">
+            <Link href="/achievements" className="btn flex items-center justify-center space-x-2">
+              <span>View All Achievements</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
