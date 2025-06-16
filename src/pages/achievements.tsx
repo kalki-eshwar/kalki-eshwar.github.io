@@ -28,7 +28,7 @@ export default function Achievements() {
         {/* Achievements Grid */}
         <div className="space-y-8 max-w-4xl mx-auto">
           {achievements.map((achievement, index) => (
-            <div key={index} className={`border rounded-lg p-8 hover:border-gray-300 transition-all duration-200 hover:shadow-sm ${achievement.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+            <div key={index} className={`border rounded-lg p-8 hover:border-gray-300 transition-all duration-200 hover:shadow-sm ${achievement.featured ? 'border-red-200 bg-red-50/20 hover:border-red-400' : 'border-gray-200'}`}>
               {achievement.featured && (
                 <div className="flex items-center mb-4">
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
@@ -42,17 +42,14 @@ export default function Achievements() {
               
               <div className="space-y-6">
                 {/* Header */}
-                <div className="flex items-start gap-4">
-                  <span className="text-3xl">{achievement.icon}</span>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h2 className="text-xl font-medium text-gray-900">{achievement.title}</h2>
-                      <span className="text-xs text-red-600 bg-red-50 px-3 py-1 rounded-full">
-                        {achievement.category}
-                      </span>
-                    </div>
-                    <span className="text-sm text-gray-500">{achievement.year}</span>
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <h2 className="text-xl font-medium text-gray-900">{achievement.title}</h2>
+                    <span className="text-xs text-red-600 bg-red-50 px-3 py-1 rounded-full">
+                      {achievement.category}
+                    </span>
                   </div>
+                  <span className="text-sm text-gray-500">{achievement.year}</span>
                 </div>
 
                 {/* Description */}

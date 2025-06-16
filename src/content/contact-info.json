@@ -20,16 +20,20 @@
   ],
   "contactSubjects": [
     {
-      "value": "collaboration",
-      "label": "Collaboration Opportunity"
-    },
-    {
       "value": "job",
       "label": "Job Opportunity"
     },
     {
+      "value": "collaboration",
+      "label": "Collaboration Opportunity"
+    },
+    {
       "value": "project",
       "label": "Project Discussion"
+    },
+    {
+      "value": "chess",
+      "label": "Chess Discussion"
     },
     {
       "value": "mentorship",

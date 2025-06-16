@@ -3,12 +3,15 @@ import educationData from '@/content/education-data.json';
 import workExperience from '@/content/work-experience.json';
 import achievementsData from '@/content/achievements-data.json';
 import contactInfo from '@/content/contact-info.json';
+import projectsData from '@/content/projects-data.json';
+import { Project } from '@/types';
 
 export const getPersonalInfo = () => personalInfo;
 export const getEducationData = () => educationData;
 export const getWorkExperience = () => workExperience;
 export const getAchievementsData = () => achievementsData;
 export const getContactInfo = () => contactInfo;
+export const getProjectsData = () => projectsData;
 
 // New functions for publications and certifications
 export const getPublications = () => educationData.publications;

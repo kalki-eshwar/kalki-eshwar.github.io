@@ -46,9 +46,6 @@ export interface Project {
   images: ProjectImage[];
   featured: boolean;
   category: 'web' | 'mobile' | 'desktop' | 'ai' | 'opensource';
-  status: 'completed' | 'in-progress' | 'planned';
-  startDate: string;
-  endDate?: string;
   highlights: string[];
 }
 

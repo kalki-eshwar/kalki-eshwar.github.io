@@ -41,7 +41,7 @@ export default function Articles({ articles, categories }: ArticlesPageProps) {
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {featuredArticles.map((article) => (
-                  <article key={article.slug} className="bg-white border border-red-200 bg-red-50/30 rounded-lg overflow-hidden hover:border-red-300 transition-colors duration-200">
+                  <article key={article.slug} className="bg-red-50/20 border border-red-200 rounded-lg overflow-hidden hover:border-red-400 transition-colors duration-200">
                     <div className="p-4">
                       <div className="flex items-center mb-3">
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
@@ -64,7 +64,7 @@ export default function Articles({ articles, categories }: ArticlesPageProps) {
                       </div>
                     </div>
                     <div className="p-6">
-                      <div className="flex items-center text-sm text-gray-500 mb-3">
+                      <div className="flex items-center text-sm text-red-600 mb-3">
                         <span>{formatDate(article.date)}</span>
                         <span className="mx-2">•</span>
                         <span>{article.readingTime.text}</span>
@@ -117,7 +117,7 @@ export default function Articles({ articles, categories }: ArticlesPageProps) {
             </h2>
             <div className="space-y-6">
               {articles.map((article) => (
-                <article key={article.slug} className={`bg-white border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${article.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+                <article key={article.slug} className={`rounded-lg p-6 transition-colors duration-200 ${article.featured ? 'bg-red-50/20 border border-red-200 hover:border-red-400' : 'bg-white border border-gray-200 hover:border-gray-300'}`}>
                   {article.featured && (
                     <div className="flex items-center mb-4">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
@@ -148,7 +148,7 @@ export default function Articles({ articles, categories }: ArticlesPageProps) {
                       </div>
                       
                       <h3 className="text-xl font-medium text-gray-900 mb-2">{article.title}</h3>
-                      <p className="text-gray-600 text-sm mb-3 leading-relaxed">{article.description}</p>
+                      <p className="text-sm text-gray-600 mb-3 leading-relaxed">{article.description}</p>
                       
                       <div className="flex items-center justify-between">
                         <div className="flex flex-wrap gap-2">

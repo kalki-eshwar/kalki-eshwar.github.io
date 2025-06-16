@@ -156,7 +156,7 @@ npm run format
 1. **Update site metadata** in [`src/components/layout/Layout.tsx`](src/components/layout/Layout.tsx)
 2. **Modify hero section** in [`src/components/sections/HeroSection.tsx`](src/components/sections/HeroSection.tsx)
 3. **Update social links** in [`src/components/layout/Footer.tsx`](src/components/layout/Footer.tsx)
-4. **Add your projects** in [`src/content/projects/projects.json`](src/content/projects/projects.json)
+4. **Add your projects** in [`src/content/projects-data.json`](src/content/projects-data.json)
 5. **Write articles** in [`src/content/articles/`](src/content/articles/)
 
 ### Styling
@@ -223,7 +223,7 @@ Use these categories for consistency:
 
 ### Adding Projects
 
-Update [`src/content/projects/projects.json`](src/content/projects/projects.json):
+Update [`src/content/projects-data.json`](src/content/projects-data.json):
 
 ```json
 {

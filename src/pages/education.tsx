@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { SEOProps } from '@/types';
 import { getEducationData } from '@/utils/data';
+import { getProjectsData } from '@/utils/data';
 import Image from 'next/image';
 
 const educationSEO: SEOProps = {
@@ -11,6 +12,7 @@ const educationSEO: SEOProps = {
 
 export default function Education() {
   const { education, certifications, skills, certificationCategories, publications } = getEducationData();
+  const projects = getProjectsData();
   
   return (
     <Layout seo={educationSEO}>
@@ -38,7 +40,7 @@ export default function Education() {
                 const anchorId = edu.institution.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
                 
                 return (
-                  <div key={index} id={anchorId === 'vellore-institute-of-technology' ? 'vit' : anchorId} className={`bg-white border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${edu.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+                  <div key={index} id={anchorId === 'vellore-institute-of-technology' ? 'vit' : anchorId} className={`rounded-lg p-6 transition-colors duration-200 ${edu.featured ? 'bg-red-50/20 border border-red-200 hover:border-red-400' : 'bg-white border border-gray-200 hover:border-gray-300'}`}>
                     {edu.featured && (
                       <div className="flex items-center mb-3">
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
@@ -104,7 +106,7 @@ export default function Education() {
             
             <div className="space-y-6">
               {publications?.map((publication, index) => (
-                <div key={index} className={`bg-white border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${publication.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+                <div key={index} className={`rounded-lg p-6 transition-colors duration-200 ${publication.featured ? 'bg-red-50/20 border border-red-200 hover:border-red-400' : 'bg-white border border-gray-200 hover:border-gray-300'}`}>
                   {publication.featured && (
                     <div className="flex items-center mb-3">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
@@ -118,7 +120,24 @@ export default function Education() {
                   
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
                     <div className="flex-grow lg:pr-6">
-                      <h3 className="text-xl font-medium text-gray-900 mb-2">{publication.title}</h3>
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
+                        <h3 className="text-xl font-medium text-gray-900 mb-2 sm:mb-0">{publication.title}</h3>
+                        <div className="flex-shrink-0">
+                          <span 
+                            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                              publication.status === 'Published' 
+                                ? 'bg-green-100 text-green-800'
+                                : publication.status === 'Accepted'
+                                ? 'bg-blue-100 text-blue-800'
+                                : publication.status === 'Submitted'
+                                ? 'bg-yellow-100 text-yellow-800'
+                                : 'bg-gray-100 text-gray-800'
+                            }`}
+                          >
+                            {publication.status}
+                          </span>
+                        </div>
+                      </div>
                       
                       <div className="text-sm text-gray-600 mb-3">
                         <p className="mb-1">
@@ -129,8 +148,7 @@ export default function Education() {
                         </p>
                         <p>
                           <span className="font-medium">Date:</span> {publication.date} | 
-                          <span className="font-medium"> Type:</span> {publication.type} | 
-                          <span className="font-medium"> Status:</span> {publication.status}
+                          <span className="font-medium"> Type:</span> {publication.type}
                         </p>
                       </div>
                       
@@ -138,7 +156,7 @@ export default function Education() {
                       
                       <div className="flex flex-wrap gap-2 mb-4">
                         {publication.keywords.map((keyword, idx) => (
-                          <span key={idx} className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">
+                          <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
                             {keyword}
                           </span>
                         ))}
@@ -152,10 +170,6 @@ export default function Education() {
                     
                     <div className="mt-4 lg:mt-0 lg:min-w-0 lg:flex-shrink-0">
                       <div className="flex flex-col gap-2">
-                        <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full text-center whitespace-nowrap">
-                          {publication.category}
-                        </span>
-                        
                         {publication.pdfUrl && (
                           <a
                             href={publication.pdfUrl}
@@ -212,7 +226,7 @@ export default function Education() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
-                <div key={index} className={`bg-white border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${cert.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+                <div key={index} className={`rounded-lg p-6 transition-colors duration-200 ${cert.featured ? 'bg-red-50/20 border border-red-200 hover:border-red-400' : 'bg-white border border-gray-200 hover:border-gray-300'}`}>
                   {cert.featured && (
                     <div className="flex items-center mb-3">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
@@ -348,7 +362,7 @@ export default function Education() {
                 <svg className="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                <span>Hands-on Projects</span>
+                <span>{projects?.length}+ Hands-on FOSS Projects</span>
               </div>
             </div>
           </div>

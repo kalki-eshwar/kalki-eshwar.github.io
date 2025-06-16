@@ -19,7 +19,7 @@ export default function CertificationsSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {certifications.slice(0, 3).map((certification, index) => (
-            <div key={index} className={`border rounded-lg p-6 hover:border-gray-300 transition-all duration-200 hover:shadow-sm ${certification.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+            <div key={index} className={`border rounded-lg p-6 hover:border-gray-300 transition-all duration-200 hover:shadow-sm ${certification.featured ? 'border-red-200 bg-red-50/20 hover:border-red-400' : 'border-gray-200'}`}>
               {certification.featured && (
                 <div className="flex items-center mb-4">
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
@@ -31,7 +31,8 @@ export default function CertificationsSection() {
                 </div>
               )}
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
+                {/* Icon and Issuer Row */}
+                <div className="flex items-center gap-3">
                   {certification.issuerIcon && (
                     <div className="flex-shrink-0">
                       <Image
@@ -43,25 +44,31 @@ export default function CertificationsSection() {
                       />
                     </div>
                   )}
-                  <div className="space-y-2 flex-1">
-                    <h3 className="text-lg font-medium text-gray-900 leading-tight">{certification.title}</h3>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs text-red-600 bg-red-50 px-2 py-1 rounded-full">
-                        {certification.category}
+                  <span className="text-lg font-semibold text-red-600">{certification.issuer}</span>
+                </div>
+                
+                {/* Title */}
+                <div>
+                  <h3 className="text-sm font-medium text-gray-900 leading-tight">{certification.title}</h3>
+                </div>
+                
+                {/* Tags and Info */}
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-xs text-red-600 bg-red-50 px-2 py-1 rounded-full">
+                      {certification.category}
+                    </span>
+                    <span className="text-xs text-gray-500">
+                      {new Date(certification.date).toLocaleDateString('en-US', { 
+                        month: 'short', 
+                        year: 'numeric' 
+                      })}
+                    </span>
+                    {certification.verified && (
+                      <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full">
+                        Verified
                       </span>
-                      <span className="text-xs text-gray-500">
-                        {new Date(certification.date).toLocaleDateString('en-US', { 
-                          month: 'short', 
-                          year: 'numeric' 
-                        })}
-                      </span>
-                      {certification.verified && (
-                        <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full">
-                          Verified
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-sm text-gray-600">{certification.issuer}</p>
+                    )}
                   </div>
                 </div>
                 

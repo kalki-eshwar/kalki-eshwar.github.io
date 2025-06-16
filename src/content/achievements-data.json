@@ -1,48 +1,44 @@
 {
   "achievements": [
     {
-      "title": "Loan Default Prediction Model",
-      "description": "Ranked in the 88th percentile in Coursera's Dataset Challenge for developing a machine learning model to predict loan defaults.",
-      "category": "Data Science",
+      "title": "Member Secretary, Student Council, VIT",
+      "description": "Served as Member Secretary of the Student Council at Vellore Institute of Technology in the academic year 2024-25, leading various student initiatives and events.",
+      "category": "Leadership",
       "year": "2024",
-      "icon": "🏆",
       "featured": true
     },
     {
-      "title": "Flutter Developer at Monclarity Solutions",
-      "description": "Successfully developed and deployed finance applications using Flutter with API integrations and comprehensive testing.",
-      "category": "Professional",
-      "year": "2024",
-      "icon": "💼"
-    },
-    {
-      "title": "Security Compliance Intern",
-      "description": "Created security policies and protocols at Valsco Technology Pvt Ltd ensuring data governance and compliance standards.",
-      "category": "Security",
-      "year": "2024",
-      "icon": "🔒"
-    },
-    {
-      "title": "VIT Chess League Platform",
-      "description": "Developed a comprehensive chess platform for VIT students with Firebase integration for seamless player registration and gameplay.",
-      "category": "Development",
-      "year": "2023",
-      "icon": "♟️",
+      "title": "Karnataka U-1700 State Amateur Chess Champion)",
+      "description": "Held the title of Karnataka U-1700 State Amateur Chess Champion in 2019, which was conducted in Bengaluru.",
+      "category": "Sports",
+      "year": "2019",
       "featured": true
     },
     {
-      "title": "Computer Science Student at VIT",
-      "description": "Currently pursuing Computer Science and Engineering at Vellore Institute of Technology, maintaining strong academic performance.",
+      "title": "Karate Black Belt Ni-Dan (2nd Black Belt)",
+      "description": "Completed over 8+ years of Karate training, achieving the rank of Ni-Dan (2nd Black Belt) in 2018 in the Kokino Shito Ryu Karate School of India.",
+      "category": "Sports",
+      "year": "2018",
+      "featured": true
+    },
+    {
+      "title": "11th International Rank in Silverzone Aptitude Olympiad (iRAO)",
+      "description": "Achieved the 11th International Rank in the Silverzone Aptitude Olympiad (iRAO) in 2018.",
       "category": "Academic",
-      "year": "2021-2025",
-      "icon": "🎓"
+      "year": "2018",
+      "featured": true
     },
     {
-      "title": "Studize Calendar Application",
-      "description": "Designed and developed a miniature calendar application to help students manage academic tasks and schedules efficiently.",
-      "category": "Development",
-      "year": "2023",
-      "icon": "📅"
+      "title": "VIT Premier League (Chess) Title Holder",
+      "description": "I have won the VIT Premier League (Chess) title three times in a row, in 2023, 2024, and 2025.",
+      "category": "Academic",
+      "year": "2023, 2024, & 2025"
+    },
+    {
+      "title": "School Head Boy",
+      "description": "Served as the School Head Boy, leading student initiatives and representing the student body.",
+      "category": "Leadership",
+      "year": "2023"
     }
   ]
 }

@@ -1,7 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import { SEOProps } from '@/types';
-import projectsData from '@/content/projects/projects.json';
+import { getProjectsData } from '@/utils/data';
 
 const projectsSEO: SEOProps = {
   title: 'Projects - Kalki Eshwar D',
@@ -10,6 +10,7 @@ const projectsSEO: SEOProps = {
 };
 
 // Map the JSON data to match the expected format
+const projectsData = getProjectsData();
 const projects = projectsData.map(project => ({
   title: project.title,
   description: project.description,
@@ -17,10 +18,10 @@ const projects = projectsData.map(project => ({
   tech: project.technologies.map(tech => tech.name),
   features: project.highlights,
   github: project.githubUrl,
-  demo: project.liveUrl || '#',
+  demo: 'liveUrl' in project ? project.liveUrl : null,
   image: project.images?.[0]?.src || '/images/project-placeholder.png',
-  status: project.status === 'completed' ? 'Completed' : project.status === 'in-progress' ? 'In Progress' : 'Active',
-  category: project.category === 'web' ? 'Web Development' : project.category === 'ai' ? 'AI/Machine Learning' : project.category === 'mobile' ? 'App Development' : project.category
+  category: project.category === 'web' ? 'Web Development' : project.category === 'ai' ? 'AI/Machine Learning' : project.category === 'mobile' ? 'App Development' : project.category,
+  featured: project.featured || false
 }));
 
 const categories = ['All', 'Web Development', 'AI/Machine Learning', 'App Development'];
@@ -57,7 +58,20 @@ export default function Projects() {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {projects.map((project, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-colors duration-200">
+              <div key={index} className={`border rounded-lg overflow-hidden transition-colors duration-200 ${project.featured ? 'bg-red-50/20 border-red-200 hover:border-red-400' : 'bg-white border-gray-200 hover:border-gray-300'}`}>
+                {project.featured && (
+                  <div className="p-4 pb-0">
+                    <div className="flex items-center mb-3">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                        <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        Featured Project
+                      </span>
+                    </div>
+                  </div>
+                )}
+                
                 {/* Project Image Placeholder */}
                 <div className="h-48 bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
                   <div className="text-center">
@@ -71,15 +85,8 @@ export default function Projects() {
                 </div>
 
                 <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
+                  <div className="mb-3">
                     <h3 className="text-xl font-medium text-gray-900">{project.title}</h3>
-                    <span className={`px-2 py-1 text-xs rounded-full ${
-                      project.status === 'Active' 
-                        ? 'bg-green-100 text-green-800' 
-                        : 'bg-blue-100 text-blue-800'
-                    }`}>
-                      {project.status}
-                    </span>
                   </div>
 
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">
@@ -120,17 +127,18 @@ export default function Projects() {
                       <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                       </svg>
-                      Code
+                      View Code
                     </Link>
-                    {project.demo !== '#' && (
+                    {project.demo && (
                       <Link 
                         href={project.demo} 
                         className="inline-flex items-center px-3 py-2 text-sm text-white bg-red-600 hover:bg-red-700 rounded transition-colors duration-200"
+                        target='_blank'
                       >
                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
-                        Demo
+                        Live Demo
                       </Link>
                     )}
                   </div>

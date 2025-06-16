@@ -1,28 +1,17 @@
 import Link from 'next/link';
+import { getProjectsData } from '@/utils/data';
 
-const projects = [
-  {
-    title: 'Studize',
-    description: 'A miniature calendar application facilitating an easy way to manage academic tasks and schedules.',
-    tech: 'Flutter',
-    link: '/projects/studize',
-    featured: true
-  },
-  {
-    title: 'VITCL Flutter Application',
-    description: 'A platform through which players from VIT could register and play chess seamlessly.',
-    tech: 'Flutter, Firebase',
-    link: '/projects/vitcl',
-    featured: true
-  },
-  {
-    title: 'Loan Default Prediction',
-    description: 'Machine learning model created for Coursera\'s Dataset Challenge. Ranked in the 88th percentile.',
-    tech: 'Python, Sklearn',
-    link: '/projects/loan-prediction',
-    featured: false
-  },
-];
+const projectsData = getProjectsData();
+const projects = projectsData
+  .filter(project => project.featured)
+  .slice(0, 3)
+  .map(project => ({
+    title: project.title,
+    description: project.description,
+    tech: project.technologies.map(tech => tech.name).join(', '),
+    link: `/projects#${project.id}`,
+    featured: project.featured
+  }));
 
 export default function ProjectsSection() {
   return (
@@ -39,7 +28,7 @@ export default function ProjectsSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {projects.map((project, index) => (
-            <div key={index} className={`border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${project.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+            <div key={index} className={`border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${project.featured ? 'border-red-200 bg-red-50/20 hover:border-red-400' : 'border-gray-200'}`}>
               {project.featured && (
                 <div className="flex items-center mb-4">
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">

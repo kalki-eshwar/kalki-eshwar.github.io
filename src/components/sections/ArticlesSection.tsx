@@ -20,7 +20,7 @@ export default function ArticlesSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {displayedArticles.map((article, index) => (
-            <article key={index} className={`border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${article.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+            <article key={index} className={`border rounded-lg p-6 transition-colors duration-200 ${article.featured ? 'bg-red-50/20 border-red-200 hover:border-red-400' : 'bg-white border-gray-200 hover:border-gray-300'}`}>
               {article.featured && (
                 <div className="flex items-center mb-4">
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
@@ -32,13 +32,13 @@ export default function ArticlesSection() {
                 </div>
               )}
               <div className="space-y-3">
-                <div className="flex items-center text-sm text-gray-500 space-x-4">
+                <div className="flex items-center text-sm space-x-4 text-gray-500">
                   <span>{article.date}</span>
                   <span>•</span>
                   <span>{article.readTime}</span>
                 </div>
                 <h3 className="text-lg font-medium text-gray-900">{article.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">{article.description}</p>
+                <p className="leading-relaxed text-sm text-gray-600">{article.description}</p>
                 <Link href={`/articles/${article.slug}`} className="inline-block text-red-600 hover:text-red-700 text-sm">
                   Read Article →
                 </Link>
