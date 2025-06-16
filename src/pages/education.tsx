@@ -97,7 +97,7 @@ export default function Education() {
           </div>
 
           {/* Publications Section */}
-          <div className="mb-16">
+          <div className="mb-16" id="publications">
             <h2 className="text-2xl font-medium text-gray-900 mb-8">
               Research <span className="text-red-600">Publications</span>
             </h2>
@@ -191,7 +191,7 @@ export default function Education() {
           </div>
 
           {/* Certifications Section */}
-          <div className="mb-16">
+          <div id="certifications" className="mb-16">
             <h2 className="text-2xl font-medium text-gray-900 mb-8">
               Professional <span className="text-red-600">Certifications</span>
             </h2>

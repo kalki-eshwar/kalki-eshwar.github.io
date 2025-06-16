@@ -5,19 +5,22 @@ const projects = [
     title: 'Studize',
     description: 'A miniature calendar application facilitating an easy way to manage academic tasks and schedules.',
     tech: 'Flutter',
-    link: '/projects/studize'
+    link: '/projects/studize',
+    featured: true
   },
   {
     title: 'VITCL Flutter Application',
     description: 'A platform through which players from VIT could register and play chess seamlessly.',
     tech: 'Flutter, Firebase',
-    link: '/projects/vitcl'
+    link: '/projects/vitcl',
+    featured: true
   },
   {
     title: 'Loan Default Prediction',
     description: 'Machine learning model created for Coursera\'s Dataset Challenge. Ranked in the 88th percentile.',
     tech: 'Python, Sklearn',
-    link: '/projects/loan-prediction'
+    link: '/projects/loan-prediction',
+    featured: false
   },
 ];
 
@@ -36,7 +39,17 @@ export default function ProjectsSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {projects.map((project, index) => (
-            <div key={index} className="border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors duration-200">
+            <div key={index} className={`border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${project.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+              {project.featured && (
+                <div className="flex items-center mb-4">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                    <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    Featured Project
+                  </span>
+                </div>
+              )}
               <div className="space-y-3">
                 <div className="space-y-2">
                   <h3 className="text-lg font-medium text-gray-900">{project.title}</h3>
