@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getPersonalInfo } from '@/utils/data';
+import DynamicContent from '@/components/DynamicContent';
 
 export default function AboutSection() {
   const personalInfo = getPersonalInfo();
@@ -32,7 +33,7 @@ export default function AboutSection() {
           <div className="lg:col-span-2 space-y-4 text-gray-600 leading-relaxed">
             {personalInfo.aboutSections.map((section, index) => (
               <p key={index}>
-                {section}
+                <DynamicContent content={section} />
               </p>
             ))}
           </div>

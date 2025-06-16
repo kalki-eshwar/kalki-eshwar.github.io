@@ -28,7 +28,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-sm text-gray-500">
-            © {currentYear} KalkiEshwar
+            © {currentYear} Kalki Eshwar D
           </p>
         </div>
       </div>

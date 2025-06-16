@@ -33,21 +33,25 @@ export default function Education() {
             </h2>
             
             <div className="space-y-8">
-              {education.map((edu, index) => (
-                <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors duration-200">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-                    <div className="flex-grow">
-                      <h3 className="text-xl font-medium text-gray-900 mb-2">{edu.degree}</h3>
-                      <p className="text-lg text-red-600 font-medium mb-1">{edu.institution}</p>
-                      <p className="text-sm text-gray-500 mb-2">{edu.location}</p>
-                      <p className="text-gray-600 leading-relaxed">{edu.description}</p>
-                    </div>
-                    <div className="mt-4 lg:mt-0 lg:ml-6 lg:text-right lg:min-w-0 lg:flex-shrink-0">
-                      <span className="inline-block px-3 py-1 bg-red-100 text-red-800 text-sm font-medium rounded-full mb-2 whitespace-nowrap">
-                        {edu.type === 'undergraduate' ? "Bachelor's Degree" : 'Secondary Education'}
-                      </span>
-                      <p className="text-sm text-gray-600">{edu.period}</p>
-                      <p className="text-sm font-medium text-gray-900 mt-1">GPA: {edu.gpa}</p>
+              {education.map((edu, index) => {
+                // Generate anchor ID from institution name
+                const anchorId = edu.institution.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+                
+                return (
+                  <div key={index} id={anchorId === 'vellore-institute-of-technology' ? 'vit' : anchorId} className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors duration-200">
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
+                      <div className="flex-grow">
+                        <h3 className="text-xl font-medium text-gray-900 mb-2">{edu.degree}</h3>
+                        <p className="text-lg text-red-600 font-medium mb-1">{edu.institution}</p>
+                        <p className="text-sm text-gray-500 mb-2">{edu.location}</p>
+                        <p className="text-gray-600 leading-relaxed">{edu.description}</p>
+                      </div>
+                      <div className="mt-4 lg:mt-0 lg:ml-6 lg:text-right lg:min-w-0 lg:flex-shrink-0">
+                        <span className="inline-block px-3 py-1 bg-red-100 text-red-800 text-sm font-medium rounded-full mb-2 whitespace-nowrap">
+                          {edu.type === 'undergraduate' ? "Bachelor's Degree" : 'Secondary Education'}
+                        </span>
+                        <p className="text-sm text-gray-600">{edu.period}</p>
+                        <p className="text-sm font-medium text-gray-900 mt-1">GPA: {edu.gpa}</p>
                     </div>
                   </div>
                   
@@ -76,7 +80,8 @@ export default function Education() {
                     </div>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -104,10 +109,20 @@ export default function Education() {
               {certifications.map((cert, index) => (
                 <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors duration-200">
                   <div className="flex items-start justify-between mb-3">
-                    <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                      <span className="text-red-600 text-sm font-bold">
-                        {cert.category.substring(0, 2).toUpperCase()}
-                      </span>
+                    <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center p-2">
+                      {cert.issuerIcon ? (
+                        <Image
+                          src={cert.issuerIcon}
+                          alt={`${cert.issuer} logo`}
+                          width={32}
+                          height={32}
+                          className="object-contain"
+                        />
+                      ) : (
+                        <span className="text-red-600 text-sm font-bold">
+                          {cert.category.substring(0, 2).toUpperCase()}
+                        </span>
+                      )}
                     </div>
                     {cert.verified && (
                       <div className="flex items-center text-green-600">
@@ -119,32 +134,11 @@ export default function Education() {
                     )}
                   </div>
                   
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">{cert.title}</h3>
+                  {/* Issuer Name - bigger than title */}
+                  <h2 className="text-xl font-semibold text-red-600 mb-2">{cert.issuer}</h2>
                   
-                  {/* Issuer with Icon */}
-                  <div className="flex items-center gap-2 mb-1">
-                    {cert.issuerIcon && (
-                      <div className="w-5 h-5 relative rounded overflow-hidden bg-gray-100 flex items-center justify-center">
-                        <Image
-                          src={cert.issuerIcon}
-                          alt={`${cert.issuer} logo`}
-                          width={20}
-                          height={20}
-                          className="object-contain"
-                          onError={(e) => {
-                            // Fallback to a generic building icon if image fails to load
-                            e.currentTarget.style.display = 'none';
-                            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                            if (fallback) {
-                              fallback.style.display = 'block';
-                            }
-                          }}
-                        />
-                        <span className="text-xs hidden">🏛️</span>
-                      </div>
-                    )}
-                    <p className="text-red-600 font-medium text-sm">{cert.issuer}</p>
-                  </div>
+                  {/* Title - smaller and red */}
+                  <h3 className="text-md font-medium text-gray-900 mb-2">{cert.title}</h3>
                   
                   <p className="text-gray-500 text-xs mb-3">{cert.date}</p>
                   
@@ -161,9 +155,9 @@ export default function Education() {
                     </div>
                   </div>
                   
-                  <div className="text-xs text-gray-500 mb-4">
+                  {(cert.credentialId != null) && (<div className="text-xs text-gray-500 mb-4">
                     <p>Credential ID: {cert.credentialId}</p>
-                  </div>
+                  </div>)}
                   
                   <div className="mt-auto">
                     <a
@@ -226,7 +220,7 @@ export default function Education() {
                 <svg className="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
-                <span>6+ Certifications</span>
+                <span>{certifications.length}+ Certifications</span>
               </div>
               <div className="flex items-center text-gray-600">
                 <svg className="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

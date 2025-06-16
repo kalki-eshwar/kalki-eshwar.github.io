@@ -2,7 +2,7 @@
   "name": "Kalki Eshwar D",
   "title": "Computer Science Student & Developer",
   "bio": "Computer Science Student at VIT Vellore",
-  "description": "I'm passionate about software development, mobile applications, and creating meaningful digital experiences. Currently studying Computer Science and Engineering.",
+  "description": "I'm passionate about software development and the thoughtful integration of artificial intelligence to build digital experiences that truly matter. I enjoy contemplating life's mysteries and exploring how technology can be a powerful tool for solving complex problems.",
   "location": "Vellore, Tamil Nadu, India",
   "website": "https://kalkieshward.me",
   "profileImage": "/images/profile.png",
@@ -10,10 +10,11 @@
   "resumePath": "/documents/Resume.pdf",
   "resumeFileName": "Kalki_Eshwar_D_Resume.pdf",
   "aboutSections": [
-    "Hello there, I'm Kalki Eshwar D. I'm currently a student at Vellore Institute of Technology, Vellore, studying Computer Science and Engineering. My journey in technology began with a curiosity about how digital systems work and has evolved into a passion for creating meaningful software solutions.",
-    "I have hands-on experience working as a Flutter Developer at Monclarity Solutions Pvt. Ltd., where I developed finance applications using Flutter, integrated APIs to connect various services, and performed comprehensive debugging and testing to ensure quality assurance. I also managed projects across different teams to ensure efficient and timely completion of deliverables.",
-    "Additionally, I worked as a Security Compliance Intern at Valsco Technology Pvt Ltd, where I created security policies in adherence to data governance and compliance standards. I designed security protocols across systems to ensure confidentiality, integrity, and availability of information systems, and developed a tiered response system for security incidents and events.",
-    "I'm passionate about mobile app development, cybersecurity, machine learning, and creating innovative solutions to real-world problems. I enjoy working on projects that challenge me to learn new technologies and solve complex problems. When I'm not coding, I enjoy exploring new frameworks, contributing to open-source projects, and staying updated with the latest trends in technology."
+    "Vanakkam! Namaste! Bonjour! Hello!",
+    "I'm Raghav, a Computer Science and Engineering student at [link:education:Vellore Institute of Technology], Vellore, and currently a summer intern at [link:work:Foradian Technologies], Bengaluru, India. My journey in technology began with a curiosity about how digital systems work, evolving into a passion for creating meaningful software solutions to combat real-world problems.",
+    "Beyond technology, I deeply believe one's true measure lies in the richness of their experiences, driving me to seek out life's mysteries. This conviction led me to chess, where I became a former State Champion, and martial arts, in which I achieved a Ni-Dan (2nd Black Belt).",
+    "I also bring hands-on experience as a [link:work:Flutter Developer at Monclarity Solutions Pvt. Ltd.], where I developed finance applications and integrated APIs to connect various services. Additionally, as a [link:work:Security Compliance Intern at Valsco Technology], I created security policies adhering to data governance and compliance standards, designed security protocols across systems to ensure confidentiality, integrity, and availability of information, and developed a tiered response system for security incidents.",
+    "In parallel, I've cultivated extensive leadership experience, having been elected as the House Vice Captain and Head Boy in high school (9th and 10th grade respectively), and served as Member Secretary of the Student Council at VIT for the academic year 2024-25."
   ],
   "seo": {
     "title": "Kalki Eshwar D - Computer Science Student & Developer",

@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import { SEOProps } from '@/types';
+import projectsData from '@/content/projects/projects.json';
 
 const projectsSEO: SEOProps = {
   title: 'Projects - Kalki Eshwar D',
@@ -8,82 +9,21 @@ const projectsSEO: SEOProps = {
   canonical: 'https://kalkieshward.me/projects',
 };
 
-const projects = [
-  {
-    title: 'Studize',
-    description: 'A comprehensive miniature calendar application designed to facilitate easy management of academic tasks and schedules. Built with Flutter for cross-platform compatibility.',
-    longDescription: 'Studize is a student-focused productivity application that helps manage academic schedules, assignments, and tasks. The app features an intuitive calendar interface, task management system, and notification alerts to keep students organized throughout their academic journey.',
-    tech: ['Flutter', 'Dart', 'SQLite', 'Local Notifications'],
-    features: [
-      'Interactive calendar for academic planning',
-      'Task and assignment management',
-      'Notification system for deadlines',
-      'Cross-platform mobile support',
-      'Offline data storage'
-    ],
-    github: 'https://github.com/KalkiEshwarD/studize',
-    demo: '#',
-    image: '/images/studize-preview.png',
-    status: 'Completed',
-    category: 'Mobile App'
-  },
-  {
-    title: 'VITCL Flutter Application',
-    description: 'A comprehensive platform designed for chess enthusiasts at VIT, enabling seamless player registration and gameplay management for the VIT Chess League.',
-    longDescription: 'The VITCL (VIT Chess League) application serves as a central hub for chess players at Vellore Institute of Technology. It provides features for tournament registration, match scheduling, player profiles, and real-time game tracking.',
-    tech: ['Flutter', 'Firebase', 'Cloud Firestore', 'Firebase Auth'],
-    features: [
-      'User registration and authentication',
-      'Tournament management system',
-      'Real-time match tracking',
-      'Player rankings and statistics',
-      'Push notifications for match updates'
-    ],
-    github: 'https://github.com/KalkiEshwarD/vitcl-app',
-    demo: '#',
-    image: '/images/vitcl-preview.png',
-    status: 'Completed',
-    category: 'Mobile App'
-  },
-  {
-    title: 'Loan Default Prediction',
-    description: 'A machine learning model developed for Coursera\'s Dataset Challenge, achieving 88th percentile ranking through advanced predictive analytics and data processing.',
-    longDescription: 'This project involves building a sophisticated machine learning model to predict loan defaults using various borrower characteristics and historical data. The model employs feature engineering, data preprocessing, and ensemble methods to achieve high accuracy.',
-    tech: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
-    features: [
-      'Advanced feature engineering',
-      'Multiple ML algorithm comparison',
-      'Cross-validation and hyperparameter tuning',
-      'Data visualization and analysis',
-      'Performance metrics evaluation'
-    ],
-    github: 'https://github.com/KalkiEshwarD/loan-prediction',
-    demo: 'https://colab.research.google.com/drive/loan-prediction',
-    image: '/images/loan-prediction-preview.png',
-    status: 'Completed',
-    category: 'Machine Learning'
-  },
-  {
-    title: 'Personal Portfolio Website',
-    description: 'A modern, responsive portfolio website built with Next.js and TypeScript, featuring optimized performance and clean design aesthetics.',
-    longDescription: 'This portfolio website showcases my professional work, projects, and articles. Built with modern web technologies, it features server-side rendering, optimized images, and responsive design for an excellent user experience.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
-    features: [
-      'Server-side rendering with Next.js',
-      'Responsive design for all devices',
-      'SEO optimized with meta tags',
-      'Fast loading with image optimization',
-      'Modern UI/UX design'
-    ],
-    github: 'https://github.com/KalkiEshwarD/portfolio',
-    demo: 'https://kalkieshward.me',
-    image: '/images/portfolio-preview.png',
-    status: 'Active',
-    category: 'Web Development'
-  }
-];
+// Map the JSON data to match the expected format
+const projects = projectsData.map(project => ({
+  title: project.title,
+  description: project.description,
+  longDescription: project.longDescription,
+  tech: project.technologies.map(tech => tech.name),
+  features: project.highlights,
+  github: project.githubUrl,
+  demo: project.liveUrl || '#',
+  image: project.images?.[0]?.src || '/images/project-placeholder.png',
+  status: project.status === 'completed' ? 'Completed' : project.status === 'in-progress' ? 'In Progress' : 'Active',
+  category: project.category === 'web' ? 'Web Development' : project.category === 'ai' ? 'AI/Machine Learning' : project.category === 'mobile' ? 'App Development' : project.category
+}));
 
-const categories = ['All', 'Mobile App', 'Web Development', 'Machine Learning'];
+const categories = ['All', 'Web Development', 'AI/Machine Learning', 'App Development'];
 
 export default function Projects() {
   return (
@@ -175,6 +115,7 @@ export default function Projects() {
                     <Link 
                       href={project.github} 
                       className="inline-flex items-center px-3 py-2 text-sm text-gray-700 hover:text-red-600 transition-colors duration-200"
+                      target='_blank'
                     >
                       <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>

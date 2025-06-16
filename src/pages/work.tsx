@@ -28,26 +28,30 @@ export default function Work() {
           {/* Experience Timeline */}
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
-              {workExperience.map((job, index) => (
-                <div key={index} className="relative">
-                  {/* Timeline line */}
-                  {index !== workExperience.length - 1 && (
-                    <div className="absolute left-4 top-16 bottom-0 w-px bg-gray-200" />
-                  )}
-                  
-                  {/* Timeline dot */}
-                  <div className={`absolute left-2 top-6 w-4 h-4 rounded-full border-4 border-white shadow-sm ${
-                    job.current ? 'bg-green-600' : 'bg-red-600'
-                  }`} />
-                  
-                  {/* Content */}
-                  <div className="ml-12">
-                    <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors duration-200">
-                      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                        <div>
-                          <h3 className="text-xl font-medium text-gray-900 mb-1">{job.title}</h3>
-                          <div className="flex items-center gap-2 mb-1">
-                            <p className="text-lg text-red-600 font-medium">{job.company}</p>
+              {workExperience.map((job, index) => {
+                // Generate anchor ID from company name
+                const anchorId = job.company.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+                
+                return (
+                  <div key={index} className="relative" id={anchorId}>
+                    {/* Timeline line */}
+                    {index !== workExperience.length - 1 && (
+                      <div className="absolute left-4 top-16 bottom-0 w-px bg-gray-200" />
+                    )}
+                    
+                    {/* Timeline dot */}
+                    <div className={`absolute left-2 top-6 w-4 h-4 rounded-full border-4 border-white shadow-sm ${
+                      job.current ? 'bg-green-600' : 'bg-red-600'
+                    }`} />
+                    
+                    {/* Content */}
+                    <div className="ml-12">
+                      <div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors duration-200">
+                        <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                          <div>
+                            <h3 className="text-xl font-medium text-gray-900 mb-1">{job.title}</h3>
+                            <div className="flex items-center gap-2 mb-1">
+                              <p className="text-lg text-red-600 font-medium">{job.company}</p>
                             <a
                               href={job.companyWebsite}
                               target="_blank"
@@ -117,7 +121,8 @@ export default function Work() {
                     </div>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

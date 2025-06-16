@@ -1,91 +1,75 @@
 [
   {
-    "id": "portfolio-website",
-    "title": "Portfolio Website",
-    "description": "A modern, responsive portfolio website built with Next.js and TypeScript",
-    "longDescription": "This portfolio website showcases my work and writing using modern web technologies. Built with Next.js for performance, TypeScript for type safety, and Tailwind CSS for beautiful styling. Features include article management, project showcases, and automated deployment.",
+    "id": "studize",
+    "title": "Studize Mobile App",
+    "description": "This project is a minature calendar application facilitating an easy way to manage academic tasks and schedules.",
+    "longDescription": "This is a front-end mobile app developed using Flutter, designed to help students manage their academic tasks and schedules efficiently. It features a user-friendly interface with the ability to view their academic calendar and manage study sessions.",
     "technologies": [
       {
-        "name": "Next.js",
+        "name": "Flutter",
         "category": "frontend",
-        "icon": "nextjs"
+        "icon": "flutter"
       },
       {
-        "name": "TypeScript",
-        "category": "frontend",
-        "icon": "typescript"
-      },
-      {
-        "name": "Tailwind CSS",
-        "category": "frontend",
-        "icon": "tailwind"
-      },
-      {
-        "name": "Framer Motion",
-        "category": "frontend",
-        "icon": "framer"
+        "name": "Dart",
+        "category": "programming-language",
+        "icon": "dart"
       }
     ],
-    "githubUrl": "https://github.com/KalkiEshwarD/KalkiEshwarD.github.io",
-    "liveUrl": "https://kalkieshward.me",
+    "githubUrl": "https://github.com/KalkiEshwarD/studize",
     "images": [
       {
-        "src": "/images/projects/portfolio-home.png",
-        "alt": "Portfolio website homepage",
+        "src": "public/images/projects/flutter.png",
+        "alt": "Studize App Icon",
         "featured": true
       }
     ],
     "featured": true,
-    "category": "web",
+    "category": "mobile",
     "status": "completed",
-    "startDate": "2024-12-01",
-    "endDate": "2024-12-31",
+    "startDate": "2024-01-22",
+    "endDate": "2024-01-23",
     "highlights": [
-      "Responsive design with mobile-first approach",
-      "SEO optimized with structured data",
-      "Automated deployment with GitHub Actions",
-      "Component-based architecture for maintainability",
-      "MDX support for rich article content"
+      "Calendar view allows for the viewing of projects"
     ]
   },
   {
-    "id": "task-management-app",
-    "title": "Task Management Application",
-    "description": "A full-stack task management app with real-time collaboration features",
-    "longDescription": "A comprehensive task management solution built for teams and individuals. Features include real-time collaboration, project organization, deadline tracking, and performance analytics. Built with React for the frontend and Node.js for the backend.",
+    "id": "loan-default-prediction",
+    "title": "Loan Default Prediction Model",
+    "description": "The model was created to compete in Coursera's Dataset Challenge. It was ranked in the 88th percentile.",
+    "longDescription": "An XGBoost decision trees machine learning model developed to predict loan defaults using various financial indicators. The model was trained on a dataset provided by Coursera and achieved a ranking in the 88th percentile during the competition.",
     "technologies": [
       {
-        "name": "React",
-        "category": "frontend",
-        "icon": "react"
+        "name": "XGBoost",
+        "category": "ai",
+        "icon": "ai"
       },
       {
-        "name": "Node.js",
-        "category": "backend",
-        "icon": "nodejs"
+        "name": "Machine Learning",
+        "category": "ai",
+        "icon": "ai"
       },
       {
-        "name": "MongoDB",
-        "category": "database",
-        "icon": "mongodb"
+        "name": "Jupyter Notebook",
+        "category": "platform",
+        "icon": "jupyter"
       },
       {
-        "name": "Socket.io",
-        "category": "tool",
-        "icon": "socketio"
+        "name": "Python",
+        "category": "programming-language",
+        "icon": "python"
       }
     ],
-    "githubUrl": "https://github.com/KalkiEshwarD/task-manager",
-    "liveUrl": "https://taskmanager-demo.com",
+    "githubUrl": "https://github.com/KalkiEshwarD/Loan-Default-Prediction",
     "images": [
       {
-        "src": "/images/projects/task-manager-dashboard.png",
-        "alt": "Task manager dashboard",
+        "src": "/images/projects/loan-default-prediction.png",
+        "alt": "AI model image",
         "featured": true
       }
     ],
     "featured": true,
-    "category": "web",
+    "category": "ai",
     "status": "completed",
     "startDate": "2024-08-01",
     "endDate": "2024-11-15",

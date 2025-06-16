@@ -1,8 +1,17 @@
 import Link from 'next/link';
-import { getPersonalInfo } from '@/utils/data';
+import { getPersonalInfo, getEducationData, getWorkExperience } from '@/utils/data';
+import projectsData from '@/content/projects/projects.json';
 
 export default function HeroSection() {
   const personalInfo = getPersonalInfo();
+  const educationData = getEducationData();
+  const workData = getWorkExperience();
+  
+  // Calculate dynamic values - now using the same projects.json as the projects page
+  const university = 'VIT';
+  const major = 'CS';
+  const projectsCount = projectsData.length; // Now matches projects page: Portfolio, Task Manager, AI Generator
+  const internshipsCount = workData.workExperience.filter(exp => exp.type === 'Internship').length;
   
   return (
     <section
@@ -49,19 +58,19 @@ export default function HeroSection() {
           <div className="lg:justify-self-end">
             <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto lg:mx-0">
               <div className="text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200">
-                <div className="text-2xl font-medium text-white">VIT</div>
+                <div className="text-2xl font-medium text-white">{university}</div>
                 <div className="text-sm text-gray-200 mt-1">University</div>
               </div>
               <div className="text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200">
-                <div className="text-2xl font-medium text-white">CS</div>
+                <div className="text-2xl font-medium text-white">{major}</div>
                 <div className="text-sm text-gray-200 mt-1">Major</div>
               </div>
               <div className="text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200">
-                <div className="text-2xl font-medium text-white">3+</div>
-                <div className="text-sm text-gray-200 mt-1">Projects</div>
+                <div className="text-2xl font-medium text-white">{projectsCount}+</div>
+                <div className="text-sm text-gray-200 mt-1"> FOSS Projects</div>
               </div>
               <div className="text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200">
-                <div className="text-2xl font-medium text-white">2</div>
+                <div className="text-2xl font-medium text-white">{internshipsCount}</div>
                 <div className="text-sm text-gray-200 mt-1">Internships</div>
               </div>
             </div>
