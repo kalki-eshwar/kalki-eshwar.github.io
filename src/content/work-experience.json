@@ -35,7 +35,7 @@
       ],
       "technologies": ["Flutter", "Dart", "REST APIs"],
       "companyWebsite": "https://finmitr.com",
-      "certificateUrl": "/documents/mon_clarity_intern_cert.pdf"
+      "certificateUrl": "/documents/intern_certs/mon_clarity_intern_cert.pdf"
     },
     {
       "title": "Security Compliance Intern",
@@ -52,7 +52,7 @@
       ],
       "technologies": ["Security Frameworks", "Compliance Standards", "Risk Assessment", "Policy Development", "NIST", "ISO 27001", "GDPR", "DPDP", "SANS"],
       "companyWebsite": "https://www.valscotech.com",
-      "certificateUrl": "/documents/valsco_tech_intern_cert.pdf"
+      "certificateUrl": "/documents/intern_certs/valsco_tech_intern_cert.pdf"
     }
   ]
 }

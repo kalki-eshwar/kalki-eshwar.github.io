@@ -1,5 +1,48 @@
 [
   {
+    "id": "tabular-reasoning",
+    "title": "Code Generation Approach for Question Answering over Tabular Data",
+    "description": "A research project that explores a code generation approach for question answering over tabular data.",
+    "longDescription": "This research project investigates a code generation approach for question answering over tabular data. It involves the development of a model that can generate code to answer questions based on the data presented in tables, enhancing the capabilities of question-answering systems.",
+    "technologies": [
+      {
+        "name": "Generative AI",
+        "category": "ai",
+        "icon": "ai"
+      },
+      {
+        "name": "Tabular Data",
+        "category": "data",
+        "icon": "data"
+      },
+      {
+        "name": "Automation",
+        "category": "tool",
+        "icon": "tool"
+      },
+      {
+        "name": "Python",
+        "category": "programming-language",
+        "icon": "python"
+      }
+    ],
+    "githubUrl": "https://github.com/KalkiEshwarD/AlphaPro-SemEval2025-Task8",
+    "liveUrl": null,
+    "images": [
+      {
+        "src": "/images/projects/tabular-reasoning.png",
+        "alt": "Model image"
+      }
+    ],
+    "featured": true,
+    "category": "ai",
+    "highlights": [
+      "Obtained 77.43% accuracy in the SemEval 2025 Task 8 competition",
+      "Answer natural language questions based on tabular data",
+      "Accepted in ACL Association for Computational Linguistics 2025"
+    ]
+  },
+  {
     "id": "loan-default-prediction",
     "title": "Loan Default Prediction Model",
     "description": "The model was created to compete in Coursera's Dataset Challenge. It was ranked in the 88th percentile.",
@@ -30,9 +73,8 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "/images/projects/loan-default-prediction.png",
-        "alt": "AI model image",
-        "featured": true
+        "src": "/images/projects/loan-default-prediction.jpg",
+        "alt": "AI model image"
       }
     ],
     "featured": true,
@@ -65,8 +107,7 @@
     "images": [
       {
         "src": "public/images/projects/flutter.png",
-        "alt": "Studize App Icon",
-        "featured": true
+        "alt": "Studize App Icon"
       }
     ],
     "featured": false,
@@ -96,9 +137,8 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "public/images/projects/flutter.png",
-        "alt": "Studize App Icon",
-        "featured": true
+        "src": "public/images/projects/vitcl-app.jpg",
+        "alt": "VITCL App Icon"
       }
     ],
     "featured": false,
@@ -107,6 +147,158 @@
       "User-friendly interface for chess players",
       "Allows registration and participation in chess matches",
       "Able to view upcoming matches and results"
+    ]
+  },
+  {
+    "id": "portfolio-website",
+    "title": "My Portfolio Website",
+    "description": "This is my personal portfolio website showcasing my projects and skills.",
+    "longDescription": "This is a front-end web application developed using Next.js and Tailwind CSS, designed to showcase my projects and skills in a visually appealing manner. The website features a clean and modern design, with sections for my work, skills, and contact information.",
+    "technologies": [
+      {
+        "name": "Next.js",
+        "category": "web",
+        "icon": "nextjs"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "web",
+        "icon": "tailwindcss"
+      },
+      {
+        "name": "React",
+        "category": "web",
+        "icon": "react"
+      },
+      {
+        "name": "JavaScript",
+        "category": "web",
+        "icon": "javascript"
+      }
+    ],
+    "githubUrl": "https://github.com/KalkiEshwarD/KalkiEshwarD.github.io",
+    "liveUrl": null,
+    "images": [
+      {
+        "src": "public/images/projects/portfolio-website.jpg",
+        "alt": "Portfolio Website Screenshot"
+      }
+    ],
+    "featured": true,
+    "category": "web",
+    "highlights": [
+      "Showcases my projects and skills",
+      "Clean and modern design",
+      "Sections for work, skills, and contact information"
+    ]
+  },
+  {
+    "id": "store",
+    "title": "Rails store app",
+    "description": "A basic project created by following the Ruby on Rails tutorial. It is a simple store application that allows users to browse products and add them to their cart.",
+    "longDescription": "This is a basic web application developed using Ruby on Rails, designed to serve as a simple store application. It allows users to browse products, add them to their cart, and manage their orders. The application features a clean and intuitive interface for easy navigation.",
+    "technologies": [
+      {
+        "name": "Ruby on Rails",
+        "category": "web",
+        "icon": "rails"
+      },
+      {
+        "name": "Ruby",
+        "category": "programming-language",
+        "icon": "ruby"
+      }
+    ],
+    "githubUrl": "https://github.com/KalkiEshwarD/store",
+    "liveUrl": null,
+    "images": [
+      {
+        "src": "public/images/projects/rails.png",
+        "alt": "Store RoR Application Screenshot"
+      }
+    ],
+    "featured": false,
+    "category": "web",
+    "highlights": [
+      "Provides a platform for VIT chess players",
+      "Clean and modern design",
+      "Sections for viewing chess news and ongoing games"
+    ]
+  },
+  {
+    "id": "vit-chess",
+    "title": "VIT Chess",
+    "description": "This project which I created with my friend, aims to create a platform through which players from VIT could view chess news, and games of players.",
+    "longDescription": "This is a front-end web application developed using React.js, designed to provide VIT chess players with a platform to view chess news and games of players. The application features a user-friendly interface that allows users to stay updated with the latest chess news and view ongoing games.",
+    "technologies": [
+      {
+        "name": "React.js",
+        "category": "web",
+        "icon": "react"
+      },
+      {
+        "name": "Bootstrap",
+        "category": "web",
+        "icon": "bootstrap"
+      },
+      {
+        "name": "JavaScript",
+        "category": "web",
+        "icon": "javascript"
+      }
+    ],
+    "githubUrl": "https://github.com/KalkiEshwarD/VIT-Chess",
+    "liveUrl": null,
+    "images": [
+      {
+        "src": "public/images/projects/vit-chess.jpg",
+        "alt": "VIT Chess Website Screenshot"
+      }
+    ],
+    "featured": false,
+    "category": "web",
+    "highlights": [
+      "Provides a platform for VIT chess players",
+      "Clean and modern design",
+      "Sections for viewing chess news and ongoing games"
+    ]
+  },
+  {
+    "id": "cli-chat-app",
+    "title": "A CLI Chat Application for PAN connected devices",
+    "description": "This project is a command-line interface chat application that allows users to communicate over a Personal Area Network (PAN).",
+    "longDescription": "This is a command-line interface chat application developed using Python, designed to allow users to communicate over a Personal Area Network (PAN). The application features a simple and intuitive interface that enables users to send and receive messages seamlessly.",
+    "technologies": [
+      {
+        "name": "Python",
+        "category": "programming-language",
+        "icon": "python"
+      },
+      {
+        "name": "Socket Programming",
+        "category": "networking",
+        "icon": "socket"
+      },
+      {
+        "name": "Command Line Interface",
+        "category": "tool",
+        "icon": "cli"
+      }
+    ],
+    "githubUrl": "https://github.com/KalkiEshwarD/CLI-Chat-App-for-PAN",
+    "liveUrl": null,
+    "images": [
+      {
+        "src": "public/images/projects/cli.png",
+        "alt": "CLI Chat Application Screenshot"
+      }
+    ],
+    "featured": false,
+    "category": "web",
+    "highlights": [
+      "Provides a platform for VIT chess players",
+      "Clean and modern design",
+      "Sections for viewing chess news and ongoing games"
     ]
   }
 ]
