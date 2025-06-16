@@ -10,6 +10,10 @@ export const getWorkExperience = () => workExperience;
 export const getAchievementsData = () => achievementsData;
 export const getContactInfo = () => contactInfo;
 
+// New functions for publications and certifications
+export const getPublications = () => educationData.publications;
+export const getCertifications = () => educationData.certifications;
+
 // Type definitions
 export interface PersonalInfo {
   name: string;
@@ -60,6 +64,27 @@ export interface Certification {
   verified: boolean;
   category: string;
   certificateUrl: string;
+}
+
+export interface Publication {
+  title: string;
+  authors: string[];
+  journal: string;
+  date: string;
+  type: string;
+  status: string;
+  doi: string;
+  abstract: string;
+  keywords: string[];
+  pages: string;
+  volume: string;
+  issue?: string;
+  issn: string;
+  category: string;
+  venue?: string;
+  pdfUrl: string;
+  bibtex: string;
+  featured: boolean;
 }
 
 export interface Skill {

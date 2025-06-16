@@ -4,6 +4,8 @@ import AboutSection from '@/components/sections/AboutSection';
 import AchievementsSection from '@/components/sections/AchievementsSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import ArticlesSection from '@/components/sections/ArticlesSection';
+import PublicationsSection from '@/components/sections/PublicationsSection';
+import CertificationsSection from '@/components/sections/CertificationsSection';
 import { SEOProps } from '@/types';
 import { getPersonalInfo, getContactInfo } from '@/utils/data';
 
@@ -26,8 +28,10 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <AchievementsSection />
-      <ProjectsSection />
       <ArticlesSection />
+      <PublicationsSection />
+      <ProjectsSection />
+      <CertificationsSection />
     </Layout>
   );
 }
