@@ -4,13 +4,13 @@ import { getEducationData } from '@/utils/data';
 import Image from 'next/image';
 
 const educationSEO: SEOProps = {
-  title: 'Education & Certifications - Kalki Eshwar D',
-  description: 'Educational background and professional certifications of Kalki Eshwar D, including academic achievements and continuous learning journey.',
+  title: 'Education, Publications & Certifications - Kalki Eshwar D',
+  description: 'Educational background, research publications, and professional certifications of Kalki Eshwar D, including academic achievements and continuous learning journey.',
   canonical: 'https://kalkieshward.me/education',
 };
 
 export default function Education() {
-  const { education, certifications, skills, certificationCategories } = getEducationData();
+  const { education, certifications, skills, certificationCategories, publications } = getEducationData();
   
   return (
     <Layout seo={educationSEO}>
@@ -19,10 +19,10 @@ export default function Education() {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4">
-              Education & <span className="text-red-600">Certifications</span>
+              Education, Publications & <span className="text-red-600">Certifications</span>
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              My academic journey and continuous learning path through formal education and professional certifications.
+              My academic journey, research publications, and continuous learning path through formal education and professional certifications.
             </p>
           </div>
 
@@ -38,7 +38,18 @@ export default function Education() {
                 const anchorId = edu.institution.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
                 
                 return (
-                  <div key={index} id={anchorId === 'vellore-institute-of-technology' ? 'vit' : anchorId} className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors duration-200">
+                  <div key={index} id={anchorId === 'vellore-institute-of-technology' ? 'vit' : anchorId} className={`bg-white border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${edu.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+                    {edu.featured && (
+                      <div className="flex items-center mb-3">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                          <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                          Featured Education
+                        </span>
+                      </div>
+                    )}
+                    
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                       <div className="flex-grow">
                         <h3 className="text-xl font-medium text-gray-900 mb-2">{edu.degree}</h3>
@@ -85,6 +96,100 @@ export default function Education() {
             </div>
           </div>
 
+          {/* Publications Section */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-medium text-gray-900 mb-8">
+              Research <span className="text-red-600">Publications</span>
+            </h2>
+            
+            <div className="space-y-6">
+              {publications?.map((publication, index) => (
+                <div key={index} className={`bg-white border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${publication.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+                  {publication.featured && (
+                    <div className="flex items-center mb-3">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                        <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        Featured Publication
+                      </span>
+                    </div>
+                  )}
+                  
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
+                    <div className="flex-grow lg:pr-6">
+                      <h3 className="text-xl font-medium text-gray-900 mb-2">{publication.title}</h3>
+                      
+                      <div className="text-sm text-gray-600 mb-3">
+                        <p className="mb-1">
+                          <span className="font-medium">Authors:</span> {publication.authors.join(', ')}
+                        </p>
+                        <p className="mb-1">
+                          <span className="font-medium">Published in:</span> {publication.journal}
+                        </p>
+                        <p>
+                          <span className="font-medium">Date:</span> {publication.date} | 
+                          <span className="font-medium"> Type:</span> {publication.type} | 
+                          <span className="font-medium"> Status:</span> {publication.status}
+                        </p>
+                      </div>
+                      
+                      <p className="text-gray-700 mb-4 leading-relaxed">{publication.abstract}</p>
+                      
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {publication.keywords.map((keyword, idx) => (
+                          <span key={idx} className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">
+                            {keyword}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <div className="text-xs text-gray-500 mb-4">
+                        {publication.pages && <p>Pages: {publication.pages}</p>}
+                        {publication.doi && <p>DOI: {publication.doi}</p>}
+                      </div>
+                    </div>
+                    
+                    <div className="mt-4 lg:mt-0 lg:min-w-0 lg:flex-shrink-0">
+                      <div className="flex flex-col gap-2">
+                        <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full text-center whitespace-nowrap">
+                          {publication.category}
+                        </span>
+                        
+                        {publication.pdfUrl && (
+                          <a
+                            href={publication.pdfUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors duration-200"
+                          >
+                            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            View PDF
+                          </a>
+                        )}
+                        
+                        <button
+                          onClick={() => {
+                            navigator.clipboard.writeText(publication.bibtex);
+                            // You could add a toast notification here
+                          }}
+                          className="inline-flex items-center justify-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                        >
+                          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                          </svg>
+                          Copy BibTeX
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Certifications Section */}
           <div className="mb-16">
             <h2 className="text-2xl font-medium text-gray-900 mb-8">
@@ -107,7 +212,18 @@ export default function Education() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
-                <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors duration-200">
+                <div key={index} className={`bg-white border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${cert.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+                  {cert.featured && (
+                    <div className="flex items-center mb-3">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                        <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        Featured Certification
+                      </span>
+                    </div>
+                  )}
+                  
                   <div className="flex items-start justify-between mb-3">
                     <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center p-2">
                       {cert.issuerIcon ? (
@@ -221,6 +337,12 @@ export default function Education() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
                 <span>{certifications.length}+ Certifications</span>
+              </div>
+              <div className="flex items-center text-gray-600">
+                <svg className="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                <span>{publications?.length || 0} Publications</span>
               </div>
               <div className="flex items-center text-gray-600">
                 <svg className="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

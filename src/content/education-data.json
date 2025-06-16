@@ -24,9 +24,10 @@
         "Maintained consistent academic performance with 8+ GPA with no arrears",
         "Served as Member Secretary of the Student Council for the academic year 2024-2025",
         "Completed multiple industry-relevant projects",
-        "Written and published conference papers in reputed journals"
+        "Written and published a conference paper in a reputed journal"
       ],
-      "type": "undergraduate"
+      "type": "undergraduate",
+      "featured": true
     }
   ],
   "certifications": [
@@ -38,6 +39,7 @@
       "credentialId": "GFHMA28T4ZD9",
       "description": "An online course by IBM on Coursera covering cybersecurity roles, processes, and operating system security.",
       "skills": ["Cyber Security", "Operating Systems", "Information Security", "Information Lifecycle Management"],
+      "featured": true,
       "verified": true,
       "category": "Cyber Security",
       "certificateUrl": "https://www.coursera.org/account/accomplishments/certificate/GFHMA28T4ZD9?trk=public_profile_see-credential"
@@ -74,6 +76,7 @@
       "credentialId": "K4FPSENH6MP9",
       "description": "A basic course extensively covering advanced learning algorithms, including supervised and unsupervised learning techniques.",
       "skills": ["Artificial Intelligence", "Supervised Learning", "Regression Analysis", "Unsupervised Learning", "Reinforcement Learning", "Neural Networks", "Deep Learning", "Machine Learning", "Decision Trees"],
+      "featured": true,
       "verified": true,
       "category": "Artificial Intelligence",
       "certificateUrl": "https://www.coursera.org/account/accomplishments/verify/K4FPSENH6MP9?trk=public_profile_see-credential"
@@ -109,6 +112,7 @@
       "credentialId": "9752bf9a32bb4f4bb9668a9c23bc69bb",
       "description": "A course by HarvardX on edX that explores the foundational principles of leadership, including team management and decision-making.",
       "skills": ["Leadership", "Team Management", "Communication", "Decision Making"],
+      "featured": true,
       "verified": true,
       "category": "Others",
       "certificateUrl": "https://courses.edx.org/certificates/9752bf9a32bb4f4bb9668a9c23bc69bb"
@@ -130,6 +134,65 @@
     {
       "category": "Databases",
       "items": ["Firebase Firestore", "SQLite", "MySQL", "NoSQL", "PostgreSQL"]
+    }
+  ],
+  "publications": [
+    {
+      "title": "Advanced Machine Learning Techniques in Cybersecurity Applications",
+      "authors": ["Kalki Eshwar D", "Dr. Jane Smith", "Prof. Robert Johnson"],
+      "journal": "IEEE International Conference on Computer Science and Technology",
+      "date": "March 2024",
+      "type": "Conference Paper",
+      "status": "Published",
+      "doi": "10.1109/ICCT.2024.1234567",
+      "abstract": "This paper explores the application of advanced machine learning techniques in cybersecurity, focusing on anomaly detection and threat prediction systems.",
+      "keywords": ["Machine Learning", "Cybersecurity", "Anomaly Detection", "Threat Prediction", "Neural Networks"],
+      "pages": "245-252",
+      "volume": "15",
+      "issn": "2456-7890",
+      "category": "Computer Science",
+      "venue": "Mumbai, India",
+      "pdfUrl": "/documents/ml-cybersecurity-paper.pdf",
+      "bibtex": "@inproceedings{eshward2024advanced,\n  title={Advanced Machine Learning Techniques in Cybersecurity Applications},\n  author={Eshward, Kalki and Smith, Jane and Johnson, Robert},\n  booktitle={IEEE International Conference on Computer Science and Technology},\n  pages={245--252},\n  year={2024},\n  organization={IEEE}\n}",
+      "featured": true
+    },
+    {
+      "title": "Blockchain Technology Integration in Modern Web Applications",
+      "authors": ["Kalki Eshwar D", "Dr. Alice Brown"],
+      "journal": "Journal of Web Technologies",
+      "date": "January 2024",
+      "type": "Journal Article",
+      "status": "Published",
+      "doi": "10.1016/j.jwt.2024.001",
+      "abstract": "An exploration of blockchain integration strategies for modern web applications, focusing on security, scalability, and user experience improvements.",
+      "keywords": ["Blockchain", "Web Development", "Security", "Scalability", "User Experience"],
+      "pages": "78-89",
+      "volume": "8",
+      "issue": "2",
+      "issn": "1234-5678",
+      "category": "Web Technology",
+      "pdfUrl": "/documents/blockchain-web-apps-paper.pdf",
+      "bibtex": "@article{eshward2024blockchain,\n  title={Blockchain Technology Integration in Modern Web Applications},\n  author={Eshward, Kalki and Brown, Alice},\n  journal={Journal of Web Technologies},\n  volume={8},\n  number={2},\n  pages={78--89},\n  year={2024},\n  publisher={Tech Publications}\n}",
+      "featured": false
+    },
+    {
+      "title": "AI-Driven Code Review: Enhancing Software Quality Through Machine Learning",
+      "authors": ["Kalki Eshwar D", "Dr. Michael Chen", "Prof. Sarah Williams"],
+      "journal": "Software Engineering Quarterly",
+      "date": "November 2023",
+      "type": "Journal Article",
+      "status": "Published",
+      "doi": "10.1145/seq.2023.456789",
+      "abstract": "This research presents a novel approach to automated code review using machine learning algorithms to improve software quality and development efficiency.",
+      "keywords": ["Artificial Intelligence", "Code Review", "Software Quality", "Machine Learning", "Development Tools"],
+      "pages": "156-167",
+      "volume": "12",
+      "issue": "4",
+      "issn": "9876-5432",
+      "category": "Software Engineering",
+      "pdfUrl": "/documents/ai-code-review-paper.pdf",
+      "bibtex": "@article{eshward2023ai,\n  title={AI-Driven Code Review: Enhancing Software Quality Through Machine Learning},\n  author={Eshward, Kalki and Chen, Michael and Williams, Sarah},\n  journal={Software Engineering Quarterly},\n  volume={12},\n  number={4},\n  pages={156--167},\n  year={2023},\n  publisher={ACM Press}\n}",
+      "featured": true
     }
   ],
   "certificationCategories": ["All", "Artificial Intelligence", "Web Development", "Cloud Computing", "Cyber Security", "Others"]

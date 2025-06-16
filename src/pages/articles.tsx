@@ -41,7 +41,18 @@ export default function Articles({ articles, categories }: ArticlesPageProps) {
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {featuredArticles.map((article) => (
-                  <article key={article.slug} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-colors duration-200">
+                  <article key={article.slug} className="bg-white border border-red-200 bg-red-50/30 rounded-lg overflow-hidden hover:border-red-300 transition-colors duration-200">
+                    <div className="p-4">
+                      <div className="flex items-center mb-3">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                          <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                          Featured Article
+                        </span>
+                      </div>
+                    </div>
+                    
                     <div className="h-48 bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
                       <div className="text-center">
                         <div className="w-16 h-16 bg-red-200 rounded-lg mx-auto mb-2 flex items-center justify-center">
@@ -57,9 +68,6 @@ export default function Articles({ articles, categories }: ArticlesPageProps) {
                         <span>{formatDate(article.date)}</span>
                         <span className="mx-2">•</span>
                         <span>{article.readingTime.text}</span>
-                        <span className="ml-auto px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">
-                          Featured
-                        </span>
                       </div>
                       <h3 className="text-xl font-medium text-gray-900 mb-3">{article.title}</h3>
                       <p className="text-gray-600 text-sm mb-4 leading-relaxed">{article.description}</p>
@@ -109,7 +117,18 @@ export default function Articles({ articles, categories }: ArticlesPageProps) {
             </h2>
             <div className="space-y-6">
               {articles.map((article) => (
-                <article key={article.slug} className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors duration-200">
+                <article key={article.slug} className={`bg-white border rounded-lg p-6 hover:border-gray-300 transition-colors duration-200 ${article.featured ? 'border-red-200 bg-red-50/30' : 'border-gray-200'}`}>
+                  {article.featured && (
+                    <div className="flex items-center mb-4">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                        <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        Featured Article
+                      </span>
+                    </div>
+                  )}
+                  
                   <div className="flex flex-col md:flex-row md:items-start gap-6">
                     <div className="md:w-24 md:flex-shrink-0">
                       <div className="w-16 h-16 bg-gradient-to-br from-red-50 to-red-100 rounded-lg flex items-center justify-center">
@@ -126,14 +145,6 @@ export default function Articles({ articles, categories }: ArticlesPageProps) {
                         <span>{article.readingTime.text}</span>
                         <span className="mx-2">•</span>
                         <span className="text-red-600">{article.category}</span>
-                        {article.featured && (
-                          <>
-                            <span className="mx-2">•</span>
-                            <span className="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">
-                              Featured
-                            </span>
-                          </>
-                        )}
                       </div>
                       
                       <h3 className="text-xl font-medium text-gray-900 mb-2">{article.title}</h3>

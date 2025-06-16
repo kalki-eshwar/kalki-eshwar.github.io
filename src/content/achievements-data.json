@@ -5,7 +5,8 @@
       "description": "Ranked in the 88th percentile in Coursera's Dataset Challenge for developing a machine learning model to predict loan defaults.",
       "category": "Data Science",
       "year": "2024",
-      "icon": "🏆"
+      "icon": "🏆",
+      "featured": true
     },
     {
       "title": "Flutter Developer at Monclarity Solutions",
@@ -26,7 +27,8 @@
       "description": "Developed a comprehensive chess platform for VIT students with Firebase integration for seamless player registration and gameplay.",
       "category": "Development",
       "year": "2023",
-      "icon": "♟️"
+      "icon": "♟️",
+      "featured": true
     },
     {
       "title": "Computer Science Student at VIT",

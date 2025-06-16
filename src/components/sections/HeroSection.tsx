@@ -11,7 +11,7 @@ export default function HeroSection() {
   const university = 'VIT';
   const major = 'CS';
   const projectsCount = projectsData.length; // Now matches projects page: Portfolio, Task Manager, AI Generator
-  const internshipsCount = workData.workExperience.filter(exp => exp.type === 'Internship').length;
+  const publicationsCount = educationData.publications?.length || 0;
   
   return (
     <section
@@ -70,8 +70,8 @@ export default function HeroSection() {
                 <div className="text-sm text-gray-200 mt-1"> FOSS Projects</div>
               </div>
               <div className="text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200">
-                <div className="text-2xl font-medium text-white">{internshipsCount}</div>
-                <div className="text-sm text-gray-200 mt-1">Internships</div>
+                <div className="text-2xl font-medium text-white">{publicationsCount}</div>
+                <div className="text-sm text-gray-200 mt-1">Publications</div>
               </div>
             </div>
           </div>
