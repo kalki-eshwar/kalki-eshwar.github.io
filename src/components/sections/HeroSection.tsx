@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getPersonalInfo, getEducationData, getWorkExperience, getPublications, getCertifications, getProjectsData } from '@/utils/data';
+import { COLORS, getTailwindClass } from '@/presets';
 
 export default function HeroSection() {
   const personalInfo = getPersonalInfo();
@@ -27,15 +28,15 @@ export default function HeroSection() {
           {/* Left side - Content */}
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white">
-                Hi, I'm <span className="text-red-500">{personalInfo.name}</span>
+              <h1 className={`text-3xl md:text-4xl lg:text-5xl font-medium ${getTailwindClass('text-white')}`}>
+                Hi, I'm <span style={{ color: COLORS.primary[500] }}>{personalInfo.name}</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-200">
+              <p className={`text-lg md:text-xl ${getTailwindClass('text-gray-200')}`}>
                 {personalInfo.bio}
               </p>
             </div>
 
-            <p className="text-gray-200 leading-relaxed max-w-md mx-auto lg:mx-0">
+            <p className={`${getTailwindClass('text-gray-200')} leading-relaxed max-w-md mx-auto lg:mx-0`}>
               {personalInfo.description}
             </p>
 
@@ -43,14 +44,14 @@ export default function HeroSection() {
               <a
                 href={personalInfo.resumePath}
                 download={personalInfo.resumeFileName}
-                className="inline-flex items-center px-6 py-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-colors duration-200 shadow-lg"
+                className={`inline-flex items-center px-6 py-3 ${getTailwindClass('bg-red-600')} ${getTailwindClass('text-white')} font-medium rounded-lg ${getTailwindClass('hover:bg-red-700')} transition-colors duration-200 shadow-lg`}
               >
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 Download Resume
               </a>
-              <Link href="/contact" className="inline-block px-6 py-3 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg">
+              <Link href="/contact" className={`inline-block px-6 py-3 ${getTailwindClass('bg-white')} ${getTailwindClass('text-gray-900')} font-medium rounded-lg ${getTailwindClass('hover:bg-gray-200')} transition-colors duration-200 shadow-lg`}>
                 Get in Touch
               </Link>
             </div>
@@ -59,29 +60,29 @@ export default function HeroSection() {
           {/* Right side - Quick stats or info */}
           <div className="lg:justify-self-end">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
-              <div className="text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200">
-                <div className="text-2xl font-medium text-white">{university}</div>
-                <div className="text-sm text-gray-200 mt-1">University</div>
+              <div className={`text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200`}>
+                <div className={`text-2xl font-medium ${getTailwindClass('text-white')}`}>{university}</div>
+                <div className={`text-sm ${getTailwindClass('text-gray-200')} mt-1`}>University</div>
               </div>
-              <div className="text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200">
-                <div className="text-2xl font-medium text-white">{major}</div>
-                <div className="text-sm text-gray-200 mt-1">Major</div>
+              <div className={`text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200`}>
+                <div className={`text-2xl font-medium ${getTailwindClass('text-white')}`}>{major}</div>
+                <div className={`text-sm ${getTailwindClass('text-gray-200')} mt-1`}>Major</div>
               </div>
-              <div className="text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200">
-                <div className="text-2xl font-medium text-white">{projectsCount}+</div>
-                <div className="text-sm text-gray-200 mt-1">FOSS Projects</div>
+              <div className={`text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200`}>
+                <div className={`text-2xl font-medium ${getTailwindClass('text-white')}`}>{projectsCount}+</div>
+                <div className={`text-sm ${getTailwindClass('text-gray-200')} mt-1`}>FOSS Projects</div>
               </div>
-              <div className="text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200">
-                <div className="text-2xl font-medium text-white">{publicationsCount}</div>
-                <div className="text-sm text-gray-200 mt-1">Publications</div>
+              <div className={`text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200`}>
+                <div className={`text-2xl font-medium ${getTailwindClass('text-white')}`}>{publicationsCount}</div>
+                <div className={`text-sm ${getTailwindClass('text-gray-200')} mt-1`}>Publications</div>
               </div>
-              <div className="text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200">
-                <div className="text-2xl font-medium text-white">{certificationsCount}</div>
-                <div className="text-sm text-gray-200 mt-1">Certifications</div>
+              <div className={`text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200`}>
+                <div className={`text-2xl font-medium ${getTailwindClass('text-white')}`}>{certificationsCount}</div>
+                <div className={`text-sm ${getTailwindClass('text-gray-200')} mt-1`}>Certifications</div>
               </div>
-              <div className="text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200">
-                <div className="text-2xl font-medium text-white">{internshipsCount}</div>
-                <div className="text-sm text-gray-200 mt-1">Internships</div>
+              <div className={`text-center p-4 border border-white/20 bg-white/10 backdrop-blur-sm rounded-lg hover:border-white/30 transition-colors duration-200`}>
+                <div className={`text-2xl font-medium ${getTailwindClass('text-white')}`}>{internshipsCount}</div>
+                <div className={`text-sm ${getTailwindClass('text-gray-200')} mt-1`}>Internships</div>
               </div>
             </div>
           </div>

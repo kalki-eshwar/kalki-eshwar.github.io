@@ -1,18 +1,19 @@
 import Image from 'next/image';
 import { getPersonalInfo } from '@/utils/data';
 import DynamicContent from '@/components/DynamicContent';
+import { getTailwindClass } from '@/presets';
 
 export default function AboutSection() {
   const personalInfo = getPersonalInfo();
   
   return (
-    <section className="section border-t border-gray-100">
+    <section className={`section border-t ${getTailwindClass('border-gray-100')}`}>
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
           {/* Title and Profile Image */}
           <div className="lg:col-span-1 space-y-6">
-            <h2 className="text-2xl font-medium text-gray-900 text-center lg:text-left">
-              About <span className="text-red-600">Me</span>
+            <h2 className={`text-2xl font-medium ${getTailwindClass('text-gray-900')} text-center lg:text-left`}>
+              About <span className={getTailwindClass('text-red-600')}>Me</span>
             </h2>
             
             {/* Profile Image */}
@@ -30,7 +31,7 @@ export default function AboutSection() {
           </div>
           
           {/* Content */}
-          <div className="lg:col-span-2 space-y-4 text-gray-600 leading-relaxed">
+          <div className={`lg:col-span-2 space-y-4 ${getTailwindClass('text-gray-600')} leading-relaxed`}>
             {personalInfo.aboutSections.map((section, index) => (
               <p key={index}>
                 <DynamicContent content={section} />

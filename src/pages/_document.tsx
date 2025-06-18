@@ -1,12 +1,13 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import { COLORS } from '@/presets';
 
 export default function Document() {
   return (
     <Html lang="en" className="scroll-smooth">
       <Head>
         <meta charSet="utf-8" />
-        <meta name="theme-color" content="#dc2626" />
-        <meta name="msapplication-TileColor" content="#dc2626" />
+        <meta name="theme-color" content={COLORS.primary[600]} />
+        <meta name="msapplication-TileColor" content={COLORS.primary[600]} />
         
         {/* Favicon */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />

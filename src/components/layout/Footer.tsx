@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { getContactInfo } from '@/utils/data';
 import { getSocialIcon } from '@/components/SocialIcons';
+import { getTailwindClass } from '@/presets';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { socialLinks } = getContactInfo();
 
   return (
-    <footer className="py-12 border-t border-gray-100">
+    <footer className={`py-12 border-t ${getTailwindClass('border-gray-100')}`}>
       <div className="container">
         <div className="text-center space-y-6">
           {/* Social Links */}
@@ -18,7 +19,7 @@ export default function Footer() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
+                className={`${getTailwindClass('text-gray-500')} ${getTailwindClass('hover:text-gray-700')} transition-colors duration-200`}
                 aria-label={`${social.name} Profile`}
               >
                 {getSocialIcon(social.icon)}
@@ -27,7 +28,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="text-sm text-gray-500">
+          <p className={`text-sm ${getTailwindClass('text-gray-500')}`}>
             © {currentYear} Kalki Eshwar D
           </p>
         </div>

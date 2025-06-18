@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ReactElement } from 'react';
+import { COLORS, getTailwindClass } from '@/presets';
 
 interface DynamicContentProps {
   content: string;
@@ -32,7 +33,7 @@ export default function DynamicContent({ content, className = '' }: DynamicConte
             href={linkUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-red-600 hover:text-red-700 hover:underline active:underline focus:underline transition-colors duration-200 inline-flex items-center gap-1"
+            className={`${getTailwindClass('text-red-600')} hover:${getTailwindClass('text-red-700')} hover:underline active:underline focus:underline transition-colors duration-200 inline-flex items-center gap-1`}
             title={`Visit ${linkText} (opens in new tab)`}
           >
             {linkText}
@@ -46,10 +47,10 @@ export default function DynamicContent({ content, className = '' }: DynamicConte
           <Link
             key={keyCounter++}
             href={linkUrl}
-            className="text-red-600 hover:text-red-700 transition-colors duration-200 relative group"
+            className={`${getTailwindClass('text-red-600')} hover:${getTailwindClass('text-red-700')} transition-colors duration-200 relative group`}
             title={`Go to ${linkText}`}
             style={{
-              backgroundImage: 'linear-gradient(to right, rgb(220, 38, 38), rgb(220, 38, 38))',
+              backgroundImage: `linear-gradient(to right, ${COLORS.primary[600]}, ${COLORS.primary[600]})`,
               backgroundSize: '0% 2px',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'left bottom',

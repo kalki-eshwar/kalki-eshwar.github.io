@@ -3,6 +3,7 @@ import { SEOProps } from '@/types';
 import { getEducationData } from '@/utils/data';
 import { getProjectsData } from '@/utils/data';
 import Image from 'next/image';
+import { COLOR_COMBINATIONS, getTailwindClass, getBadgeColors } from '@/presets';
 
 const educationSEO: SEOProps = {
   title: 'Education, Publications & Certifications - Kalki Eshwar D',
@@ -20,18 +21,18 @@ export default function Education() {
         <div className="container">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4">
-              Education, Publications & <span className="text-red-600">Certifications</span>
+            <h1 className={`text-3xl md:text-4xl font-medium ${getTailwindClass('text-gray-900')} mb-4`}>
+              Education, Publications & <span className={COLOR_COMBINATIONS.primary.default.text}>Certifications</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className={`text-lg ${getTailwindClass('text-gray-600')} max-w-2xl mx-auto`}>
               My academic journey, research publications, and continuous learning path through formal education and professional certifications.
             </p>
           </div>
 
           {/* Education Section */}
           <div className="mb-16">
-            <h2 className="text-2xl font-medium text-gray-900 mb-8">
-              <span className="text-red-600">Education</span>
+            <h2 className={`text-2xl font-medium ${getTailwindClass('text-gray-900')} mb-8`}>
+              <span className={COLOR_COMBINATIONS.primary.default.text}>Education</span>
             </h2>
             
             <div className="space-y-8">
@@ -40,10 +41,10 @@ export default function Education() {
                 const anchorId = edu.institution.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
                 
                 return (
-                  <div key={index} id={anchorId === 'vellore-institute-of-technology' ? 'vit' : anchorId} className={`rounded-lg p-6 transition-colors duration-200 ${edu.featured ? 'bg-red-50/20 border border-red-200 hover:border-red-400' : 'bg-white border border-gray-200 hover:border-gray-300'}`}>
+                  <div key={index} id={anchorId === 'vellore-institute-of-technology' ? 'vit' : anchorId} className={`rounded-lg p-6 transition-colors duration-200 ${edu.featured ? `${COLOR_COMBINATIONS.featured.default.background} border ${COLOR_COMBINATIONS.featured.default.border} ${COLOR_COMBINATIONS.featured.hover.border}` : `${COLOR_COMBINATIONS.neutral.default.background} border ${COLOR_COMBINATIONS.neutral.default.border} ${COLOR_COMBINATIONS.neutral.hover.border}`}`}>
                     {edu.featured && (
                       <div className="flex items-center mb-3">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getBadgeColors('featured').background} ${getBadgeColors('featured').text}`}>
                           <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
@@ -54,17 +55,17 @@ export default function Education() {
                     
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                       <div className="flex-grow">
-                        <h3 className="text-xl font-medium text-gray-900 mb-2">{edu.degree}</h3>
-                        <p className="text-lg text-red-600 font-medium mb-1">{edu.institution}</p>
-                        <p className="text-sm text-gray-500 mb-2">{edu.location}</p>
-                        <p className="text-gray-600 leading-relaxed">{edu.description}</p>
+                        <h3 className={`text-xl font-medium ${getTailwindClass('text-gray-900')} mb-2`}>{edu.degree}</h3>
+                        <p className={`text-lg ${COLOR_COMBINATIONS.primary.default.text} font-medium mb-1`}>{edu.institution}</p>
+                        <p className={`text-sm ${getTailwindClass('text-gray-500')} mb-2`}>{edu.location}</p>
+                        <p className={`${getTailwindClass('text-gray-600')} leading-relaxed`}>{edu.description}</p>
                       </div>
                       <div className="mt-4 lg:mt-0 lg:ml-6 lg:text-right lg:min-w-0 lg:flex-shrink-0">
-                        <span className="inline-block px-3 py-1 bg-red-100 text-red-800 text-sm font-medium rounded-full mb-2 whitespace-nowrap">
+                        <span className={`inline-block px-3 py-1 ${getBadgeColors('primary').background} ${getBadgeColors('primary').text} text-sm font-medium rounded-full mb-2 whitespace-nowrap`}>
                           {edu.type === 'undergraduate' ? "Bachelor's Degree" : 'Secondary Education'}
                         </span>
-                        <p className="text-sm text-gray-600">{edu.period}</p>
-                        <p className="text-sm font-medium text-gray-900 mt-1">GPA: {edu.gpa}</p>
+                        <p className={`text-sm ${getTailwindClass('text-gray-600')}`}>{edu.period}</p>
+                        <p className={`text-sm font-medium ${getTailwindClass('text-gray-900')} mt-1`}>GPA: {edu.gpa}</p>
                     </div>
                   </div>
                   

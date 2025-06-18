@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getProjectsData } from '@/utils/data';
+import { getTailwindClass, COLOR_COMBINATIONS } from '@/presets';
 
 const projectsData = getProjectsData();
 const projects = projectsData
@@ -16,24 +17,28 @@ const projects = projectsData
 
 export default function ProjectsSection() {
   return (
-    <section className="section border-t border-gray-100">
+    <section className={`section border-t ${getTailwindClass('border-gray-100')}`}>
       <div className="container">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-medium text-gray-900 mb-3">
-            Featured <span className="text-red-600">Projects</span>
+          <h2 className={`text-2xl font-medium ${getTailwindClass('text-gray-900')} mb-3`}>
+            Featured <span className={getTailwindClass('text-red-600')}>Projects</span>
           </h2>
-          <p className="text-gray-600">
+          <p className={getTailwindClass('text-gray-600')}>
             Some of the projects I've worked on recently
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {projects.map((project, index) => (
-            <div key={index} className={`border rounded-lg overflow-hidden transition-colors duration-200 ${project.featured ? 'border-red-200 bg-red-50/20 hover:border-red-400' : 'border-gray-200 hover:border-gray-300'}`}>
+            <div key={index} className={`border rounded-lg overflow-hidden transition-colors duration-200 ${
+              project.featured 
+                ? `${COLOR_COMBINATIONS.featured.default.border} ${COLOR_COMBINATIONS.featured.default.background} ${COLOR_COMBINATIONS.featured.hover.border}` 
+                : `${COLOR_COMBINATIONS.neutral.default.border} ${COLOR_COMBINATIONS.neutral.hover.border}`
+            }`}>
               {/* Small fixed height container for featured badge to maintain consistent layout */}
-              <div className="h-6 px-3 pt-1 flex items-start">
+              <div className="h-9 px-3 pt-2 flex items-start">
                 {project.featured && (
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getTailwindClass('bg-red-100')} ${getTailwindClass('text-red-800')}`}>
                     <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
@@ -43,21 +48,20 @@ export default function ProjectsSection() {
               </div>
               
               {/* Project Image Placeholder */}
-              <div className="h-32 bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
+              <div className={`h-32 bg-gradient-to-br ${getTailwindClass('bg-red-50')} to-red-100 flex items-center justify-center`}>
                 <div className="text-center">
-                  
-                  <p className="text-red-600 font-medium text-sm">{project.category}</p>
+                  <p className={`${getTailwindClass('text-red-600')} font-medium text-sm`}>{project.category}</p>
                 </div>
               </div>
 
               <div className="p-4">
                 <div className="space-y-3">
                   <div className="space-y-2">
-                    <h3 className="text-lg font-medium text-gray-900">{project.title}</h3>
-                    <span className="text-sm text-gray-500">{project.tech}</span>
+                    <h3 className={`text-lg font-medium ${getTailwindClass('text-gray-900')}`}>{project.title}</h3>
+                    <span className={`text-sm ${getTailwindClass('text-gray-500')}`}>{project.tech}</span>
                   </div>
-                  <p className="text-gray-600 leading-relaxed text-sm">{project.description}</p>
-                  <Link href={project.link} className="inline-block text-red-600 hover:text-red-700 text-sm">
+                  <p className={`${getTailwindClass('text-gray-600')} leading-relaxed text-sm`}>{project.description}</p>
+                  <Link href={project.link} className={`inline-block ${getTailwindClass('text-red-600')} hover:${getTailwindClass('text-red-700')} text-sm`}>
                     View Project →
                   </Link>
                 </div>

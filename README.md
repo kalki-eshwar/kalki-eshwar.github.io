@@ -161,9 +161,33 @@ npm run format
 
 ### Styling
 
-- **Colors**: Modify the color palette in [`tailwind.config.js`](tailwind.config.js)
+- **Colors**: Use the centralized color system in [`src/presets/`](src/presets/) for consistent theming
 - **Typography**: Update fonts in [`src/pages/_app.tsx`](src/pages/_app.tsx)
 - **Components**: Customize component styles in [`src/styles/globals.css`](src/styles/globals.css)
+
+### Color System
+
+The website uses a centralized color system located in [`src/presets/`](src/presets/) for consistent theming:
+
+```typescript
+import { COLORS, SEMANTIC_COLORS, COLOR_COMBINATIONS } from '@/presets';
+
+// Use predefined color constants
+const primaryColor = COLORS.primary[600];
+const cardBackground = SEMANTIC_COLORS.neutral.background.primary;
+
+// Use Tailwind class combinations
+const featuredCard = COLOR_COMBINATIONS.featured.default;
+```
+
+**Key features:**
+- 🎨 **Centralized colors** - All colors defined in one place
+- 🔧 **Utility functions** - Helper functions for dynamic color usage
+- 📱 **Component presets** - Pre-defined color combinations for UI components
+- 🎯 **Type safety** - Full TypeScript support for color constants
+- 🔄 **Easy migration** - Supports both Tailwind classes and inline styles
+
+See [`src/presets/README.md`](src/presets/README.md) for detailed documentation.
 
 ## ✍️ Content Management
 

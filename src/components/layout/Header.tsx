@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { NavigationItem } from '@/types';
+import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
 
 const navigation: NavigationItem[] = [
   { label: 'Home', href: '/' },
@@ -26,11 +27,11 @@ export default function Header() {
   };
 
   return (
-    <header className="py-6 border-b border-gray-100">
+    <header className={`py-6 border-b ${getTailwindClass('border-gray-100')}`}>
       <nav className="container">
         <div className="flex justify-between items-center">
           {/* Logo with Profile Image */}
-          <Link href="/" className="flex items-center space-x-3 text-lg font-medium text-gray-900">
+          <Link href="/" className={`flex items-center space-x-3 text-lg font-medium ${getTailwindClass('text-gray-900')}`}>
             <div className="relative w-8 h-8 rounded-full overflow-hidden">
               <Image
                 src="/images/profile.png"
@@ -50,8 +51,8 @@ export default function Header() {
                 href={item.href}
                 className={`text-sm transition-colors duration-200 ${
                   isActiveRoute(item.href)
-                    ? 'text-red-600 font-medium'
-                    : 'text-gray-600 hover:text-red-600'
+                    ? `${COLOR_COMBINATIONS.primary.default.text} font-medium`
+                    : `${COLOR_COMBINATIONS.neutral.default.text} ${COLOR_COMBINATIONS.primary.hover.text}`
                 }`}
               >
                 {item.label}
@@ -63,7 +64,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-600 hover:text-gray-900"
+              className={`${COLOR_COMBINATIONS.neutral.default.text} ${COLOR_COMBINATIONS.neutral.hover.text}`}
             >
               <span className="sr-only">Menu</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,7 +76,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-gray-100">
+          <div className={`md:hidden mt-4 pt-4 border-t ${getTailwindClass('border-gray-100')}`}>
             <div className="space-y-3">
               {navigation.map((item) => (
                 <Link
@@ -84,8 +85,8 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block text-sm transition-colors duration-200 ${
                     isActiveRoute(item.href)
-                      ? 'text-red-600 font-medium'
-                      : 'text-gray-600 hover:text-red-600'
+                      ? `${COLOR_COMBINATIONS.primary.default.text} font-medium`
+                      : `${COLOR_COMBINATIONS.neutral.default.text} ${COLOR_COMBINATIONS.primary.hover.text}`
                   }`}
                 >
                   {item.label}

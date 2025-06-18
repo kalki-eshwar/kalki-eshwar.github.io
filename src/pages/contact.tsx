@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { SEOProps } from '@/types';
 import { getContactInfo } from '@/utils/data';
 import { getSocialIcon } from '@/components/SocialIcons';
+import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
 
 const contactSEO: SEOProps = {
   title: 'Contact - Kalki Eshwar D',
@@ -40,7 +41,7 @@ export default function Contact() {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4">
-              Get In <span className="text-red-600">Touch</span>
+              Get In <span className={getTailwindClass('text-red-600')}>Touch</span>
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               I'm always interested in new opportunities, collaborations, and discussions about technology. 
@@ -144,17 +145,17 @@ export default function Contact() {
                   <h3 className="font-medium text-gray-900 mb-4">Quick Contact</h3>
                   <div className="space-y-3">
                     <div className="flex items-center">
-                      <svg className="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className={`w-5 h-5 ${getTailwindClass('text-red-600')} mr-3`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-                      <span className="text-gray-700">{contactData.contactInfo.location}</span>
+                      <span className={`${getTailwindClass('text-gray-700')}`}>{contactData.contactInfo.location}</span>
                     </div>
                     <div className="flex items-center">
-                      <svg className="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className={`w-5 h-5 ${getTailwindClass('text-red-600')} mr-3`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      <span className="text-gray-700">{contactData.contactInfo.availability}</span>
+                      <span className={`${getTailwindClass('text-gray-700')}`}>{contactData.contactInfo.availability}</span>
                     </div>
                   </div>
                 </div>
@@ -206,7 +207,7 @@ export default function Contact() {
           {/* Additional CTAs */}
           <div className="mt-16 pt-16 border-t border-gray-100 text-center">
             <h2 className="text-2xl font-medium text-gray-900 mb-6">
-              Other Ways to <span className="text-red-600">Connect</span>
+              Other Ways to <span className={getTailwindClass('text-red-600')}>Connect</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {contactData.connectionTypes.map((type, index) => (

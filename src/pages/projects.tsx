@@ -2,6 +2,7 @@ import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import { SEOProps } from '@/types';
 import { getProjectsData } from '@/utils/data';
+import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
 
 const projectsSEO: SEOProps = {
   title: 'Projects - Kalki Eshwar D',
@@ -33,21 +34,21 @@ export default function Projects() {
         <div className="container">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4">
-              My <span className="text-red-600">Projects</span>
+            <h1 className={`text-3xl md:text-4xl font-medium ${getTailwindClass('text-gray-900')} mb-4`}>
+              My <span className={COLOR_COMBINATIONS.primary.default.text}>Projects</span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className={`text-lg ${getTailwindClass('text-gray-600')} max-w-2xl mx-auto`}>
               A collection of projects that showcase my skills in mobile development, web technologies, and machine learning.
             </p>
           </div>
 
           {/* Category Filter */}
           <div className="flex justify-center mb-12">
-            <div className="flex flex-wrap gap-2 bg-gray-50 p-1 rounded-lg">
+            <div className={`flex flex-wrap gap-2 ${getTailwindClass('bg-gray-50')} p-1 rounded-lg`}>
               {categories.map((category) => (
                 <button
                   key={category}
-                  className="px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 text-gray-600 hover:text-red-600 hover:bg-white"
+                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${getTailwindClass('text-gray-600')} hover:${getTailwindClass('text-red-600')} hover:${getTailwindClass('bg-white')}`}
                 >
                   {category}
                 </button>
@@ -58,11 +59,11 @@ export default function Projects() {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {projects.map((project, index) => (
-              <div key={index} className={`border rounded-lg overflow-hidden transition-colors duration-200 ${project.featured ? 'bg-red-50/20 border-red-200 hover:border-red-400' : 'bg-white border-gray-200 hover:border-gray-300'}`}>
+              <div key={index} className={`border rounded-lg overflow-hidden transition-colors duration-200 ${project.featured ? `${COLOR_COMBINATIONS.featured.default.background} ${COLOR_COMBINATIONS.featured.default.border} hover:${COLOR_COMBINATIONS.featured.hover.border}` : `${getTailwindClass('bg-white')} ${getTailwindClass('border-gray-200')} hover:${getTailwindClass('border-gray-300')}`}`}>
                 {/* Small fixed height container for featured badge to maintain consistent layout */}
                 <div className="h-10 px-4 pt-3 flex items-start">
                   {project.featured && (
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getTailwindClass('bg-red-100')} ${getTailwindClass('text-red-800')}`}>
                       <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
@@ -82,26 +83,26 @@ export default function Projects() {
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
-                          <div className="w-16 h-16 bg-red-200 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                            <span className="text-red-600 text-xl font-bold">
+                          <div className={`w-16 h-16 ${getTailwindClass('bg-red-200')} rounded-lg mx-auto mb-2 flex items-center justify-center`}>
+                            <span className={`${getTailwindClass('text-red-600')} text-xl font-bold`}>
                               {project.title.substring(0, 2).toUpperCase()}
                             </span>
                           </div>
-                          <p className="text-red-600 font-medium bg-red-100 px-3 py-1 rounded-full">
+                          <p className={`${getTailwindClass('text-red-600')} font-medium ${getTailwindClass('bg-red-100')} px-3 py-1 rounded-full`}>
                             {project.category}
                           </p>
                         </div>
                       </div>
                     </>
                   ) : (
-                    <div className="h-full bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
+                    <div className={`h-full bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-16 h-16 bg-red-200 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                          <span className="text-red-600 text-xl font-bold">
+                        <div className={`w-16 h-16 ${getTailwindClass('bg-red-200')} rounded-lg mx-auto mb-2 flex items-center justify-center`}>
+                          <span className={`${getTailwindClass('text-red-600')} text-xl font-bold`}>
                             {project.title.substring(0, 2).toUpperCase()}
                           </span>
                         </div>
-                        <p className="text-red-600 font-medium">{project.category}</p>
+                        <p className={`${getTailwindClass('text-red-600')} font-medium`}>{project.category}</p>
                       </div>
                     </div>
                   )}
@@ -109,10 +110,10 @@ export default function Projects() {
 
                 <div className="p-6">
                   <div className="mb-3">
-                    <h3 className="text-xl font-medium text-gray-900">{project.title}</h3>
+                    <h3 className={`text-xl font-medium ${getTailwindClass('text-gray-900')}`}>{project.title}</h3>
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className={`${getTailwindClass('text-gray-600')} text-sm mb-4 leading-relaxed`}>
                     {project.description}
                   </p>
 
@@ -120,7 +121,7 @@ export default function Projects() {
                   <div className="mb-4">
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
+                        <span key={idx} className={`px-2 py-1 ${getTailwindClass('bg-gray-100')} ${getTailwindClass('text-gray-700')} text-xs rounded`}>
                           {tech}
                         </span>
                       ))}
@@ -129,11 +130,11 @@ export default function Projects() {
 
                   {/* Key Features */}
                   <div className="mb-4">
-                    <h4 className="text-sm font-medium text-gray-900 mb-2">Key Features:</h4>
-                    <ul className="text-xs text-gray-600 space-y-1">
+                    <h4 className={`text-sm font-medium ${getTailwindClass('text-gray-900')} mb-2`}>Key Features:</h4>
+                    <ul className={`text-xs ${getTailwindClass('text-gray-600')} space-y-1`}>
                       {project.features.slice(0, 3).map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <span className="text-red-600 mr-2">•</span>
+                          <span className={`${getTailwindClass('text-red-600')} mr-2`}>•</span>
                           {feature}
                         </li>
                       ))}
@@ -144,7 +145,7 @@ export default function Projects() {
                   <div className="flex gap-3">
                     <Link 
                       href={project.github} 
-                      className="inline-flex items-center px-3 py-2 text-sm text-gray-700 hover:text-red-600 transition-colors duration-200"
+                      className={`inline-flex items-center px-3 py-2 text-sm ${getTailwindClass('text-gray-700')} hover:${getTailwindClass('text-red-600')} transition-colors duration-200`}
                       target='_blank'
                     >
                       <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -155,7 +156,7 @@ export default function Projects() {
                     {project.demo && (
                       <Link 
                         href={project.demo} 
-                        className="inline-flex items-center px-3 py-2 text-sm text-white bg-red-600 hover:bg-red-700 rounded transition-colors duration-200"
+                        className={`inline-flex items-center px-3 py-2 text-sm ${getTailwindClass('text-white')} ${getTailwindClass('bg-red-600')} hover:${getTailwindClass('bg-red-700')} rounded transition-colors duration-200`}
                         target='_blank'
                       >
                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,16 +172,16 @@ export default function Projects() {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-16 pt-16 border-t border-gray-100">
-            <h2 className="text-2xl font-medium text-gray-900 mb-4">
-              Interested in <span className="text-red-600">Collaborating?</span>
+          <div className={`text-center mt-16 pt-16 border-t ${getTailwindClass('border-gray-100')}`}>
+            <h2 className={`text-2xl font-medium ${getTailwindClass('text-gray-900')} mb-4`}>
+              Interested in <span className={getTailwindClass('text-red-600')}>Collaborating?</span>
             </h2>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className={`${getTailwindClass('text-gray-600')} mb-6 max-w-2xl mx-auto`}>
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
             <Link 
               href="/contact" 
-              className="inline-flex items-center px-6 py-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-colors duration-200"
+              className={`inline-flex items-center px-6 py-3 ${getTailwindClass('bg-red-600')} ${getTailwindClass('text-white')} font-medium rounded-lg hover:${getTailwindClass('bg-red-700')} transition-colors duration-200`}
             >
               Get in Touch
               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

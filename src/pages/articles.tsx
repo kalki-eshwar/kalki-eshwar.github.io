@@ -3,6 +3,7 @@ import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import { SEOProps } from '@/types';
 import { getAllArticles, getAllCategories, formatDate, Article } from '@/utils/articles';
+import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
 
 const articlesSEO: SEOProps = {
   title: 'Articles - Kalki Eshwar D',
