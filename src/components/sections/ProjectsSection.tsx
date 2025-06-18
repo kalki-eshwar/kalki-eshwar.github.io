@@ -45,11 +45,7 @@ export default function ProjectsSection() {
               {/* Project Image Placeholder */}
               <div className="h-32 bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-red-200 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                    <span className="text-red-600 text-lg font-bold">
-                      {project.title.substring(0, 2).toUpperCase()}
-                    </span>
-                  </div>
+                  
                   <p className="text-red-600 font-medium text-sm">{project.category}</p>
                 </div>
               </div>

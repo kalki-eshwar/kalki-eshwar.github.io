@@ -30,7 +30,7 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "/images/projects/tabular-reasoning.png",
+        "src": "/images/projects/tabular-reasoning.webp",
         "alt": "Model image"
       }
     ],
@@ -73,7 +73,7 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "/images/projects/loan-default-prediction.jpg",
+        "src": "/images/projects/loan-default-prediction.webp",
         "alt": "AI model image"
       }
     ],
@@ -106,7 +106,7 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "public/images/projects/flutter.png",
+        "src": "public/images/projects/studize.webp",
         "alt": "Studize App Icon"
       }
     ],
@@ -137,7 +137,7 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "public/images/projects/vitcl-app.jpg",
+        "src": "public/images/projects/vitcl-app.webp",
         "alt": "VITCL App Icon"
       }
     ],
@@ -180,7 +180,7 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "public/images/projects/portfolio-website.jpg",
+        "src": "public/images/projects/portfolio-website.webp",
         "alt": "Portfolio Website Screenshot"
       }
     ],
@@ -213,7 +213,7 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "public/images/projects/rails.png",
+        "src": "public/images/projects/store.webp",
         "alt": "Store RoR Application Screenshot"
       }
     ],
@@ -251,7 +251,7 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "public/images/projects/vit-chess.jpg",
+        "src": "public/images/projects/vit-chess.webp",
         "alt": "VIT Chess Website Screenshot"
       }
     ],
@@ -289,7 +289,7 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "public/images/projects/cli.png",
+        "src": "public/images/projects/cli-chat.webp",
         "alt": "CLI Chat Application Screenshot"
       }
     ],
