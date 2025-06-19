@@ -1,19 +1,23 @@
 ---
-title: "Lessons from Five Years in Tech"
+title: "The Mirage Called Success"
 description: "Reflections on my journey in technology, the lessons learned, and advice for newcomers entering the field. Personal insights from internships, projects, and continuous learning."
 date: "2024-11-28"
-readTime: "6 min read"
-category: "Career"
-tags: ["Career", "Personal Growth", "Technology", "Advice"]
+readTime: "3 min read"
+category: "Personal Growth"
+tags: ["Happiness", "Personal Growth", "Success"]
 featured: true
 author: "Kalki Eshwar D"
 ---
 
-# Lessons from Five Years in Tech
+# What makes a person happy?
 
-As I reflect on my journey through the technology landscape over the past five years, I'm amazed at how much the industry has evolved and how much I've grown both personally and professionally. From my first "Hello, World!" to working on complex applications, the path has been filled with challenges, discoveries, and invaluable lessons.
+What makes a person happy? What would qualify a person to be called successful? As a student, I pondered over these thoughts.
 
-## The Beginning: Curiosity Meets Reality
+Everyone wants to be successful. Everyone wants to be great. Yet one in ten adults are said to suffer from a depressive illness in any given year.
+
+One is always curious why so many technological advancements have not led to a parallel improvement in people’s satisfaction of life. To arrive upon such a paradoxical state of affairs is quite disheartening. To find the root cause of such a conundrum, one must journey inwards, and unravel one’s own perceptions of success and happiness.
+
+# Journeying Inward
 
 My tech journey began in college when I first encountered programming. Like many beginners, I was both excited and overwhelmed by the vast possibilities that code could unlock. The early days were filled with:
 
