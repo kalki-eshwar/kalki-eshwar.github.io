@@ -3,7 +3,6 @@ title: "The Psychology of Code: Writing Software that Humans Can Understand"
 description: "Explore the intersection of psychology and programming. Learn how cognitive principles can guide you to write more readable, maintainable, and intuitive code that works with human nature."
 date: "2024-11-20"
 readTime: "7 min read"
-category: "Software Engineering"
 tags: ["Code Quality", "Psychology", "Best Practices", "Clean Code"]
 featured: false
 author: "Kalki Eshwar D"

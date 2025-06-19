@@ -3,7 +3,6 @@ title: "Modern Frontend Development: Beyond Frameworks"
 description: "Explore advanced frontend concepts including micro-frontends, progressive enhancement, performance optimization, and modern browser APIs that every frontend developer should know."
 date: "2024-12-05"
 readTime: "9 min read"
-category: "Frontend Development"
 tags: ["Frontend", "Web Development", "Performance", "Modern Web"]
 featured: false
 author: "Kalki Eshwar D"

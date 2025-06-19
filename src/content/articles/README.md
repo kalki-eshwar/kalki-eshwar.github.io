@@ -30,7 +30,6 @@ title: "Your Article Title"
 description: "Brief description of the article"
 date: "2024-12-25"
 readTime: "8 min read"
-category: "Custom Category" # Optional, defaults to directory name
 tags: ["tag1", "tag2"]
 featured: true # Optional
 author: "Your Name"

@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next';
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import { SEOProps } from '@/types';
-import { getAllArticles, getAllCategories, formatDate, Article } from '@/utils/articles';
+import { getAllArticles, getAllCategories, getAllCategoryDirs, formatDate, Article } from '@/utils/articles';
 import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
 
 const articlesSEO: SEOProps = {
@@ -14,11 +14,17 @@ const articlesSEO: SEOProps = {
 interface ArticlesPageProps {
   articles: Article[];
   categories: string[];
+  categoryDirs: string[];
 }
 
-export default function Articles({ articles, categories }: ArticlesPageProps) {
+export default function Articles({ articles, categories, categoryDirs }: ArticlesPageProps) {
   const featuredArticles = articles.filter(article => article.featured);
-  const allCategories = ['All', ...categories];
+
+  // Create mapping of category dirs to display names
+  const getCategoryDisplayName = (categoryDir: string) => {
+    const article = articles.find(a => (a as any).categoryDir === categoryDir);
+    return article?.category || categoryDir;
+  };
 
   return (
     <Layout seo={articlesSEO}>
@@ -54,15 +60,10 @@ export default function Articles({ articles, categories }: ArticlesPageProps) {
                       </div>
                     </div>
                     
-                    <div className="h-48 bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-red-200 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                          <span className="text-red-600 text-xl font-bold">
-                            {article.category.substring(0, 2).toUpperCase()}
-                          </span>
-                        </div>
-                        <p className="text-red-600 font-medium text-sm">{article.category}</p>
-                      </div>
+                    <div
+                      className="h-48 bg-center bg-cover flex items-end justify-center"
+                      style={{ backgroundImage: "url('/images/home_background.webp')" }}
+                    >
                     </div>
                     <div className="p-6">
                       <div className="flex items-center text-sm text-red-600 mb-3">
@@ -97,16 +98,23 @@ export default function Articles({ articles, categories }: ArticlesPageProps) {
             </div>
           )}
 
-          {/* Category Filter */}
+          {/* Category Navigation */}
           <div className="flex justify-center mb-12">
             <div className="flex flex-wrap gap-2 bg-gray-50 p-1 rounded-lg">
-              {allCategories.map((category) => (
-                <button
-                  key={category}
+              <Link
+                href="/articles"
+                className="px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 bg-white text-red-600 shadow-sm"
+              >
+                All Articles
+              </Link>
+              {categoryDirs.map((categoryDir) => (
+                <Link
+                  key={categoryDir}
+                  href={`/${categoryDir}`}
                   className="px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 text-gray-600 hover:text-red-600 hover:bg-white"
                 >
-                  {category}
-                </button>
+                  {getCategoryDisplayName(categoryDir)}
+                </Link>
               ))}
             </div>
           </div>
@@ -131,13 +139,6 @@ export default function Articles({ articles, categories }: ArticlesPageProps) {
                   )}
                   
                   <div className="flex flex-col md:flex-row md:items-start gap-6">
-                    <div className="md:w-24 md:flex-shrink-0">
-                      <div className="w-16 h-16 bg-gradient-to-br from-red-50 to-red-100 rounded-lg flex items-center justify-center">
-                        <span className="text-red-600 text-sm font-bold">
-                          {article.category.substring(0, 2).toUpperCase()}
-                        </span>
-                      </div>
-                    </div>
                     
                     <div className="flex-grow">
                       <div className="flex items-center text-sm text-gray-500 mb-2">
@@ -206,11 +207,13 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const articles = getAllArticles();
     const categories = getAllCategories();
+    const categoryDirs = getAllCategoryDirs();
 
     return {
       props: {
         articles: articles || [],
         categories: categories || [],
+        categoryDirs: categoryDirs || [],
       },
     };
   } catch (error) {
@@ -221,6 +224,7 @@ export const getStaticProps: GetStaticProps = async () => {
       props: {
         articles: [],
         categories: [],
+        categoryDirs: [],
       },
     };
   }

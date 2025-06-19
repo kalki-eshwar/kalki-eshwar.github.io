@@ -7,9 +7,7 @@
  * Structure:
  * src/content/articles/
  * ├── tech/           -> "Tech" category
- * ├── life/           -> "Life" category  
- * ├── backend/        -> "Backend" category
- * └── machine-learning/  -> "Machine Learning" category
+ * └── life/           -> "Life" category
  * 
  * Features:
  * - Processes both .md and .mdx files
@@ -112,7 +110,7 @@ function generateArticlesData() {
             description: data.description || '',
             date: data.date || '',
             readTime: data.readTime || '',
-            category: data.category || categoryName, // Use directory name as fallback category
+            category: categoryName, // Use directory name as category (no fallback to frontmatter)
             tags: data.tags || [],
             featured: data.featured || false,
             author: data.author || '',

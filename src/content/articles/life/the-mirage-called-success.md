@@ -3,7 +3,6 @@ title: "The Mirage Called Success"
 description: "Reflections on my journey in technology, the lessons learned, and advice for newcomers entering the field. Personal insights from internships, projects, and continuous learning."
 date: "2024-11-28"
 readTime: "3 min read"
-category: "Personal Growth"
 tags: ["Happiness", "Personal Growth", "Success"]
 featured: true
 author: "Kalki Eshwar D"

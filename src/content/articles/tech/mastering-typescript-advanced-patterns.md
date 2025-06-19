@@ -3,7 +3,6 @@ title: "Mastering TypeScript: Advanced Patterns and Best Practices"
 description: "Explore advanced TypeScript patterns including conditional types, mapped types, utility types, and design patterns that will elevate your code quality and developer experience."
 date: "2024-12-20"
 readTime: "10 min read"
-category: "Software Development"
 tags: ["TypeScript", "JavaScript", "Programming", "Best Practices"]
 featured: true
 author: "Kalki Eshwar D"

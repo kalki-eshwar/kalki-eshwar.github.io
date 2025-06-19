@@ -3,7 +3,6 @@ title: "Building Scalable React Applications"
 description: "Learn how to structure and build React applications that can grow with your team and requirements. This comprehensive guide covers architecture patterns, state management, and performance optimization."
 date: "2024-12-15"
 readTime: "8 min read"
-category: "Software Development"
 tags: ["React", "JavaScript", "Architecture", "Scalability"]
 featured: true
 author: "Kalki Eshwar D"

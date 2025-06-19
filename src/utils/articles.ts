@@ -244,3 +244,41 @@ export function generateArticleSlug(title: string): string {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '');
 }
+
+export function getAllCategoryDirs(): string[] {
+  try {
+    const articles = getAllArticles();
+    const categoryDirs = articles.map(article => {
+      const articleData = article as any;
+      return articleData.categoryDir || article.category.toLowerCase().replace(/\s+/g, '-');
+    });
+    return Array.from(new Set(categoryDirs));
+  } catch (error) {
+    console.error('Error getting category directories:', error);
+    return [];
+  }
+}
+
+export function getArticlesByCategoryDir(categoryDir: string): Article[] {
+  try {
+    const articles = getAllArticles();
+    return articles.filter(article => {
+      const articleData = article as any;
+      const articleCategoryDir = articleData.categoryDir || article.category.toLowerCase().replace(/\s+/g, '-');
+      return articleCategoryDir === categoryDir;
+    });
+  } catch (error) {
+    console.error('Error getting articles by category directory:', error);
+    return [];
+  }
+}
+
+export function getCategoryNameFromDir(categoryDir: string): string {
+  try {
+    const articles = getArticlesByCategoryDir(categoryDir);
+    return articles.length > 0 ? articles[0].category : categoryDir;
+  } catch (error) {
+    console.error('Error getting category name from directory:', error);
+    return categoryDir;
+  }
+}
