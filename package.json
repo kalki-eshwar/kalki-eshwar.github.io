@@ -14,7 +14,8 @@
     "format": "prettier --write .",
     "prepare": "husky install",
     "article": "node scripts/generate-articles-data.js",
-    "deploy": "npm run build && touch out/.nojekyll && gh-pages -d out"
+    "export": "next export",
+    "deploy": "npm run build && rm -rf docs/* && cp -r out/* docs/ && touch docs/.nojekyll && git add docs && git commit -m 'Deploy to docs' && git push"
   },
   "dependencies": {
     "clsx": "^2.0.0",
