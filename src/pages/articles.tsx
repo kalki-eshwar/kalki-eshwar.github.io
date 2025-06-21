@@ -20,10 +20,15 @@ interface ArticlesPageProps {
 export default function Articles({ articles, categories, categoryDirs }: ArticlesPageProps) {
   const featuredArticles = articles.filter(article => article.featured);
 
-  // Create mapping of category dirs to display names
+  // Capitalize the first letter of each word in a string
+  const capitalizeWords = (str: string) =>
+    str.replace(/\b\w/g, (char) => char.toUpperCase());
+
+  // Create mapping of category dirs to display names, capitalized
   const getCategoryDisplayName = (categoryDir: string) => {
     const article = articles.find(a => (a as any).categoryDir === categoryDir);
-    return article?.category || categoryDir;
+    const display = article?.category || categoryDir;
+    return capitalizeWords(display);
   };
 
   return (
