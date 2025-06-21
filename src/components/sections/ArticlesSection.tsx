@@ -37,10 +37,10 @@ export default function ArticlesSection() {
                 </div>
               )}
               <div className="space-y-3">
-                <div className={`flex items-center text-sm space-x-4 ${getTailwindClass('text-gray-500')}`}>
-                  <span>{article.date}</span>
+                <div className={`flex items-center text-sm space-x-4`}>
+                  <span className={getTailwindClass('text-red-600')}>{article.date}</span>
                   <span>•</span>
-                  <span>{article.readTime}</span>
+                  <span className={getTailwindClass('text-red-600')}>{article.readTime}</span>
                 </div>
                 <h3 className={`text-lg font-medium ${getTailwindClass('text-gray-900')}`}>{article.title}</h3>
                 <p className={`leading-relaxed text-sm ${getTailwindClass('text-gray-600')}`}>{article.description}</p>

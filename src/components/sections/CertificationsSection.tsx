@@ -37,19 +37,30 @@ export default function CertificationsSection() {
               )}
               <div className="space-y-4">
                 {/* Icon and Issuer Row */}
-                <div className="flex items-center gap-3">
-                  {certification.issuerIcon && (
-                    <div className="flex-shrink-0">
-                      <Image
-                        src={certification.issuerIcon}
-                        alt={certification.issuer}
-                        width={32}
-                        height={32}
-                        className="rounded"
-                      />
-                    </div>
+                <div className="flex items-center gap-3 justify-between">
+                  <div className="flex items-center gap-3">
+                    {certification.issuerIcon && (
+                      <div className="flex-shrink-0">
+                        <Image
+                          src={certification.issuerIcon}
+                          alt={certification.issuer}
+                          width={32}
+                          height={32}
+                          className="rounded"
+                        />
+                      </div>
+                    )}
+                    <span className={`text-lg font-semibold ${getTailwindClass('text-red-600')}`}>{certification.issuer}</span>
+                  </div>
+                  {certification.verified && (
+                    <span className="inline-flex items-center text-green-700 text-xs font-medium">
+                      <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <circle cx="10" cy="10" r="10" fill="#16a34a" />
+                        <path d="M6 10.5l2.25 2.25 5-5" fill="none" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      Verified
+                    </span>
                   )}
-                  <span className={`text-lg font-semibold ${getTailwindClass('text-red-600')}`}>{certification.issuer}</span>
                 </div>
                 
                 {/* Title */}
@@ -69,11 +80,6 @@ export default function CertificationsSection() {
                         year: 'numeric' 
                       })}
                     </span>
-                    {certification.verified && (
-                      <span className={`text-xs ${getTailwindClass('text-gray-600')} ${getTailwindClass('bg-gray-100')} px-2 py-1 rounded-full`}>
-                        Verified
-                      </span>
-                    )}
                   </div>
                 </div>
                 

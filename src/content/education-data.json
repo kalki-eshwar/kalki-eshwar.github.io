@@ -65,7 +65,7 @@
       "description": "A basic course extensively covering advanced learning algorithms, including supervised and unsupervised learning techniques.",
       "skills": ["Generative AI", "Artificial Intelligence", "IBM WatsonX", "Foundational Models", "Prompt Engineering", "Fine Tuning", "AI Lifecycle Management", "Chatbots", "Human-AI Interfaces"],
       "featured": true,
-      "verified": false,
+      "verified": true,
       "category": "Artificial Intelligence",
       "certificateUrl": "https://www.coursera.org/account/accomplishments/verify/K4FPSENH6MP9?trk=public_profile_see-credential"
     },

@@ -110,7 +110,7 @@ function generateArticlesData() {
             description: data.description || '',
             date: data.date || '',
             readTime: data.readTime || '',
-            category: categoryName, // Use directory name as category (no fallback to frontmatter)
+            category: formatCategoryName(categoryDir), // Capitalize first letter of category
             tags: data.tags || [],
             featured: data.featured || false,
             author: data.author || '',

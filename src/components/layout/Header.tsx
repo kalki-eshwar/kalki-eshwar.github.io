@@ -11,7 +11,7 @@ const navigation: NavigationItem[] = [
   { label: 'Education', href: '/education' },
   { label: 'Achievements', href: '/achievements' },
   { label: 'Projects', href: '/projects' },
-  // { label: 'Articles', href: '/articles' },
+  { label: 'Articles', href: '/articles' },
   { label: 'Contact', href: '/contact' },
 ];
 

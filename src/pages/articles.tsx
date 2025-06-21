@@ -141,11 +141,11 @@ export default function Articles({ articles, categories, categoryDirs }: Article
                   <div className="flex flex-col md:flex-row md:items-start gap-6">
                     
                     <div className="flex-grow">
-                      <div className="flex items-center text-sm text-gray-500 mb-2">
-                        <span>{formatDate(article.date)}</span>
-                        <span className="mx-2">•</span>
-                        <span>{article.readingTime.text}</span>
-                        <span className="mx-2">•</span>
+                      <div className="flex items-center text-sm mb-2">
+                        <span className="text-red-600">{formatDate(article.date)}</span>
+                        <span className="mx-2 text-gray-500">•</span>
+                        <span className="text-red-600">{article.readingTime.text}</span>
+                        <span className="mx-2 text-gray-500">•</span>
                         <span className="text-red-600">{article.category}</span>
                       </div>
                       
