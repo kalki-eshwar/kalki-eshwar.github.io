@@ -178,6 +178,7 @@ export default function CategoryPage({ articles, categoryName, categorySlug, all
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+console.log('getStaticPaths for [category] called');
   try {
     const articles = getAllArticles();
     

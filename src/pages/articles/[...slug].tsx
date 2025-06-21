@@ -220,6 +220,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+console.log('getStaticPaths for articles/[...slug] called');
   try {
     const slugs = getArticleSlugs();
     const paths = slugs.map((slug) => ({

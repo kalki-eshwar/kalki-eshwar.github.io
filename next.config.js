@@ -1,34 +1,15 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   output: 'export',
-  images: {
-    unoptimized: true // Required for static export to GitHub Pages
-  },
-  basePath: process.env.NODE_ENV === 'production' ? '' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+  basePath: '', // No subfolder for user site
+  assetPrefix: '', // No asset prefix for user site
   trailingSlash: true,
-  reactStrictMode: true,
-  swcMinify: true,
-  typescript: {
-    ignoreBuildErrors: true,
+  images: {
+    unoptimized: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  experimental: {
-    mdxRs: true,
-  },
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack']
-    });
-    
-    // Disable problematic webpack caching strategy
-    config.cache = false;
-    
-    return config;
-  }
-}
+};
+console.log('Next.js config:', nextConfig);
 
-module.exports = nextConfig
+module.exports = nextConfig;
