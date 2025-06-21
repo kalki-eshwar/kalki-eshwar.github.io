@@ -18,6 +18,31 @@
       radial-gradient(circle at 75px 75px, rgba(16, 185, 129, 0.02) 1px, transparent 0);
     background-size: 100px 100px, 50px 50px;
   }
+
+  /* Only markdown-authored links in article content */
+  .article-content .md-link {
+    @apply text-red-600;
+    text-decoration: none !important;
+    position: relative;
+    transition: color 0.2s;
+  }
+  .article-content .md-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    border-radius: 1px;
+    pointer-events: none;
+  }
+  .article-content .md-link:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 @layer components {

@@ -37,7 +37,12 @@ const mdxComponents = {
     <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-6 text-sm" {...props} />
   ),
   a: (props: any) => (
-    <a className={`${getTailwindClass('text-red-600')} hover:${getTailwindClass('text-red-700')} underline`} target="_blank" rel="noopener noreferrer" {...props} />
+    <a
+      className="md-link"
+      target="_blank"
+      rel="noopener noreferrer"
+      {...props}
+    />
   ),
   hr: (props: any) => <hr className={`${getTailwindClass('border-gray-200')} my-8`} {...props} />,
   table: (props: any) => (
@@ -114,7 +119,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
           </header>
 
           {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none article-content">
             <MDXRemote {...article.source} components={mdxComponents} />
           </div>
 
