@@ -22,7 +22,8 @@ const projects = projectsData.map(project => ({
   demo: 'liveUrl' in project ? project.liveUrl : null,
   image: project.images?.[0]?.src?.replace(/^public\//, '/') || '/images/project-placeholder.png',
   category: project.category === 'web' ? 'Web Development' : project.category === 'ai' ? 'AI/Machine Learning' : project.category === 'mobile' ? 'App Development' : project.category,
-  featured: project.featured || false
+  featured: project.featured || false,
+  icon: project.icon || null
 }));
 
 const categories = ['All', 'Web Development', 'AI/Machine Learning', 'App Development'];
@@ -83,10 +84,14 @@ export default function Projects() {
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
-                          <div className={`w-16 h-16 ${getTailwindClass('bg-red-200')} rounded-lg mx-auto mb-2 flex items-center justify-center`}>
-                            <span className={`${getTailwindClass('text-red-600')} text-xl font-bold`}>
-                              {project.title.substring(0, 2).toUpperCase()}
-                            </span>
+                          <div className={`w-16 h-16 ${getTailwindClass('bg-red-200')} rounded-lg mx-auto mb-2 flex items-center justify-center overflow-hidden`}>
+                            {project.icon ? (
+                              <img src={project.icon} alt={`${project.title} icon`} className="w-full h-full object-contain p-2" />
+                            ) : (
+                              <span className={`${getTailwindClass('text-red-600')} text-xl font-bold`}>
+                                {project.title.substring(0, 2).toUpperCase()}
+                              </span>
+                            )}
                           </div>
                           <p className={`${getTailwindClass('text-red-600')} font-medium ${getTailwindClass('bg-red-100')} px-3 py-1 rounded-full`}>
                             {project.category}
@@ -97,10 +102,14 @@ export default function Projects() {
                   ) : (
                     <div className={`h-full bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className={`w-16 h-16 ${getTailwindClass('bg-red-200')} rounded-lg mx-auto mb-2 flex items-center justify-center`}>
-                          <span className={`${getTailwindClass('text-red-600')} text-xl font-bold`}>
-                            {project.title.substring(0, 2).toUpperCase()}
-                          </span>
+                        <div className={`w-16 h-16 ${getTailwindClass('bg-red-200')} rounded-lg mx-auto mb-2 flex items-center justify-center overflow-hidden`}>
+                          {project.icon ? (
+                            <img src={project.icon} alt={`${project.title} icon`} className="w-full h-full object-contain p-2" />
+                          ) : (
+                            <span className={`${getTailwindClass('text-red-600')} text-xl font-bold`}>
+                              {project.title.substring(0, 2).toUpperCase()}
+                            </span>
+                          )}
                         </div>
                         <p className={`${getTailwindClass('text-red-600')} font-medium`}>{project.category}</p>
                       </div>

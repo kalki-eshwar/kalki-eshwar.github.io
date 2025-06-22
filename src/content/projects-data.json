@@ -4,6 +4,7 @@
     "title": "Code Generation Approach for Question Answering over Tabular Data",
     "description": "A research project that explores a code generation approach for question answering over tabular data.",
     "longDescription": "This research project investigates a code generation approach for question answering over tabular data. It involves the development of a model that can generate code to answer questions based on the data presented in tables, enhancing the capabilities of question-answering systems.",
+    "icon": "/images/projects/icons/python.webp",
     "technologies": [
       {
         "name": "Generative AI",
@@ -47,6 +48,7 @@
     "title": "Loan Default Prediction Model",
     "description": "The model was created to compete in Coursera's Dataset Challenge. It was ranked in the 88th percentile.",
     "longDescription": "An XGBoost decision trees machine learning model developed to predict loan defaults using various financial indicators. The model was trained on a dataset provided by Coursera and achieved a ranking in the 88th percentile during the competition.",
+    "icon":"/images/projects/icons/sklearn.webp",
     "technologies": [
       {
         "name": "XGBoost",
@@ -90,6 +92,7 @@
     "title": "Studize Mobile App",
     "description": "This project is a minature calendar application facilitating an easy way to manage academic tasks and schedules.",
     "longDescription": "This is a front-end mobile app developed using Flutter, designed to help students manage their academic tasks and schedules efficiently. It features a user-friendly interface with the ability to view their academic calendar and manage study sessions.",
+    "icon":"/images/projects/icons/flutter.webp",
     "technologies": [
       {
         "name": "Flutter",
@@ -121,6 +124,7 @@
     "title": "VITCL Flutter Application",
     "description": "This project aims to create a platform through which players from VIT could register and play chess seamlessly.",
     "longDescription": "This is a front-end mobile app developed using Flutter, designed to facilitate chess players from VIT to register and play games seamlessly. The app provides a user-friendly interface for players to manage their profiles and participate in chess matches.",
+    "icon":"/images/projects/icons/flutter.webp",
     "technologies": [
       {
         "name": "Flutter",
@@ -154,6 +158,7 @@
     "title": "My Portfolio Website",
     "description": "This is my personal portfolio website showcasing my projects and skills.",
     "longDescription": "This is a front-end web application developed using Next.js and Tailwind CSS, designed to showcase my projects and skills in a visually appealing manner. The website features a clean and modern design, with sections for my work, skills, and contact information.",
+    "icon":"/images/projects/icons/react.webp",
     "technologies": [
       {
         "name": "Next.js",
@@ -180,7 +185,7 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "public/images/projects/portfolio-website.webp",
+        "src": "/images/projects/portfolio-website.webp",
         "alt": "Portfolio Website Screenshot"
       }
     ],
@@ -197,6 +202,7 @@
     "title": "Rails store app",
     "description": "A basic project created by following the Ruby on Rails tutorial. It is a simple store application that allows users to browse products and add them to their cart.",
     "longDescription": "This is a basic web application developed using Ruby on Rails, designed to serve as a simple store application. It allows users to browse products, add them to their cart, and manage their orders. The application features a clean and intuitive interface for easy navigation.",
+    "icon": "/images/projects/icons/rails.webp",
     "technologies": [
       {
         "name": "Ruby on Rails",
@@ -268,6 +274,7 @@
     "title": "A CLI Chat Application for PAN connected devices",
     "description": "This project is a command-line interface chat application that allows users to communicate over a Personal Area Network (PAN).",
     "longDescription": "This is a command-line interface chat application developed using Python, designed to allow users to communicate over a Personal Area Network (PAN). The application features a simple and intuitive interface that enables users to send and receive messages seamlessly.",
+    "icon": "/images/projects/icons/python.webp",
     "technologies": [
       {
         "name": "Python",
@@ -289,7 +296,7 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "public/images/projects/cli-chat.webp",
+        "src": "/images/projects/cli-chat.webp",
         "alt": "CLI Chat Application Screenshot"
       }
     ],

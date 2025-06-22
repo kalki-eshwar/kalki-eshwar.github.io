@@ -65,7 +65,7 @@ export default function CertificationsSection() {
                 
                 {/* Title */}
                 <div>
-                  <h3 className={`text-sm font-medium ${getTailwindClass('text-gray-900')} leading-tight`}>{certification.title}</h3>
+                  <h3 className={`card-title text-sm font-medium ${getTailwindClass('text-gray-900')} leading-tight`}>{certification.title}</h3>
                 </div>
                 
                 {/* Tags and Info */}

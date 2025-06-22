@@ -33,7 +33,7 @@ export default function AboutSection() {
           {/* Content */}
           <div className={`lg:col-span-2 space-y-4 ${getTailwindClass('text-gray-600')} leading-relaxed`}>
             {personalInfo.aboutSections.map((section, index) => (
-              <p key={index}>
+              <p key={index} className="text-justify">
                 <DynamicContent content={section} />
               </p>
             ))}

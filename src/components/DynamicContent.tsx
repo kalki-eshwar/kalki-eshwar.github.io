@@ -116,6 +116,11 @@ export default function DynamicContent({ content, className = '' }: DynamicConte
         return '/projects';
       
       case 'achievements':
+        // If a specific achievement is referenced, create an anchor link
+        if (linkText && linkText.trim() !== '' && linkText !== 'Achievements') {
+          const slug = linkText.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+          return `/achievements#${slug}`;
+        }
         return '/achievements';
       
       case 'articles':

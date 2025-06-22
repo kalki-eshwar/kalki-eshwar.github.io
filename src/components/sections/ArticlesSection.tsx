@@ -42,7 +42,7 @@ export default function ArticlesSection() {
                   <span>•</span>
                   <span className={getTailwindClass('text-red-600')}>{article.readTime}</span>
                 </div>
-                <h3 className={`text-lg font-medium ${getTailwindClass('text-gray-900')}`}>{article.title}</h3>
+                <h3 className={`card-title text-lg font-medium ${getTailwindClass('text-gray-900')}`}>{article.title}</h3>
                 <p className={`leading-relaxed text-sm ${getTailwindClass('text-gray-600')}`}>{article.description}</p>
                 <Link href={`/articles/${article.slug}`} className={`inline-block ${getTailwindClass('text-red-600')} hover:${getTailwindClass('text-red-700')} text-sm`}>
                   Read Article →

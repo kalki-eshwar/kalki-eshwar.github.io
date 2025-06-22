@@ -36,7 +36,7 @@ export default function HeroSection() {
               </p>
             </div>
 
-            <p className={`${getTailwindClass('text-gray-200')} leading-relaxed max-w-md mx-auto lg:mx-0`}>
+            <p className={`${getTailwindClass('text-gray-200')} text-justify leading-relaxed max-w-md mx-auto lg:mx-0`}>
               {personalInfo.description}
             </p>
 

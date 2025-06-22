@@ -12,7 +12,8 @@ const projects = projectsData
     tech: project.technologies.map(tech => tech.name).join(', '),
     link: `/projects#${project.id}`,
     featured: project.featured,
-    category: project.category === 'web' ? 'Web Development' : project.category === 'ai' ? 'AI/Machine Learning' : project.category === 'mobile' ? 'App Development' : project.category
+    category: project.category === 'web' ? 'Web Development' : project.category === 'ai' ? 'AI/Machine Learning' : project.category === 'mobile' ? 'App Development' : project.category,
+    images: project.images // Pass images property
   }));
 
 export default function ProjectsSection() {
@@ -47,17 +48,27 @@ export default function ProjectsSection() {
                 )}
               </div>
               
-              {/* Project Image Placeholder */}
-              <div className={`h-32 bg-gradient-to-br ${getTailwindClass('bg-red-50')} to-red-100 flex items-center justify-center`}>
-                <div className="text-center">
-                  <p className={`${getTailwindClass('text-red-600')} font-medium text-sm`}>{project.category}</p>
+              {/* Project Image */}
+              {project.images && project.images.length > 0 ? (
+                <div className="h-32 flex items-center justify-center bg-white">
+                  <img
+                    src={project.images[0].src}
+                    alt={project.images[0].alt}
+                    className="object-contain h-full max-h-32 w-auto mx-auto"
+                  />
                 </div>
-              </div>
+              ) : (
+                <div className={`h-32 bg-gradient-to-br ${getTailwindClass('bg-red-50')} to-red-100 flex items-center justify-center`}>
+                  <div className="text-center">
+                    <p className={`${getTailwindClass('text-red-600')} font-medium text-sm`}>{project.category}</p>
+                  </div>
+                </div>
+              )}
 
               <div className="p-4">
                 <div className="space-y-3">
                   <div className="space-y-2">
-                    <h3 className={`text-lg font-medium ${getTailwindClass('text-gray-900')}`}>{project.title}</h3>
+                    <h3 className={`card-title text-lg font-medium ${getTailwindClass('text-gray-900')}`}>{project.title}</h3>
                     <span className={`text-sm ${getTailwindClass('text-gray-500')}`}>{project.tech}</span>
                   </div>
                   <p className={`${getTailwindClass('text-gray-600')} leading-relaxed text-sm`}>{project.description}</p>

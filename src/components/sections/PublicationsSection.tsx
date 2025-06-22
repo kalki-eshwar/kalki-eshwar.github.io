@@ -36,7 +36,7 @@ export default function PublicationsSection() {
               )}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <h3 className={`text-lg font-medium ${getTailwindClass('text-gray-900')} leading-tight`}>{publication.title}</h3>
+                  <h3 className={`card-title text-lg font-medium ${getTailwindClass('text-gray-900')} leading-tight`}>{publication.title}</h3>
                   <div className="flex items-center gap-2">
                     <span className={`text-xs ${getTailwindClass('text-red-600')} ${getTailwindClass('bg-red-50')} px-2 py-1 rounded-full`}>
                       {publication.type}

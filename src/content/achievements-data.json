@@ -8,15 +8,15 @@
       "featured": true
     },
     {
-      "title": "Karnataka U-1700 State Amateur Chess Champion)",
+      "title": "Karnataka U-1700 State Amateur Chess Champion",
       "description": "Held the title of Karnataka U-1700 State Amateur Chess Champion in 2019, which was conducted in Bengaluru.",
       "category": "Sports",
       "year": "2019",
       "featured": true
     },
     {
-      "title": "Karate Black Belt Ni-Dan (2nd Black Belt)",
-      "description": "Completed over 8+ years of Karate training, achieving the rank of Ni-Dan (2nd Black Belt) in 2018 in the Kokino Shito Ryu Karate School of India.",
+      "title": "Karate Ni-Dan (2nd Black Belt)",
+      "description": "Completed 8+ years of Karate training, achieving the rank of Ni-Dan (2nd Black Belt) in 2018 in the Kokino Shito Ryu Karate School of India.",
       "category": "Sports",
       "year": "2018",
       "featured": true
@@ -39,6 +39,12 @@
       "description": "Served as the School Head Boy, leading student initiatives and representing the student body.",
       "category": "Leadership",
       "year": "2019"
+    },
+    {
+      "title": "School House Vice Captain",
+      "description": "Served as the School House Vice Captain, assisting the Captain in instilling values among the students and representing the concerns of students to the management.",
+      "category": "Leadership",
+      "year": "2018"
     }
   ]
 }

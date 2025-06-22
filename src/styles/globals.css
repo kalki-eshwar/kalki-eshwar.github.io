@@ -17,6 +17,7 @@
       radial-gradient(circle at 25px 25px, rgba(59, 130, 246, 0.03) 2px, transparent 0),
       radial-gradient(circle at 75px 75px, rgba(16, 185, 129, 0.02) 1px, transparent 0);
     background-size: 100px 100px, 50px 50px;
+    text-align: justify;
   }
 
   /* Only markdown-authored links in article content */
@@ -68,5 +69,15 @@
   
   .text-shadow-sm {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card-title {
+    text-align: left !important;
+  }
+}
+
+@layer utilities {
+  .text-justify {
+    text-align: justify;
   }
 }
