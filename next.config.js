@@ -10,6 +10,5 @@ const nextConfig = {
     unoptimized: true,
   },
 };
-console.log('Next.js config:', nextConfig);
 
 module.exports = nextConfig;
