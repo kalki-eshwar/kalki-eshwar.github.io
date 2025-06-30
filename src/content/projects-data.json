@@ -156,7 +156,7 @@
   {
     "id": "portfolio-website",
     "title": "My Portfolio Website",
-    "description": "This is my personal portfolio website showcasing my projects and skills.",
+    "description": "This is a personal portfolio website showcasing my projects and skills.",
     "longDescription": "This is a front-end web application developed using Next.js and Tailwind CSS, designed to showcase my projects and skills in a visually appealing manner. The website features a clean and modern design, with sections for my work, skills, and contact information.",
     "icon":"/images/projects/icons/react.webp",
     "technologies": [

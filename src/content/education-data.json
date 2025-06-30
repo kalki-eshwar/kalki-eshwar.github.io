@@ -33,7 +33,7 @@
   "certifications": [
     {
       "title": "Exercising Leadership: Foundational Principles",
-      "issuer": "HarvardX",
+      "issuer": "Harvard University (HarvardX)",
       "issuerIcon": "/images/certification-issuers/harvard.svg",
       "date": "January 2024",
       "credentialId": "9752bf9a32bb4f4bb9668a9c23bc69bb",
@@ -59,7 +59,7 @@
     },
     {
       "title": "GenAI using IBM Watsonx",
-      "issuer": "IBM",
+      "issuer": "IBM Technologies",
       "issuerIcon": "/images/certification-issuers/ibm.svg",
       "date": "June 2025",
       "description": "A basic course extensively covering advanced learning algorithms, including supervised and unsupervised learning techniques.",
@@ -71,7 +71,7 @@
     },
     {
       "title": "GenAI for Executives & Business Leaders: An Introduction",
-      "issuer": "IBM",
+      "issuer": "IBM Technologies",
       "issuerIcon": "/images/certification-issuers/ibm.svg",
       "credentialId": "XBBEAFJ8N7RL",
       "date": "May 2024",
@@ -84,7 +84,7 @@
     },
     {
       "title": "Cybersecurity Roles, Processes & Operating System Security",
-      "issuer": "IBM",
+      "issuer": "IBM Technologies",
       "issuerIcon": "/images/certification-issuers/ibm.svg",
       "date": "July 2023",
       "credentialId": "GFHMA28T4ZD9",
@@ -108,8 +108,19 @@
       "certificateUrl": "https://www.coursera.org/account/accomplishments/certificate/CWPQ8Z7WRAAD?trk=public_profile_see-credential"
     },
     {
+      "title": "Github Foundations",
+      "issuer": "GitHub Inc.",
+      "issuerIcon": "/images/certification-issuers/github.svg",
+      "date": "June 2025",
+      "description": "An introductory course on on GitHub covering version control, repositories, commits, branching, markdowns and project management.",
+      "skills": ["Git", "GitHub", "Version Control", "Code Collaboration" ],
+      "verified": true,
+      "category": "Cyber Security",
+      "certificateUrl": "https://www.credly.com/go/44FXLlbX"
+    },
+    {
       "title": "Operating Systems: Overview, Administration, and Security",
-      "issuer": "IBM",
+      "issuer": "IBM Technologies",
       "issuerIcon": "/images/certification-issuers/ibm.svg",
       "date": "July 2023",
       "credentialId": "GFHMA28T4ZD9",
@@ -121,7 +132,7 @@
     },
     {
       "title": "Cybersecurity Roles, Processes & Operating System Security",
-      "issuer": "IBM",
+      "issuer": "IBM Technologies",
       "issuerIcon": "/images/certification-issuers/ibm.svg",
       "date": "July 2023",
       "credentialId": "GFHMA28T4ZD9",
