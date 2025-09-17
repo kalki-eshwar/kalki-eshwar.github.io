@@ -6,7 +6,7 @@
   "scripts": {
     "site": "npm run dev -- --port 9000",
     "dev": "npm run article; next dev",
-    "prebuild": "node scripts/generate-articles-data.js",
+    "prebuild": "npm run article",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
