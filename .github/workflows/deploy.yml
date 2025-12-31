@@ -38,6 +38,9 @@ jobs:
         run: npm ci
         
       - name: Build with Next.js
+        env:
+          NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
+          NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.POSTHOG_HOST }}
         run: npm run build
         
       - name: Export static files
