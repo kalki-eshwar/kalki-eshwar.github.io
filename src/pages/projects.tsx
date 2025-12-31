@@ -5,8 +5,8 @@ import { getProjectsData } from '@/utils/data';
 import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
 
 const projectsSEO: SEOProps = {
-  title: 'Projects - Kalki Eshwar D',
-  description: 'Explore the projects and applications built by Kalki Eshwar D, showcasing skills in Flutter, Machine Learning, and web development.',
+  title: 'Projects - Kalki Eshwar',
+  description: 'Explore the projects and applications built by Kalki Eshwar, showcasing skills in Flutter, Machine Learning, and web development.',
   canonical: 'https://kalkieshward.me/projects',
 };
 

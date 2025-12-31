@@ -6,8 +6,8 @@ import { getSocialIcon } from '@/components/SocialIcons';
 import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
 
 const contactSEO: SEOProps = {
-  title: 'Contact - Kalki Eshwar D',
-  description: 'Get in touch with Kalki Eshwar D for collaboration opportunities, project discussions, or professional inquiries.',
+  title: 'Contact - Kalki Eshwar',
+  description: 'Get in touch with Kalki Eshwar for collaboration opportunities, project discussions, or professional inquiries.',
   canonical: 'https://kalkieshward.me/contact',
 };
 

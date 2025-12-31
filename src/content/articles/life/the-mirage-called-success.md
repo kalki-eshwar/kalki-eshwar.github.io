@@ -5,7 +5,7 @@ date: "2025-07-09"
 readTime: "8 min read"
 tags: ["Life", "Success", "Happiness", "Philosophy", "Meaning"]
 featured: false
-author: "Kalki Eshwar D"
+author: "Kalki Eshwar"
 ---
 
 # The Mirage Called Success

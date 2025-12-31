@@ -1,5 +1,5 @@
 {
-  "name": "Kalki Eshwar D",
+  "name": "Kalki Eshwar",
   "title": "Computer Science Student & Developer",
   "bio": "Computer Science Student at VIT Vellore",
   "description": "I'm passionate about software development and the thoughtful integration of artificial intelligence to build digital experiences that truly matter. I enjoy contemplating life's mysteries and exploring how technology can be a powerful tool for solving complex problems.",
@@ -8,7 +8,7 @@
   "profileImage": "/images/profile.png",
   "backgroundImage": "/images/home_background.webp",
   "resumePath": "/documents/Resume.pdf",
-  "resumeFileName": "Kalki_Eshwar_D_Resume.pdf",
+  "resumeFileName": "Kalki_Eshwar_Resume.pdf",
   "aboutSections": [
     "Vanakkam! Namaste! Bonjour! Hello!",
     "I'm Kalki, a Computer Science and Engineering student at [link:education:Vellore Institute of Technology], Vellore, and currently a summer intern at [link:work:Foradian Technologies], Bengaluru, India. My journey in technology began with a curiosity about how digital systems work, evolving into a passion for creating meaningful software solutions to combat real-world problems.",
@@ -17,13 +17,13 @@
     "In parallel, I've cultivated extensive leadership experience, having been elected as the [link:achievements:School House Vice Captain] and [link:achievements:School Head Boy] in high school (9th and 10th grade respectively), and served as [link:achievements:Member Secretary of the Student Council] at VIT for the academic year 2024-25."
   ],
   "seo": {
-    "title": "Kalki Eshwar D - Computer Science Student & Developer",
-    "description": "Portfolio of Kalki Eshwar D, a Computer Science student at VIT Vellore passionate about software development and technology.",
+    "title": "Kalki Eshwar - Computer Science Student & Developer",
+    "description": "Portfolio of Kalki Eshwar, a Computer Science student at VIT Vellore passionate about software development and technology.",
     "canonical": "https://kalkieshward.me",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Kalki Eshwar D",
+      "name": "Kalki Eshwar",
       "jobTitle": "Computer Science Student",
       "url": "https://kalkieshward.me"
     }

@@ -4,8 +4,8 @@ import { getAchievementsData } from '@/utils/data';
 import { COLOR_COMBINATIONS, getTailwindClass, getBadgeColors } from '@/presets';
 
 const achievementsSEO: SEOProps = {
-  title: 'Achievements - Kalki Eshwar D',
-  description: 'Key achievements and milestones in the career of Kalki Eshwar D, including academic accomplishments, professional projects, and recognition.',
+  title: 'Achievements - Kalki Eshwar',
+  description: 'Key achievements and milestones in the career of Kalki Eshwar, including academic accomplishments, professional projects, and recognition.',
   canonical: 'https://kalkieshward.me/achievements',
 };
 

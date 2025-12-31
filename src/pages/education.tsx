@@ -6,8 +6,8 @@ import Image from 'next/image';
 import { COLOR_COMBINATIONS, getTailwindClass, getBadgeColors } from '@/presets';
 
 const educationSEO: SEOProps = {
-  title: 'Education, Publications & Certifications - Kalki Eshwar D',
-  description: 'Educational background, research publications, and professional certifications of Kalki Eshwar D, including academic achievements and continuous learning journey.',
+  title: 'Education, Publications & Certifications - Kalki Eshwar',
+  description: 'Educational background, research publications, and professional certifications of Kalki Eshwar, including academic achievements and continuous learning journey.',
   canonical: 'https://kalkieshward.me/education',
 };
 

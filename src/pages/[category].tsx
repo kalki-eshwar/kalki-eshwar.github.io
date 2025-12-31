@@ -14,8 +14,8 @@ interface CategoryPageProps {
 
 export default function CategoryPage({ articles, categoryName, categorySlug, allCategories }: CategoryPageProps) {
   const seo: SEOProps = {
-    title: `${categoryName} Articles - Kalki Eshwar D`,
-    description: `Articles and insights on ${categoryName.toLowerCase()} by Kalki Eshwar D. Explore thoughts and experiences in this category.`,
+    title: `${categoryName} Articles - Kalki Eshwar`,
+    description: `Articles and insights on ${categoryName.toLowerCase()} by Kalki Eshwar. Explore thoughts and experiences in this category.`,
     canonical: `https://kalkieshward.me/${categorySlug}`,
   };
 

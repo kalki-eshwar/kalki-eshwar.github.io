@@ -35,12 +35,12 @@ export default function Header() {
             <div className="relative w-8 h-8 rounded-full overflow-hidden">
               <Image
                 src="/images/profile.png"
-                alt="Kalki Eshwar D"
+                alt="Kalki Eshwar"
                 fill
                 className="object-cover"
               />
             </div>
-            <span>Kalki Eshwar D</span>
+            <span>Kalki Eshwar</span>
           </Link>
 
           {/* Desktop Navigation - spread out more */}

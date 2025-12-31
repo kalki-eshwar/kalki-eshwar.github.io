@@ -6,8 +6,8 @@ import { getAllArticles, getAllCategories, getAllCategoryDirs, formatDate, Artic
 import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
 
 const articlesSEO: SEOProps = {
-  title: 'Articles - Kalki Eshwar D',
-  description: 'Read articles and insights by Kalki Eshwar D on software development, technology trends, and programming best practices.',
+  title: 'Articles - Kalki Eshwar',
+  description: 'Read articles and insights by Kalki Eshwar on software development, technology trends, and programming best practices.',
   canonical: 'https://kalkieshward.me/articles',
 };
 

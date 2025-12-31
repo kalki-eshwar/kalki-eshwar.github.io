@@ -204,7 +204,7 @@ readTime: "5 min read"
 category: "Technology"
 tags: ["react", "typescript", "tutorial"]
 featured: true
-author: "Kalki Eshwar D"
+author: "Kalki Eshwar"
 ---
 
 # Your Article Title

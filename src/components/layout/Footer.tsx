@@ -29,7 +29,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className={`text-sm ${getTailwindClass('text-gray-500')}`}>
-            © {currentYear} Kalki Eshwar D
+            © {currentYear} Kalki Eshwar
           </p>
         </div>
       </div>

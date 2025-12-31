@@ -5,7 +5,7 @@
       "institution": "Vellore Institute of Technology, Vellore",
       "period": "Septermber 2022 - July 2026 (Expected)",
       "location": "Vellore, Tamil Nadu, India",
-      "gpa": "8.65/10",
+      "gpa": "8.67/10",
       "description": "Studied computer science fundamentals including algorithms, data structures, software engineering, and emerging technologies.",
       "coursework": [
         "Data Structures and Algorithms",
@@ -45,7 +45,7 @@
       "certificateUrl": "https://courses.edx.org/certificates/9752bf9a32bb4f4bb9668a9c23bc69bb"
     },
     {
-      "title": "Advanced Learning Algorithms",
+      "title": "Machine Learning Specialization",
       "issuer": "Stanford & Deeplearning.ai",
       "issuerIcon": "/images/certification-issuers/stanford.svg",
       "date": "September 2022",
@@ -55,7 +55,7 @@
       "featured": true,
       "verified": true,
       "category": "Artificial Intelligence",
-      "certificateUrl": "https://www.coursera.org/account/accomplishments/verify/K4FPSENH6MP9?trk=public_profile_see-credential"
+      "certificateUrl": "https://www.coursera.org/account/accomplishments/specialization/3DDKZY4G7HQ6"
     },
     {
       "title": "GenAI using IBM Watsonx",
@@ -67,7 +67,7 @@
       "featured": true,
       "verified": true,
       "category": "Artificial Intelligence",
-      "certificateUrl": "https://www.coursera.org/account/accomplishments/verify/K4FPSENH6MP9?trk=public_profile_see-credential"
+      "certificateUrl": "https://courses.vit.skillsnetwork.site/certificates/cb39882a519e475989506fddaed4ea00"
     },
     {
       "title": "GenAI for Executives & Business Leaders: An Introduction",
@@ -188,25 +188,25 @@
   "publications": [
     {
       "title": "AlphaPro at SemEval-2025 Task 8: A Code Generation Approach for Question-Answering over Tabular Data",
-      "authors": ["Anshuman Aryan", "Laukik Wadhwa", "Kalki Eshwar D", "Aakarsh Sinha", "Dr. Durgesh Kumar"],
+      "authors": ["Anshuman Aryan", "Laukik Wadhwa", "Kalki Eshwar", "Aakarsh Sinha", "Dr. Durgesh Kumar"],
       "journal": "ACL Association for Computational Linguistics",
-      "date": "May 2025",
+      "date": "August 2025",
       "type": "Conference Paper",
-      "status": "Accepted",
-      "doi": "TBA",
+      "status": "Published",
+      "doi": "-",
       "abstract": "This work outlines the AlphaPro team's solution to SemEval-2025 Task 8: Question Answering on Tabular Data. The system utilizes a three-stage pipeline that exploits tabular structural information and code generation as intermediaries in answering questions to tables in natural language.",
       "keywords": ["Machine Learning", "NLP", "Generative AI", "Databases", "Question Answering", "Tabular Data"],
-      "pages": "TBA",
-      "volume": "TBA",
-      "issn": "TBA",
+      "pages": "2358-2367",
+      "volume": "Proceedings of the 19th International Workshop on Semantic Evaluation (SemEval-2025)",
+      "issn": "-",
       "venue": "Vellore, India",
-      "pdfUrl": "/documents/publications/tabular_reasoning.pdf",
-      "bibtex": "TBA",
+      "pdfUrl": "https://aclanthology.org/2025.semeval-1.307.pdf",
+      "bibtex": "aryan-etal-2025-alphapro",
       "featured": true
     },
     {
       "title": "Occlusion-Resilient Face Detection for Real-World Robustness Using Efficient Machine Learning Techniques",
-      "authors": ["Asmith", "Saksham Agnihotri", "Dhoop Patel", "S.P. Raja", "Kalki Eshwar D"],
+      "authors": ["Asmith", "Saksham Agnihotri", "Dhoop Patel", "S.P. Raja", "Kalki Eshwar"],
       "journal": "IJIMAI International Journal of Interactive Multimedia and Artificial Intelligence",
       "date": "June 2025",
       "type": "Journal Article",

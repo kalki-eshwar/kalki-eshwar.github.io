@@ -4,8 +4,8 @@ import { getWorkExperience } from '@/utils/data';
 import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
 
 const workSEO: SEOProps = {
-  title: 'Work Experience - Kalki Eshwar D',
-  description: 'Professional work experience and career journey of Kalki Eshwar D, including internships and projects.',
+  title: 'Work Experience - Kalki Eshwar',
+  description: 'Professional work experience and career journey of Kalki Eshwar, including internships and projects.',
   canonical: 'https://kalkieshward.me/work',
 };
 

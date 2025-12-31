@@ -61,7 +61,7 @@ const mdxComponents = {
 
 export default function ArticlePage({ article, relatedArticles }: ArticlePageProps) {
   const seo: SEOProps = {
-    title: `${article.title} - Kalki Eshwar D`,
+    title: `${article.title} - Kalki Eshwar`,
     description: article.description,
     canonical: `https://kalkieshward.me/articles/${article.slug}`,
     ogImage: `/api/og?title=${encodeURIComponent(article.title)}`,

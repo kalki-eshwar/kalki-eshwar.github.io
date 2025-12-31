@@ -3,10 +3,10 @@
     {
       "title": "Development Intern",
       "company": "Foradian Technologies",
-      "period": "May 2025 - Present",
+      "period": "May 2025 - July 2025",
       "type": "Internship",
       "location": "On-site, Bangalore, India",
-      "description": "Currently developing a full-stack mobile application using React Native to create internal tools for the company. Focused on enhancing user experience and integrating backend services.",
+      "description": "Developed a full-stack mobile application using React Native to create internal tools for the company. Focused on enhancing user experience and integrating backend services.",
       "achievements": [
         "Developed a Ruby on Rails backend service api for internal tools",
         "Developed a mobile application using React Native",
@@ -17,8 +17,8 @@
       ],
       "technologies": ["React Native", "Ruby on Rails", "Azure", "Docker", "TypeScript", "JavaScript", "Ruby"],
       "companyWebsite": "https://www.foradian.com/",
-      "certificateUrl": "",
-      "current": true
+      "certificateUrl": "/documents/intern_certs/foradian_tech_intern_cert.pdf",
+      "current": false
     },
     {
       "title": "Flutter Developer",
