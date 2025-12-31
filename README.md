@@ -295,6 +295,22 @@ To ensure analytics remain functional after each deployment, add the following r
 This repository includes a post-deploy smoke test in `.github/workflows/deploy.yml` that will run `node scripts/send-posthog-smoke-batch.js` after successful Pages deployment using the above secrets. If the smoke test fails, the workflow will fail so you can investigate.
 
 > Important: Do not commit your PostHog keys to the repo. Use GitHub repository secrets as described above.
+
+### Use a custom domain (kalkieshward.me)
+To ensure your site publishes as `kalkieshward.me` (instead of `kalkieshward.github.io`):
+
+1. Ensure the repo contains a `CNAME` file at the repository root with only the domain name. This repo already has `CNAME` containing `kalkieshward.me`.
+2. The deployment workflow now copies that `CNAME` into the exported `out/` folder before upload, so GitHub Pages will pick it up automatically.
+3. Add DNS records for your domain (in your DNS provider):
+   - For an apex domain (kalkieshward.me): add these A records to point to GitHub Pages:
+     - 185.199.108.153
+     - 185.199.109.153
+     - 185.199.110.153
+     - 185.199.111.153
+   - Or, if using a subdomain (www.kalkieshward.me), create a CNAME record pointing to `kalkieshward.github.io`.
+4. In your repository settings → Pages, verify the custom domain is `kalkieshward.me` and **enforce HTTPS** if the certificate is available.
+
+If you'd like, I can also add a simple GitHub Action step to verify DNS propagation for the custom domain after deploy and fail the workflow if it's not resolving to GitHub Pages IPs.
 ## �🚀 Deployment
 
 ### Automatic Deployment (Recommended)
