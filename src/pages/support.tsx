@@ -1,0 +1,120 @@
+import Layout from '@/components/layout/Layout';
+import { SEOProps } from '@/types';
+import { getTailwindClass } from '@/presets';
+import Image from 'next/image';
+import cryptoWallets from '@/content/crypto-wallets.json';
+import { useState } from 'react';
+
+type Wallet = {
+  name: string;
+  symbol: string;
+  address?: string;
+  icon: string;
+  image?: string;
+};
+
+const wallets = cryptoWallets as Wallet[]; // Edit src/content/crypto-wallets.json to add or update wallets
+
+
+export default function Support() {
+  const [copiedAddress, setCopiedAddress] = useState<string | null>(null);
+
+  const seo: SEOProps = {
+    title: 'Support',
+    description: 'Support my work through a donation',
+    canonical: 'https://kalkieshward.me/support',
+  };
+
+  const copyToClipboard = async (address: string | undefined, symbol: string) => {
+    if (!address) return;
+    try {
+      await navigator.clipboard.writeText(address);
+      setCopiedAddress(symbol);
+      setTimeout(() => setCopiedAddress(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  return (
+    <Layout seo={seo}>
+      <section className="py-20">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-12">
+              <h1 className={`text-4xl font-bold mb-4 ${getTailwindClass('text-gray-900')}`}>
+                <span className={getTailwindClass('text-red-600')}>Support</span> My Work
+              </h1>
+              <p className={`text-lg ${getTailwindClass('text-gray-600')}`}>
+                If you find my work <span className={getTailwindClass('text-red-600')}>valuable</span>, consider supporting me with a donation.
+              </p>
+            </div>
+
+            {/* Wallet Cards */}
+            <div className="space-y-4">
+              {wallets.map((wallet) => (
+                <div
+                  key={wallet.symbol}
+                  className={`p-6 rounded-lg border ${getTailwindClass('border-gray-200')} ${getTailwindClass('bg-white')} hover:shadow-lg transition-shadow duration-200`}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex-shrink-0">
+                        {wallet.image ? (
+                          <Image src={wallet.image} alt={`${wallet.name} logo`} width={48} height={48} className={`rounded-md ${getTailwindClass('bg-white')}`} />
+                        ) : (
+                          <div className={`text-4xl ${getTailwindClass('text-gray-700')}`}>{wallet.icon}</div>
+                        )}
+                      </div>
+                      <div>
+                        <h3 className={`text-xl font-semibold ${getTailwindClass('text-gray-900')}`}>
+                          {wallet.name}
+                        </h3>
+                        <p className={`text-sm ${getTailwindClass('text-gray-500')}`}>
+                          {wallet.symbol}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {wallet.address ? (
+                    <div className="mt-4">
+                      <div className={`flex items-center justify-between p-3 rounded ${getTailwindClass('bg-gray-50')} border ${getTailwindClass('border-gray-200')}`}>
+                        <code className={`text-sm ${getTailwindClass('text-gray-700')} break-all`}>
+                          {wallet.address}
+                        </code>
+                        <button
+                          onClick={() => copyToClipboard(wallet.address, wallet.symbol)}
+                          className={`ml-4 px-4 py-2 rounded ${getTailwindClass('bg-red-600')} ${getTailwindClass('text-white')} hover:opacity-90 transition-opacity whitespace-nowrap`}
+                          data-analytics="button_click"
+                          data-analytics-label={`copy_${wallet.symbol.toLowerCase()}_address`}
+                          data-analytics-section="support"
+                        >
+                          {copiedAddress === wallet.symbol ? 'Copied!' : 'Copy'}
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="mt-4">
+                      <p className={`text-sm italic ${getTailwindClass('text-gray-400')}`}>
+                        Wallet address coming soon
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Thank You Message */}
+            <div className={`mt-12 p-6 rounded-lg ${getTailwindClass('bg-red-50')} border ${getTailwindClass('border-red-200')}`}>
+              <p className={`text-center ${getTailwindClass('text-gray-700')}`}>
+                Thank you for your support! Every contribution helps me continue creating and sharing valuable content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+}

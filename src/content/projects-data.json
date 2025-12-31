@@ -70,7 +70,7 @@
     "liveUrl": null,
     "images": [
       {
-        "src": "public/images/projects/nexus-ledger.webp",
+        "src": "/images/projects/nexus-ledger.webp",
         "alt": "Nexus Ledger App"
       }
     ],

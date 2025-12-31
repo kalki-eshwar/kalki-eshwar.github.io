@@ -35,8 +35,10 @@ jobs:
           static_site_generator: next
           
       - name: Ensure POSTHOG_KEY secret is set
+        env:
+          POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
         run: |
-          if [ -z "${{ secrets.POSTHOG_KEY }}" ]; then
+          if [ -z "$POSTHOG_KEY" ]; then
             echo "Error: POSTHOG_KEY secret is not set. Add it in repository Settings → Secrets and variables → Actions." >&2
             exit 1
           fi
@@ -46,9 +48,10 @@ jobs:
         
       - name: Build with Next.js
         env:
-          NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
-          NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.POSTHOG_HOST }}
-        run: npm run build
+          POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
+          POSTHOG_HOST: ${{ secrets.POSTHOG_HOST }}
+        run: |
+          NEXT_PUBLIC_POSTHOG_KEY="$POSTHOG_KEY" NEXT_PUBLIC_POSTHOG_HOST="$POSTHOG_HOST" npm run build
         
       - name: Export static files
         run: npm run export
@@ -95,8 +98,10 @@ jobs:
 
       - name: Run analytics smoke test
         env:
-          NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
-          NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.POSTHOG_HOST }}
+          POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
+          POSTHOG_HOST: ${{ secrets.POSTHOG_HOST }}
         run: |
           echo "Running PostHog smoke batch..."
+          export NEXT_PUBLIC_POSTHOG_KEY="$POSTHOG_KEY"
+          export NEXT_PUBLIC_POSTHOG_HOST="$POSTHOG_HOST"
           node scripts/send-posthog-smoke-batch.js

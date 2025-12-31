@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "address": "bc1qpd2ze56rjkx9x63tkvklgxumkq5jy0vtde7c3j",
+    "icon": "₿",
+    "image": "/images/crypto/btc.png"
+  },
+  {
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "address": "",
+    "icon": "Ξ",
+    "image": ""
+  },
+  {
+    "name": "Solana",
+    "symbol": "SOL",
+    "address": "",
+    "icon": "◎",
+    "image": ""
+  },
+  {
+    "name": "USDT (Tether)",
+    "symbol": "USDT",
+    "address": "",
+    "icon": "₮",
+    "image": ""
+  }
+]
