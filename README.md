@@ -294,6 +294,8 @@ To ensure analytics remain functional after each deployment, add the following r
 
 These secrets will be injected into the build as `NEXT_PUBLIC_POSTHOG_KEY` and `NEXT_PUBLIC_POSTHOG_HOST` so the client bundle can send events (set the secrets in repo Settings → Secrets and variables → Actions).
 
+IMPORTANT: The workflows now fail the build if `POSTHOG_KEY` is not set — this prevents accidental deployments without analytics. Add the secret in repository Settings → Secrets and variables → Actions to avoid build failures.
+
 This repository includes a post-deploy smoke test in `.github/workflows/deploy.yml` that will run `node scripts/send-posthog-smoke-batch.js` after successful Pages deployment using the above secrets. If the smoke test fails, the workflow will fail so you can investigate.
 
 > Important: Do not commit your PostHog keys to the repo. Use GitHub repository secrets as described above.
