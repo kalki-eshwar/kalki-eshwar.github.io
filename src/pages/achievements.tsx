@@ -31,7 +31,7 @@ export default function Achievements() {
           {achievements.map((achievement, index) => {
             const anchorId = achievement.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
             return (
-              <div key={index} id={anchorId} onClick={() => {
+              <div key={index} id={anchorId} data-analytics="button_click" data-analytics-label={`achievement_${anchorId}`} data-analytics-section="achievements" onClick={() => {
                 try { const { trackEvent } = require('@/utils/analytics'); trackEvent('achievement_click', { title: achievement.title, category: achievement.category }); } catch (e) { }
               }} className={`border rounded-lg p-8 ${COLOR_COMBINATIONS.neutral.hover.border} transition-all duration-200 hover:shadow-sm ${achievement.featured ? `${COLOR_COMBINATIONS.featured.default.border} ${COLOR_COMBINATIONS.featured.default.background} ${COLOR_COMBINATIONS.featured.hover.border}` : COLOR_COMBINATIONS.neutral.default.border}`}>
               

@@ -63,7 +63,7 @@ export default function Projects() {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {projects.map((project, index) => (
-              <div key={index} onClick={() => {
+              <div key={index} data-analytics="button_click" data-analytics-label={`project_card_${project.title}`} data-analytics-section="projects" onClick={() => {
                 try { const { trackEvent } = require('@/utils/analytics'); trackEvent('project_card_click', { title: project.title }); } catch (e) { }
               }} className={`cursor-pointer border rounded-lg overflow-hidden transition-colors duration-200 ${project.featured ? `${COLOR_COMBINATIONS.featured.default.background} ${COLOR_COMBINATIONS.featured.default.border} hover:${COLOR_COMBINATIONS.featured.hover.border}` : `${getTailwindClass('bg-white')} ${getTailwindClass('border-gray-200')} hover:${getTailwindClass('border-gray-300')}`}`}>
                 {/* Small fixed height container for featured badge to maintain consistent layout */}
@@ -159,6 +159,9 @@ export default function Projects() {
                   <div className="flex gap-3">
                     <Link 
                       href={project.github} 
+                      data-analytics="button_click"
+                      data-analytics-label={`project_link_github_${project.title}`}
+                      data-analytics-section="projects"
                       onClick={(e) => {
                         try { const { trackEvent } = require('@/utils/analytics'); trackEvent('project_link_click', { project: project.title, type: 'github' }); } catch (err) { }
                       }}
@@ -173,6 +176,9 @@ export default function Projects() {
                     {project.demo && (
                       <Link 
                         href={project.demo} 
+                        data-analytics="button_click"
+                        data-analytics-label={`project_link_demo_${project.title}`}
+                        data-analytics-section="projects"
                         onClick={(e) => { try { const { trackEvent } = require('@/utils/analytics'); trackEvent('project_link_click', { project: project.title, type: 'demo' }); } catch (err) { } }}
                         className={`inline-flex items-center px-3 py-2 text-sm ${getTailwindClass('text-white')} ${getTailwindClass('bg-red-600')} hover:${getTailwindClass('bg-red-700')} rounded transition-colors duration-200`}
                         target='_blank'

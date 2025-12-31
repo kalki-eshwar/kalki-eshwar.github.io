@@ -278,7 +278,7 @@ This approach ensures:
 ## � Analytics
 
 - This site includes a privacy-first analytics integration (default: PostHog) using a thin abstraction at `src/utils/analytics.ts`.
-- Events collected: `nav_click`, `resume_download`, `cta_click`, `filter_clicked`, `project_card_click`, `project_link_click`, `achievement_click`, `scroll_depth`.
+- Events collected: `nav_click`, `resume_download`, `cta_click`, `filter_clicked`, `project_card_click`, `project_link_click`, `achievement_click`, `scroll_depth`, `button_click`.
 - No user-identifying data is captured by default. The analytics are initialized only if `NEXT_PUBLIC_POSTHOG_KEY` is provided.
 
 **Environment variables**
@@ -286,6 +286,24 @@ This approach ensures:
 - `NEXT_PUBLIC_POSTHOG_HOST` — (optional) PostHog host (defaults to https://app.posthog.com)
 
 If you're on Next.js 15.3+ and using the App Router, you can also use `src/utils/instrumentation-client.js` for a lightweight client initialization compatible with PostHog's recommended instrumentation approach. The repo includes `src/utils/instrumentation-client.js` (autocapture and pageview capture are opt-in via env flags to preserve privacy).
+
+### Track buttons (what I added)
+- A delegated listener now captures clicks on any element with `data-analytics="button_click"` and sends a `button_click` event with `{ label, section, page, href }` to the analytics provider. See `src/utils/autoClickTracker.ts` and `src/pages/_app.tsx`.
+- I added `data-analytics` attributes to important CTAs: download resume, Get in Touch, project cards/links, achievements.
+
+### How to view top buttons in PostHog
+1. Open PostHog → Insights → Trends.
+2. Select event: `button_click`.
+3. Group or breakdown by `properties.label` and sort by count to find your most-clicked buttons.
+
+### Seed some sample button events (for testing)
+Run locally:
+
+```bash
+node scripts/send-posthog-seed-button.js
+```
+
+This will send a few `button_click` events you can use to confirm your Live Events and Insights are working.
 
 ### Continuous verification (recommended)
 To ensure analytics remain functional after each deployment, add the following repository secret(s):

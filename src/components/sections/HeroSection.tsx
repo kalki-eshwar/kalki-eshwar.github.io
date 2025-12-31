@@ -44,6 +44,9 @@ export default function HeroSection() {
               <a
                 href={personalInfo.resumePath}
                 download={personalInfo.resumeFileName}
+                data-analytics="button_click"
+                data-analytics-label="download_resume"
+                data-analytics-section="hero"
                 onClick={() => {
                   try {
                     const { trackEvent } = require('@/utils/analytics');
@@ -59,7 +62,7 @@ export default function HeroSection() {
                 </svg>
                 Download Resume
               </a>
-              <Link href="/contact" onClick={() => {
+              <Link href="/contact" data-analytics="button_click" data-analytics-label="get_in_touch_home" data-analytics-section="hero" onClick={() => {
                 try { const { trackEvent } = require('@/utils/analytics'); trackEvent('cta_click', { label: 'get_in_touch_home' }); } catch (e) { }
               }} className={`inline-block px-6 py-3 ${getTailwindClass('bg-white')} ${getTailwindClass('text-gray-900')} font-medium rounded-lg ${getTailwindClass('hover:bg-gray-200')} transition-colors duration-200 shadow-lg`}>
                 Get in Touch
