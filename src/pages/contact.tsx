@@ -1,5 +1,5 @@
 import Layout from '@/components/layout/Layout';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SEOProps } from '@/types';
 import { getContactInfo } from '@/utils/data';
 import { getSocialIcon } from '@/components/SocialIcons';
@@ -20,6 +20,33 @@ export default function Contact() {
     message: ''
   });
 
+  const [captchaToken, setCaptchaToken] = useState<string>('');
+  const [submitting, setSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    const siteKey = process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY;
+    if (!siteKey) return;
+
+    if (!document.querySelector('script[src="https://js.hcaptcha.com/1/api.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://js.hcaptcha.com/1/api.js';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    // Global callbacks used by the hCaptcha widget
+    (window as any).onCaptchaSuccess = (token: string) => setCaptchaToken(token);
+    (window as any).onCaptchaExpired = () => setCaptchaToken('');
+
+    return () => {
+      (window as any).onCaptchaSuccess = undefined;
+      (window as any).onCaptchaExpired = undefined;
+    };
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -27,11 +54,50 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can integrate with your preferred form handling service
+    setErrorMessage('');
+    setSuccessMessage('');
+
+    if (!process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY) {
+      setErrorMessage('hCaptcha site key is not configured. Please set NEXT_PUBLIC_HCAPTCHA_SITEKEY.');
+      return;
+    }
+
+    if (!captchaToken) {
+      setErrorMessage('Please complete the hCaptcha challenge to send the message.');
+      return;
+    }
+
+    setSubmitting(true);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, token: captchaToken })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMessage(data.error || 'Failed to send message.');
+      } else {
+        setSuccessMessage('Message sent successfully. Thank you!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        // reset hCaptcha widget if available
+        try {
+          (window as any).hcaptcha?.reset?.();
+        } catch (e) {
+          // ignore
+        }
+        setCaptchaToken('');
+      }
+    } catch (err) {
+      setErrorMessage('An error occurred while sending your message. Please try again later.');
+    }
+
+    setSubmitting(false);
   };
 
   return (
@@ -123,11 +189,27 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* hCaptcha widget - required to send message */}
+                <div>
+                  <div
+                    id="hcaptcha"
+                    className="h-captcha mt-4"
+                    data-sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY}
+                    data-callback="onCaptchaSuccess"
+                    data-expired-callback="onCaptchaExpired"
+                  />
+                  <p className="text-xs text-gray-500 mt-2">hCaptcha verification is required to send a message.</p>
+                </div>
+
+                {errorMessage && <p className="text-sm text-red-600 mt-2">{errorMessage}</p>}
+                {successMessage && <p className="text-sm text-green-600 mt-2">{successMessage}</p>}
+
                 <button
                   type="submit"
-                  className="w-full bg-red-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-red-700 transition-colors duration-200 flex items-center justify-center"
+                  disabled={submitting || !captchaToken}
+                  className={`w-full bg-red-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-red-700 transition-colors duration-200 flex items-center justify-center ${submitting || !captchaToken ? 'opacity-60 cursor-not-allowed' : ''}`}
                 >
-                  Send Message
+                  {submitting ? 'Sending...' : 'Send Message'}
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                   </svg>
