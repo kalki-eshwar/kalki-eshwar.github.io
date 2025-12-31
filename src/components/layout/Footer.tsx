@@ -1,7 +1,10 @@
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { getContactInfo } from '@/utils/data';
 import { getSocialIcon } from '@/components/SocialIcons';
 import { getTailwindClass } from '@/presets';
+import { Analytics } from '@/utils/analytics';
+import AnalyticsToggle from '@/components/AnalyticsToggle';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -31,6 +34,11 @@ export default function Footer() {
           <p className={`text-sm ${getTailwindClass('text-gray-500')}`}>
             © {currentYear} Kalki Eshwar
           </p>
+
+          {/* Analytics toggle (privacy control) */}
+          <div className="mt-2">
+            <AnalyticsToggle />
+          </div>
         </div>
       </div>
     </footer>

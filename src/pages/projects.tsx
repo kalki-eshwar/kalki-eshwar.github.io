@@ -49,6 +49,9 @@ export default function Projects() {
               {categories.map((category) => (
                 <button
                   key={category}
+                  onClick={() => {
+                    try { const { trackEvent } = require('@/utils/analytics'); trackEvent('filter_clicked', { category }); } catch (e) { }
+                  }}
                   className={`px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${getTailwindClass('text-gray-600')} hover:${getTailwindClass('text-red-600')} hover:${getTailwindClass('bg-white')}`}
                 >
                   {category}
@@ -60,7 +63,9 @@ export default function Projects() {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {projects.map((project, index) => (
-              <div key={index} className={`border rounded-lg overflow-hidden transition-colors duration-200 ${project.featured ? `${COLOR_COMBINATIONS.featured.default.background} ${COLOR_COMBINATIONS.featured.default.border} hover:${COLOR_COMBINATIONS.featured.hover.border}` : `${getTailwindClass('bg-white')} ${getTailwindClass('border-gray-200')} hover:${getTailwindClass('border-gray-300')}`}`}>
+              <div key={index} onClick={() => {
+                try { const { trackEvent } = require('@/utils/analytics'); trackEvent('project_card_click', { title: project.title }); } catch (e) { }
+              }} className={`cursor-pointer border rounded-lg overflow-hidden transition-colors duration-200 ${project.featured ? `${COLOR_COMBINATIONS.featured.default.background} ${COLOR_COMBINATIONS.featured.default.border} hover:${COLOR_COMBINATIONS.featured.hover.border}` : `${getTailwindClass('bg-white')} ${getTailwindClass('border-gray-200')} hover:${getTailwindClass('border-gray-300')}`}`}>
                 {/* Small fixed height container for featured badge to maintain consistent layout */}
                 <div className="h-10 px-4 pt-3 flex items-start">
                   {project.featured && (
@@ -154,6 +159,9 @@ export default function Projects() {
                   <div className="flex gap-3">
                     <Link 
                       href={project.github} 
+                      onClick={(e) => {
+                        try { const { trackEvent } = require('@/utils/analytics'); trackEvent('project_link_click', { project: project.title, type: 'github' }); } catch (err) { }
+                      }}
                       className={`inline-flex items-center px-3 py-2 text-sm ${getTailwindClass('text-gray-700')} hover:${getTailwindClass('text-red-600')} transition-colors duration-200`}
                       target='_blank'
                     >
@@ -165,6 +173,7 @@ export default function Projects() {
                     {project.demo && (
                       <Link 
                         href={project.demo} 
+                        onClick={(e) => { try { const { trackEvent } = require('@/utils/analytics'); trackEvent('project_link_click', { project: project.title, type: 'demo' }); } catch (err) { } }}
                         className={`inline-flex items-center px-3 py-2 text-sm ${getTailwindClass('text-white')} ${getTailwindClass('bg-red-600')} hover:${getTailwindClass('bg-red-700')} rounded transition-colors duration-200`}
                         target='_blank'
                       >

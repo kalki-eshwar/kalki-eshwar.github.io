@@ -275,7 +275,27 @@ This approach ensures:
 - ✅ No server-side dependencies
 - ✅ Type safety with TypeScript
 
-## 🚀 Deployment
+## � Analytics
+
+- This site includes a privacy-first analytics integration (default: PostHog) using a thin abstraction at `src/utils/analytics.ts`.
+- Events collected: `nav_click`, `resume_download`, `cta_click`, `filter_clicked`, `project_card_click`, `project_link_click`, `achievement_click`, `scroll_depth`.
+- No user-identifying data is captured by default. The analytics are initialized only if `NEXT_PUBLIC_POSTHOG_KEY` is provided.
+
+**Environment variables**
+- `NEXT_PUBLIC_POSTHOG_KEY` — (optional) PostHog project key
+- `NEXT_PUBLIC_POSTHOG_HOST` — (optional) PostHog host (defaults to https://app.posthog.com)
+
+If you're on Next.js 15.3+ and using the App Router, you can also use `src/utils/instrumentation-client.js` for a lightweight client initialization compatible with PostHog's recommended instrumentation approach. The repo includes `src/utils/instrumentation-client.js` (autocapture and pageview capture are opt-in via env flags to preserve privacy).
+
+### Continuous verification (recommended)
+To ensure analytics remain functional after each deployment, add the following repository secret(s):
+- `POSTHOG_KEY` — your PostHog project key (required)
+- `POSTHOG_HOST` — optional, e.g., `https://us.i.posthog.com`
+
+This repository includes a post-deploy smoke test in `.github/workflows/deploy.yml` that will run `node scripts/send-posthog-smoke-batch.js` after successful Pages deployment using the above secrets. If the smoke test fails, the workflow will fail so you can investigate.
+
+> Important: Do not commit your PostHog keys to the repo. Use GitHub repository secrets as described above.
+## �🚀 Deployment
 
 ### Automatic Deployment (Recommended)
 

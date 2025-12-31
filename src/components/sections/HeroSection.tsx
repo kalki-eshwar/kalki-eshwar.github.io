@@ -44,6 +44,14 @@ export default function HeroSection() {
               <a
                 href={personalInfo.resumePath}
                 download={personalInfo.resumeFileName}
+                onClick={() => {
+                  try {
+                    const { trackEvent } = require('@/utils/analytics');
+                    trackEvent('resume_download', { filename: personalInfo.resumeFileName, path: personalInfo.resumePath });
+                  } catch (e) {
+                    // ignore
+                  }
+                }}
                 className={`inline-flex items-center px-6 py-3 ${getTailwindClass('bg-red-600')} ${getTailwindClass('text-white')} font-medium rounded-lg ${getTailwindClass('hover:bg-red-700')} transition-colors duration-200 shadow-lg`}
               >
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,7 +59,9 @@ export default function HeroSection() {
                 </svg>
                 Download Resume
               </a>
-              <Link href="/contact" className={`inline-block px-6 py-3 ${getTailwindClass('bg-white')} ${getTailwindClass('text-gray-900')} font-medium rounded-lg ${getTailwindClass('hover:bg-gray-200')} transition-colors duration-200 shadow-lg`}>
+              <Link href="/contact" onClick={() => {
+                try { const { trackEvent } = require('@/utils/analytics'); trackEvent('cta_click', { label: 'get_in_touch_home' }); } catch (e) { }
+              }} className={`inline-block px-6 py-3 ${getTailwindClass('bg-white')} ${getTailwindClass('text-gray-900')} font-medium rounded-lg ${getTailwindClass('hover:bg-gray-200')} transition-colors duration-200 shadow-lg`}>
                 Get in Touch
               </Link>
             </div>

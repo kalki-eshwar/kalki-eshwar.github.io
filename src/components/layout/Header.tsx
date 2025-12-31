@@ -49,6 +49,15 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={() => {
+                  try {
+                    // Fire a navigation click event (no user-identifying data)
+                    const { trackEvent } = require('@/utils/analytics');
+                    trackEvent('nav_click', { label: item.label, href: item.href });
+                  } catch (e) {
+                    // ignore errors
+                  }
+                }}
                 className={`text-sm transition-colors duration-200 ${
                   isActiveRoute(item.href)
                     ? `${COLOR_COMBINATIONS.primary.default.text} font-medium`
@@ -82,7 +91,15 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    try {
+                      const { trackEvent } = require('@/utils/analytics');
+                      trackEvent('nav_click', { label: item.label, href: item.href });
+                    } catch (e) {
+                      // ignore
+                    }
+                  }}
                   className={`block text-sm transition-colors duration-200 ${
                     isActiveRoute(item.href)
                       ? `${COLOR_COMBINATIONS.primary.default.text} font-medium`

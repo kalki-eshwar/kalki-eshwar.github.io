@@ -30,9 +30,10 @@
     },
     {
       "title": "Cleared Air Force Common Admission Test (AFCAT)",
-      "description": "Qualified for the Airforce Service Selection Board (AFSB) and attended the Board's Conference.",
+      "description": "Qualified for the Airforce Service Selection Board (AFSB) and attended the board's conference.",
       "category": "Honours",
-      "year": "2025"
+      "year": "2025",
+      "featured": true
     },
     {
       "title": "VIT Premier League (Chess) Title Holder",

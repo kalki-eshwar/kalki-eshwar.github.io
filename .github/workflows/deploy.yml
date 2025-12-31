@@ -60,3 +60,24 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # Verify analytics by sending a representative batch of smoke events.
+      # Requires repository secrets: POSTHOG_KEY (required) and POSTHOG_HOST (optional).
+      - name: Checkout for verification
+        uses: actions/checkout@v4
+
+      - name: Setup Node for verification
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies for verification
+        run: npm ci
+
+      - name: Run analytics smoke test
+        env:
+          NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
+          NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.POSTHOG_HOST }}
+        run: |
+          echo "Running PostHog smoke batch..."
+          node scripts/send-posthog-smoke-batch.js
