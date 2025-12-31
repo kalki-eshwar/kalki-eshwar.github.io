@@ -152,10 +152,3 @@ All certificate links point to files in `/public/documents/`. To add actual cert
 1. Place PDF files in `public/documents/`
 2. Update the `certificateUrl` fields in the JSON files
 3. Ensure file names match the URLs in the configuration
-
-## Next Steps
-
-1. Add actual certificate PDF files to `public/documents/`
-2. Verify all company website URLs are correct
-3. Update personal information as needed
-4. Customize social links and contact information

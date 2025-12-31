@@ -21,7 +21,7 @@ export default function NotFound() {
             <h2 className={`text-2xl md:text-3xl font-semibold mb-4 ${getTailwindClass('text-gray-900')}`}>
               Are you sure where you're going?
             </h2>
-            <p className={`${getTailwindClass('text-gray-600')} mb-8`}>It's in the middle of nowhere.</p>
+            <p className={`${getTailwindClass('text-gray-600')} text-lg md:text-xl mb-8`}>It's in the middle of <span className={`${getTailwindClass('text-red-600')} font-medium`}>nowhere</span>.</p>
 
             <div className="flex items-center justify-center gap-4">
               <Link href="/" className={`inline-flex items-center px-6 py-3 ${getTailwindClass('bg-red-600')} ${getTailwindClass('text-white')} font-medium rounded-lg ${getTailwindClass('hover:bg-red-700')} transition-colors duration-200`}>
