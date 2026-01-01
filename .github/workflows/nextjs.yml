@@ -71,6 +71,16 @@ jobs:
             exit 1
           fi
 
+      - name: Ensure email service secret is set
+        env:
+          EMAILJS_SERVICE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}
+          FORMSPREE_FORM_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_FORM_ID }}
+        run: |
+          if [ -z "$EMAILJS_SERVICE_ID" ] && [ -z "$FORMSPREE_FORM_ID" ]; then
+            echo "Error: No email service configured. Add NEXT_PUBLIC_EMAILJS_SERVICE_ID or NEXT_PUBLIC_FORMSPREE_FORM_ID to repository Secrets and variables → Actions." >&2
+            exit 1
+          fi
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -88,8 +98,12 @@ jobs:
           POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
           POSTHOG_HOST: ${{ secrets.POSTHOG_HOST }}
           HCAPTCHA_SITEKEY: ${{ secrets.NEXT_PUBLIC_HCAPTCHA_SITEKEY }}
+          EMAILJS_SERVICE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}
+          EMAILJS_TEMPLATE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}
+          EMAILJS_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }}
+          FORMSPREE_FORM_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_FORM_ID }}
         run: |
-          NEXT_PUBLIC_POSTHOG_KEY="$POSTHOG_KEY" NEXT_PUBLIC_POSTHOG_HOST="$POSTHOG_HOST" NEXT_PUBLIC_HCAPTCHA_SITEKEY="$HCAPTCHA_SITEKEY" ${{ steps.detect-package-manager.outputs.runner }} next build
+          NEXT_PUBLIC_EMAILJS_SERVICE_ID="$EMAILJS_SERVICE_ID" NEXT_PUBLIC_EMAILJS_TEMPLATE_ID="$EMAILJS_TEMPLATE_ID" NEXT_PUBLIC_EMAILJS_PUBLIC_KEY="$EMAILJS_PUBLIC_KEY" NEXT_PUBLIC_FORMSPREE_FORM_ID="$FORMSPREE_FORM_ID" NEXT_PUBLIC_POSTHOG_KEY="$POSTHOG_KEY" NEXT_PUBLIC_POSTHOG_HOST="$POSTHOG_HOST" NEXT_PUBLIC_HCAPTCHA_SITEKEY="$HCAPTCHA_SITEKEY" ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
