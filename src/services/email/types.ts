@@ -8,7 +8,8 @@ export interface EmailMessage {
   email?: string;
   subject: string;
   message: string;
-  captchaToken: string;
+  // captchaToken is optional on the client payload; server-side verification can be used if required
+  captchaToken?: string;
 }
 
 export interface EmailServiceResponse {
