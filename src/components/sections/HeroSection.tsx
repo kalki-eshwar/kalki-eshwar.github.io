@@ -1,10 +1,12 @@
 import Link from 'next/link';
-import { getPersonalInfo, getEducationData, getWorkExperience, getPublications, getCertifications, getProjectsData } from '@/utils/data';
+import { getPersonalInfo, getWorkExperience, getPublications, getCertifications, getProjectsData } from '@/utils/data';
+import { trackEvent } from '@/utils/analytics';
 import { COLORS, getTailwindClass } from '@/presets';
 
 export default function HeroSection() {
   const personalInfo = getPersonalInfo();
-  const educationData = getEducationData();
+  // educationData removed; not used in the hero section
+  // const educationData = getEducationData();
   const workData = getWorkExperience();
   const projectsData = getProjectsData();
   
@@ -29,7 +31,7 @@ export default function HeroSection() {
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-4">
               <h1 className={`text-3xl md:text-4xl lg:text-5xl font-medium ${getTailwindClass('text-white')}`}>
-                Hi, I'm <span style={{ color: COLORS.primary[500] }}>{personalInfo.name}</span>
+                Hi, I&apos;m <span style={{ color: COLORS.primary[500] }}>{personalInfo.name}</span>
               </h1>
               <p className={`text-lg md:text-xl ${getTailwindClass('text-gray-200')}`}>
                 {personalInfo.bio}
@@ -49,7 +51,6 @@ export default function HeroSection() {
                 data-analytics-section="hero"
                 onClick={() => {
                   try {
-                    const { trackEvent } = require('@/utils/analytics');
                     trackEvent('resume_download', { filename: personalInfo.resumeFileName, path: personalInfo.resumePath });
                   } catch (e) {
                     // ignore
@@ -63,7 +64,7 @@ export default function HeroSection() {
                 Download Resume
               </a>
               <Link href="/contact" data-analytics="button_click" data-analytics-label="get_in_touch_home" data-analytics-section="hero" onClick={() => {
-                try { const { trackEvent } = require('@/utils/analytics'); trackEvent('cta_click', { label: 'get_in_touch_home' }); } catch (e) { }
+                try { trackEvent('cta_click', { label: 'get_in_touch_home' }); } catch (e) { }
               }} className={`inline-block px-6 py-3 ${getTailwindClass('bg-white')} ${getTailwindClass('text-gray-900')} font-medium rounded-lg ${getTailwindClass('hover:bg-gray-200')} transition-colors duration-200 shadow-lg`}>
                 Get in Touch
               </Link>

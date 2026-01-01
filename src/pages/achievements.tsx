@@ -1,7 +1,8 @@
 import Layout from '@/components/layout/Layout';
 import { SEOProps } from '@/types';
 import { getAchievementsData } from '@/utils/data';
-import { COLOR_COMBINATIONS, getTailwindClass, getBadgeColors } from '@/presets';
+import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
+import { trackEvent } from '@/utils/analytics';
 
 const achievementsSEO: SEOProps = {
   title: 'Achievements - Kalki Eshwar',
@@ -32,7 +33,7 @@ export default function Achievements() {
             const anchorId = achievement.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
             return (
               <div key={index} id={anchorId} data-analytics="button_click" data-analytics-label={`achievement_${anchorId}`} data-analytics-section="achievements" onClick={() => {
-                try { const { trackEvent } = require('@/utils/analytics'); trackEvent('achievement_click', { title: achievement.title, category: achievement.category }); } catch (e) { }
+                try { trackEvent('achievement_click', { title: achievement.title, category: achievement.category }); } catch (e) { }
               }} className={`border rounded-lg p-8 ${COLOR_COMBINATIONS.neutral.hover.border} transition-all duration-200 hover:shadow-sm ${achievement.featured ? `${COLOR_COMBINATIONS.featured.default.border} ${COLOR_COMBINATIONS.featured.default.background} ${COLOR_COMBINATIONS.featured.hover.border}` : COLOR_COMBINATIONS.neutral.default.border}`}>
               
                 {achievement.featured && (

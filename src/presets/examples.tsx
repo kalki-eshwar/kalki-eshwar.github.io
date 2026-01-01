@@ -185,8 +185,6 @@ interface ExampleButtonProps {
 }
 
 export function ExampleButton({ children, variant = 'primary', size = 'md', onClick }: ExampleButtonProps) {
-  const buttonColors = COMPONENT_COLORS.button[variant];
-  
   const sizeClasses = {
     sm: 'px-3 py-1.5 text-sm',
     md: 'px-4 py-2 text-sm',

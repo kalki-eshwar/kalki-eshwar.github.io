@@ -4,7 +4,6 @@ import workExperience from '@/content/work-experience.json';
 import achievementsData from '@/content/achievements-data.json';
 import contactInfo from '@/content/contact-info.json';
 import projectsData from '@/content/projects-data.json';
-import { Project } from '@/types';
 
 export const getPersonalInfo = () => personalInfo;
 export const getEducationData = () => educationData;

@@ -3,7 +3,7 @@ import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import { SEOProps } from '@/types';
 import { getAllArticles, formatDate, Article } from '@/utils/articles';
-import { getTailwindClass } from '@/presets';
+
 
 interface CategoryPageProps {
   articles: Article[];

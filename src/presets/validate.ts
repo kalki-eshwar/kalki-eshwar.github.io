@@ -5,8 +5,6 @@
 
 import { 
   COLORS, 
-  SEMANTIC_COLORS, 
-  COMPONENT_COLORS, 
   TAILWIND_COLORS,
   getColor,
   getSemanticColor,

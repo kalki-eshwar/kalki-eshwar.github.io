@@ -43,8 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
       router.events.on('routeChangeComplete', handleRoute);
 
       // initialize delegated click tracker
-      const { default: initAutoClickTracker } = require('@/utils/autoClickTracker');
-      initAutoClickTracker();
+      import('@/utils/autoClickTracker').then((m) => m?.default?.()).catch(() => {/* ignore */});
 
       return () => router.events.off('routeChangeComplete', handleRoute);
     }

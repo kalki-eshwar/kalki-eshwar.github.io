@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getAchievementsData } from '@/utils/data';
-import { getTailwindClass, COLOR_COMBINATIONS, getBadgeColors } from '@/presets';
+import { getTailwindClass, COLOR_COMBINATIONS } from '@/presets';
 
 export default function AchievementsSection() {
   const { achievements } = getAchievementsData();

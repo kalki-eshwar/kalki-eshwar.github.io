@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { SEOProps } from '@/types';
 import { getProjectsData } from '@/utils/data';
 import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
+import { trackEvent } from '@/utils/analytics';
 
 const projectsSEO: SEOProps = {
   title: 'Projects - Kalki Eshwar',
@@ -49,9 +50,7 @@ export default function Projects() {
               {categories.map((category) => (
                 <button
                   key={category}
-                  onClick={() => {
-                    try { const { trackEvent } = require('@/utils/analytics'); trackEvent('filter_clicked', { category }); } catch (e) { }
-                  }}
+                  onClick={() => { try { trackEvent('filter_clicked', { category }); } catch (e) { } }}
                   className={`px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${getTailwindClass('text-gray-600')} hover:${getTailwindClass('text-red-600')} hover:${getTailwindClass('bg-white')}`}
                 >
                   {category}
@@ -63,9 +62,7 @@ export default function Projects() {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {projects.map((project, index) => (
-              <div key={index} data-analytics="button_click" data-analytics-label={`project_card_${project.title}`} data-analytics-section="projects" onClick={() => {
-                try { const { trackEvent } = require('@/utils/analytics'); trackEvent('project_card_click', { title: project.title }); } catch (e) { }
-              }} className={`cursor-pointer border rounded-lg overflow-hidden transition-colors duration-200 ${project.featured ? `${COLOR_COMBINATIONS.featured.default.background} ${COLOR_COMBINATIONS.featured.default.border} hover:${COLOR_COMBINATIONS.featured.hover.border}` : `${getTailwindClass('bg-white')} ${getTailwindClass('border-gray-200')} hover:${getTailwindClass('border-gray-300')}`}`}>
+              <div key={index} data-analytics="button_click" data-analytics-label={`project_card_${project.title}`} data-analytics-section="projects" onClick={() => { try { trackEvent('project_card_click', { title: project.title }); } catch (e) { } }} className={`cursor-pointer border rounded-lg overflow-hidden transition-colors duration-200 ${project.featured ? `${COLOR_COMBINATIONS.featured.default.background} ${COLOR_COMBINATIONS.featured.default.border} hover:${COLOR_COMBINATIONS.featured.hover.border}` : `${getTailwindClass('bg-white')} ${getTailwindClass('border-gray-200')} hover:${getTailwindClass('border-gray-300')}`}`}>
                 {/* Small fixed height container for featured badge to maintain consistent layout */}
                 <div className="h-10 px-4 pt-3 flex items-start">
                   {project.featured && (
@@ -162,9 +159,7 @@ export default function Projects() {
                       data-analytics="button_click"
                       data-analytics-label={`project_link_github_${project.title}`}
                       data-analytics-section="projects"
-                      onClick={(e) => {
-                        try { const { trackEvent } = require('@/utils/analytics'); trackEvent('project_link_click', { project: project.title, type: 'github' }); } catch (err) { }
-                      }}
+                      onClick={() => { try { trackEvent('project_link_click', { project: project.title, type: 'github' }); } catch (err) { } }}
                       className={`inline-flex items-center px-3 py-2 text-sm ${getTailwindClass('text-gray-700')} hover:${getTailwindClass('text-red-600')} transition-colors duration-200`}
                       target='_blank'
                     >
@@ -179,7 +174,7 @@ export default function Projects() {
                         data-analytics="button_click"
                         data-analytics-label={`project_link_demo_${project.title}`}
                         data-analytics-section="projects"
-                        onClick={(e) => { try { const { trackEvent } = require('@/utils/analytics'); trackEvent('project_link_click', { project: project.title, type: 'demo' }); } catch (err) { } }}
+                        onClick={() => { try { trackEvent('project_link_click', { project: project.title, type: 'demo' }); } catch (err) { } }}
                         className={`inline-flex items-center px-3 py-2 text-sm ${getTailwindClass('text-white')} ${getTailwindClass('bg-red-600')} hover:${getTailwindClass('bg-red-700')} rounded transition-colors duration-200`}
                         target='_blank'
                       >
@@ -201,7 +196,7 @@ export default function Projects() {
               Interested in <span className={getTailwindClass('text-red-600')}>Collaborating?</span>
             </h2>
             <p className={`${getTailwindClass('text-gray-600')} mb-6 max-w-2xl mx-auto`}>
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+              I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
             <Link 
               href="/contact" 

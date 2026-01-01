@@ -25,7 +25,7 @@ export default function ProjectsSection() {
             Featured <span className={getTailwindClass('text-red-600')}>Projects</span>
           </h2>
           <p className={getTailwindClass('text-gray-600')}>
-            Some of the projects I've worked on recently
+            Some of the projects I&apos;ve worked on recently
           </p>
         </div>
         

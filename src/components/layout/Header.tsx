@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { NavigationItem } from '@/types';
 import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
+import { trackEvent } from '@/utils/analytics';
 
 const navigation: NavigationItem[] = [
   { label: 'Home', href: '/' },
@@ -52,7 +53,6 @@ export default function Header() {
                 onClick={() => {
                   try {
                     // Fire a navigation click event (no user-identifying data)
-                    const { trackEvent } = require('@/utils/analytics');
                     trackEvent('nav_click', { label: item.label, href: item.href });
                   } catch (e) {
                     // ignore errors
@@ -94,7 +94,6 @@ export default function Header() {
                   onClick={() => {
                     setIsMenuOpen(false);
                     try {
-                      const { trackEvent } = require('@/utils/analytics');
                       trackEvent('nav_click', { label: item.label, href: item.href });
                     } catch (e) {
                       // ignore

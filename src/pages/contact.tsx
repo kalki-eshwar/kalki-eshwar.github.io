@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { SEOProps } from '@/types';
 import { getContactInfo } from '@/utils/data';
 import { getSocialIcon } from '@/components/SocialIcons';
-import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
+import { getTailwindClass } from '@/presets';
 import { getEmailService } from '@/services/email';
 
 const contactSEO: SEOProps = {
@@ -127,8 +127,8 @@ export default function Contact() {
               Get In <span className={getTailwindClass('text-red-600')}>Touch</span>
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              I'm always interested in new opportunities, collaborations, and discussions about technology. 
-              Feel free to reach out if you'd like to connect!
+              I&apos;m always interested in new opportunities, collaborations, and discussions about technology. 
+              Feel free to reach out if you&apos;d like to connect!
             </p>
           </div>
 
@@ -236,7 +236,7 @@ export default function Contact() {
 
             {/* Contact Information */}
             <div>
-              <h2 className="text-2xl font-medium text-gray-900 mb-6">Let's Connect</h2>
+              <h2 className="text-2xl font-medium text-gray-900 mb-6">Let&apos;s Connect</h2>
               
               <div className="space-y-6">
                 {/* Quick Contact */}

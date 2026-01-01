@@ -3,7 +3,6 @@ import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import { SEOProps } from '@/types';
 import { getAllArticles, getAllCategories, getAllCategoryDirs, formatDate, Article } from '@/utils/articles';
-import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
 
 const articlesSEO: SEOProps = {
   title: 'Articles - Kalki Eshwar',
@@ -17,7 +16,7 @@ interface ArticlesPageProps {
   categoryDirs: string[];
 }
 
-export default function Articles({ articles, categories, categoryDirs }: ArticlesPageProps) {
+export default function Articles({ articles, categoryDirs }: ArticlesPageProps) {
   const featuredArticles = articles.filter(article => article.featured);
 
   // Capitalize the first letter of each word in a string
