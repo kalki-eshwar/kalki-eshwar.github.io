@@ -97,10 +97,14 @@ export default function Contact() {
       }
 
       // Send the email using the configured service
+      // Use the human-friendly label for the subject (e.g., "Job Opportunity")
+      // instead of the short value (e.g., "job") so emails show the full phrase.
+      const subjectLabel = contactData.contactSubjects.find(s => s.value === formData.subject)?.label ?? formData.subject;
+
       const result = await emailService.sendEmail({
         name: formData.name,
         email: formData.email,
-        subject: formData.subject,
+        subject: subjectLabel,
         message: formData.message,
       });
 
