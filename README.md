@@ -284,6 +284,33 @@ This approach ensures:
 **Environment variables**
 - `NEXT_PUBLIC_POSTHOG_KEY` — (optional) PostHog project key
 - `NEXT_PUBLIC_POSTHOG_HOST` — (optional) PostHog host (defaults to https://app.posthog.com)
+- `NEXT_PUBLIC_HCAPTCHA_SITEKEY` — (required for contact form) hCaptcha site key
+- `HCAPTCHA_SECRET` — (not used in static export, but for reference) hCaptcha secret key
+
+## Contact Form with hCaptcha
+
+The contact form requires hCaptcha verification to prevent spam. Since this site uses static export for GitHub Pages deployment, server-side verification isn't possible. Instead, the form submits to an external service like Formspree.
+
+### Setup Instructions
+
+1. **Get hCaptcha Keys**: Sign up at [hCaptcha.com](https://hcaptcha.com) and create a site to get your site key and secret.
+
+2. **Set Environment Variables**: Add to `.env.local`:
+   ```
+   NEXT_PUBLIC_HCAPTCHA_SITEKEY=your-site-key
+   HCAPTCHA_SECRET=your-secret
+   ```
+
+3. **Set Up Formspree**:
+   - Sign up at [Formspree.io](https://formspree.io)
+   - Create a new form and enable hCaptcha integration with your hCaptcha secret.
+   - Copy the form endpoint URL (e.g., `https://formspree.io/f/YOUR_FORM_ID`)
+
+4. **Update Contact Form**:
+   - In `src/pages/contact.tsx`, replace `'https://formspree.io/f/YOUR_FORM_ID'` with your actual Formspree URL.
+   - Formspree will handle hCaptcha verification server-side.
+
+If you prefer server-side rendering, consider deploying to Vercel or Netlify for API route support.
 
 If you're on Next.js 15.3+ and using the App Router, you can also use `src/utils/instrumentation-client.js` for a lightweight client initialization compatible with PostHog's recommended instrumentation approach. The repo includes `src/utils/instrumentation-client.js` (autocapture and pageview capture are opt-in via env flags to preserve privacy).
 

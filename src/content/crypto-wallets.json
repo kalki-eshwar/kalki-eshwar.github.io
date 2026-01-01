@@ -9,22 +9,43 @@
   {
     "name": "Ethereum",
     "symbol": "ETH",
-    "address": "",
+    "address": "0xA7BDA53eC6eeE290bBcA4e94bd67b89DF1f0eF77",
     "icon": "Ξ",
-    "image": ""
+    "image": "/images/crypto/eth.png"
+  },
+  {
+    "name": "Monero",
+    "symbol": "SOL",
+    "address": "89DPivMDUDaWQGfYUNJ2jAKtuSou2oRsxX5gtD6nvyWjXQXXYRM8Zqe7gbc5pSQUSF4yo4NbqHVSD8WGuRCLsyNwEdTZFhx",
+    "icon": "µ",
+    "image": "/images/crypto/xmr.png"
   },
   {
     "name": "Solana",
     "symbol": "SOL",
-    "address": "",
+    "address": "DkT4HErcQfckNPo2m6inwGv94icBL95yjKp8xeidSFd2",
     "icon": "◎",
-    "image": ""
+    "image": "/images/crypto/sol.png"
   },
   {
-    "name": "USDT (Tether)",
-    "symbol": "USDT",
-    "address": "",
-    "icon": "₮",
-    "image": ""
+    "name": "Doge",
+    "symbol": "DOGE",
+    "address": "D9kHqbim73c4nfpjaYSfDKxvsRQZeMDDjZ",
+    "icon": "D",
+    "image": "/images/crypto/doge.png"
+  },
+  {
+    "name": "Bitcoin Cash",
+    "symbol": "BCH",
+    "address": "bitcoincash:qz9d24peldpuka7lezext2gwp3fqa0dcucegcr2455",
+    "icon": "B",
+    "image": "/images/crypto/bch.png"
+  },
+  {
+    "name": "Polygon",
+    "symbol": "POL",
+    "address": "0xCcFA3449c157c7c67C518CD50eb1C3F14fc8759F",
+    "icon": "B",
+    "image": "/images/crypto/pol.png"
   }
 ]

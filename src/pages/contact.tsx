@@ -72,17 +72,22 @@ export default function Contact() {
     setSubmitting(true);
 
     try {
-      const res = await fetch('/api/contact', {
+      // Replace with your Formspree or other form service URL
+      const formUrl = 'https://formspree.io/f/YOUR_FORM_ID'; // TODO: Replace with actual Formspree form ID
+
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email || '');
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('h-captcha-response', captchaToken);
+
+      const res = await fetch(formUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, token: captchaToken })
+        body: formDataToSend,
       });
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        setErrorMessage(data.error || 'Failed to send message.');
-      } else {
+      if (res.ok) {
         setSuccessMessage('Message sent successfully. Thank you!');
         setFormData({ name: '', email: '', subject: '', message: '' });
         // reset hCaptcha widget if available
@@ -92,6 +97,8 @@ export default function Contact() {
           // ignore
         }
         setCaptchaToken('');
+      } else {
+        setErrorMessage('Failed to send message. Please try again later.');
       }
     } catch (err) {
       setErrorMessage('An error occurred while sending your message. Please try again later.');
