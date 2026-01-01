@@ -51,7 +51,7 @@ export default function ProjectsSection() {
               
               {/* Project Image */}
               {project.images && project.images.length > 0 ? (
-                <div className="h-32 flex items-center justify-center bg-white">
+                <div className="h-32 relative overflow-hidden flex items-center justify-center bg-white">
                   <Image
                     src={project.images[0].src}
                     alt={project.images[0].alt}
