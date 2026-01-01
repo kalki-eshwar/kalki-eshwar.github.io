@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
 import { SEOProps } from '@/types';
-import { getTailwindClass, COLOR_COMBINATIONS } from '@/presets';
+import { getTailwindClass, COLORS } from '@/presets';
 
 const seo: SEOProps = {
   title: 'Page Not Found - Kalki Eshwar',
-  description: "Looks like the page you're looking for doesn't exist.",
+  description: "Looks like the page you&apos;re looking for doesn&apos;t exist.",
   canonical: 'https://kalkieshward.me/404',
 };
 
@@ -19,7 +19,7 @@ export default function NotFound() {
               404
             </h1>
             <h2 className={`text-2xl md:text-3xl font-semibold mb-4 ${getTailwindClass('text-gray-900')}`}>
-              Are you sure where you're going?
+              Are you sure where you&apos;re going?
             </h2>
             <p className={`${getTailwindClass('text-gray-600')} text-lg md:text-xl mb-8`}>It's in the middle of <span className={`${getTailwindClass('text-red-600')} font-medium`}>nowhere</span>.</p>
 
@@ -34,7 +34,27 @@ export default function NotFound() {
             </div>
 
             <p className={`${getTailwindClass('text-gray-500')} text-sm mt-6`}>
-              If you think this is an error, feel free to <Link href="/contact" className="underline">get in touch</Link>.
+              If you think this is an error, feel free to <Link
+                href="/contact"
+                className={`${getTailwindClass('text-red-600')} transition-colors duration-200 relative group inline-flex items-center gap-1 font-medium`}
+                style={{
+                  backgroundImage: `linear-gradient(to right, ${COLORS.primary[600]}, ${COLORS.primary[600]})`,
+                  backgroundSize: '0% 2px',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'left bottom',
+                  transition: 'background-size 200ms ease-in-out'
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundSize = '100% 2px'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundSize = '0% 2px'; }}
+                onFocus={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundSize = '100% 2px'; }}
+                onBlur={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundSize = '0% 2px'; }}
+                onTouchStart={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundSize = '100% 2px'; }}
+                data-analytics="button_click"
+                data-analytics-label="contact_404"
+                data-analytics-section="404"
+              >
+                get in touch
+              </Link>. 
             </p>
           </div>
         </div>
