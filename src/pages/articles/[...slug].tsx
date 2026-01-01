@@ -1,5 +1,5 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemote } from 'next-mdx-remote';
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import {
