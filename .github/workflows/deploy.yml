@@ -50,8 +50,9 @@ jobs:
         env:
           POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
           POSTHOG_HOST: ${{ secrets.POSTHOG_HOST }}
+          HCAPTCHA_SITEKEY: ${{ secrets.NEXT_PUBLIC_HCAPTCHA_SITEKEY }}
         run: |
-          NEXT_PUBLIC_POSTHOG_KEY="$POSTHOG_KEY" NEXT_PUBLIC_POSTHOG_HOST="$POSTHOG_HOST" npm run build
+          NEXT_PUBLIC_POSTHOG_KEY="$POSTHOG_KEY" NEXT_PUBLIC_POSTHOG_HOST="$POSTHOG_HOST" NEXT_PUBLIC_HCAPTCHA_SITEKEY="$HCAPTCHA_SITEKEY" npm run build
         
       - name: Export static files
         run: npm run export

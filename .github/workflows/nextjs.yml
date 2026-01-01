@@ -87,8 +87,9 @@ jobs:
         env:
           POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
           POSTHOG_HOST: ${{ secrets.POSTHOG_HOST }}
+          HCAPTCHA_SITEKEY: ${{ secrets.NEXT_PUBLIC_HCAPTCHA_SITEKEY }}
         run: |
-          NEXT_PUBLIC_POSTHOG_KEY="$POSTHOG_KEY" NEXT_PUBLIC_POSTHOG_HOST="$POSTHOG_HOST" ${{ steps.detect-package-manager.outputs.runner }} next build
+          NEXT_PUBLIC_POSTHOG_KEY="$POSTHOG_KEY" NEXT_PUBLIC_POSTHOG_HOST="$POSTHOG_HOST" NEXT_PUBLIC_HCAPTCHA_SITEKEY="$HCAPTCHA_SITEKEY" ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
