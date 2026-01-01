@@ -9,6 +9,7 @@ export interface ArticleData {
   tags: string[];
   featured: boolean;
   author: string;
+  categoryDir: string;
 }
 
 export interface ArticlesDataFile {

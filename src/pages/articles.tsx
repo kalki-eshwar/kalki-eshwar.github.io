@@ -25,7 +25,7 @@ export default function Articles({ articles, categoryDirs }: ArticlesPageProps) 
 
   // Create mapping of category dirs to display names, capitalized
   const getCategoryDisplayName = (categoryDir: string) => {
-    const article = articles.find(a => (a as any).categoryDir === categoryDir);
+    const article = articles.find(a => a.categoryDir === categoryDir);
     const display = article?.category || categoryDir;
     return capitalizeWords(display);
   };

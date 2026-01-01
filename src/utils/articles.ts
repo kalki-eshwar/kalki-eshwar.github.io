@@ -25,6 +25,7 @@ export interface ArticleMatter {
 export interface Article extends ArticleMatter {
   slug: string;
   content: string;
+  categoryDir?: string;
   readingTime: {
     text: string;
     minutes: number;
@@ -35,7 +36,7 @@ export interface Article extends ArticleMatter {
 
 export interface SerializedArticle extends ArticleMatter {
   slug: string;
-  source: any;
+  source: unknown;
   readingTime: {
     text: string;
     minutes: number;
@@ -145,6 +146,7 @@ export function getAllArticles(): Article[] {
           tags: articleData.tags,
           featured: articleData.featured,
           author: articleData.author,
+          categoryDir: articleData.categoryDir,
         };
       })
       .sort((a: Article, b: Article) => {
@@ -248,8 +250,7 @@ export function getAllCategoryDirs(): string[] {
   try {
     const articles = getAllArticles();
     const categoryDirs = articles.map(article => {
-      const articleData = article as any;
-      return articleData.categoryDir || article.category.toLowerCase().replace(/\s+/g, '-');
+      return article.categoryDir || article.category.toLowerCase().replace(/\s+/g, '-');
     });
     return Array.from(new Set(categoryDirs));
   } catch (error) {
@@ -262,8 +263,7 @@ export function getArticlesByCategoryDir(categoryDir: string): Article[] {
   try {
     const articles = getAllArticles();
     return articles.filter(article => {
-      const articleData = article as any;
-      const articleCategoryDir = articleData.categoryDir || article.category.toLowerCase().replace(/\s+/g, '-');
+      const articleCategoryDir = article.categoryDir || article.category.toLowerCase().replace(/\s+/g, '-');
       return articleCategoryDir === categoryDir;
     });
   } catch (error) {

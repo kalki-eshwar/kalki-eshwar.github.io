@@ -19,24 +19,24 @@ interface ArticlePageProps {
 }
 
 const mdxComponents = {
-  h1: (props: any) => <h1 className={`text-3xl font-bold ${getTailwindClass('text-gray-900')} mb-6`} {...props} />,
-  h2: (props: any) => <h2 className={`text-2xl font-semibold ${getTailwindClass('text-gray-900')} mb-4 mt-8`} {...props} />,
-  h3: (props: any) => <h3 className={`text-xl font-semibold ${getTailwindClass('text-gray-900')} mb-3 mt-6`} {...props} />,
-  h4: (props: any) => <h4 className={`text-lg font-semibold ${getTailwindClass('text-gray-900')} mb-2 mt-4`} {...props} />,
-  p: (props: any) => <p className={`${getTailwindClass('text-gray-700')} leading-relaxed mb-4`} {...props} />,
-  ul: (props: any) => <ul className={`list-disc list-inside ${getTailwindClass('text-gray-700')} mb-4 space-y-1`} {...props} />,
-  ol: (props: any) => <ol className={`list-decimal list-inside ${getTailwindClass('text-gray-700')} mb-4 space-y-1`} {...props} />,
-  li: (props: any) => <li className="ml-4" {...props} />,
-  blockquote: (props: any) => (
+  h1: (props: React.ComponentProps<'h1'>) => <h1 className={`text-3xl font-bold ${getTailwindClass('text-gray-900')} mb-6`} {...props} />,
+  h2: (props: React.ComponentProps<'h2'>) => <h2 className={`text-2xl font-semibold ${getTailwindClass('text-gray-900')} mb-4 mt-8`} {...props} />,
+  h3: (props: React.ComponentProps<'h3'>) => <h3 className={`text-xl font-semibold ${getTailwindClass('text-gray-900')} mb-3 mt-6`} {...props} />,
+  h4: (props: React.ComponentProps<'h4'>) => <h4 className={`text-lg font-semibold ${getTailwindClass('text-gray-900')} mb-2 mt-4`} {...props} />,
+  p: (props: React.ComponentProps<'p'>) => <p className={`${getTailwindClass('text-gray-700')} leading-relaxed mb-4`} {...props} />,
+  ul: (props: React.ComponentProps<'ul'>) => <ul className={`list-disc list-inside ${getTailwindClass('text-gray-700')} mb-4 space-y-1`} {...props} />,
+  ol: (props: React.ComponentProps<'ol'>) => <ol className={`list-decimal list-inside ${getTailwindClass('text-gray-700')} mb-4 space-y-1`} {...props} />,
+  li: (props: React.ComponentProps<'li'>) => <li className="ml-4" {...props} />,
+  blockquote: (props: React.ComponentProps<'blockquote'>) => (
     <blockquote className={`border-l-4 border-red-600 pl-4 italic ${getTailwindClass('text-gray-600')} my-6`} {...props} />
   ),
-  code: (props: any) => (
+  code: (props: React.ComponentProps<'code'>) => (
     <code className={`${getTailwindClass('bg-gray-100')} ${getTailwindClass('text-red-600')} px-2 py-1 rounded text-sm font-mono`} {...props} />
   ),
-  pre: (props: any) => (
+  pre: (props: React.ComponentProps<'pre'>) => (
     <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-6 text-sm" {...props} />
   ),
-  a: (props: any) => (
+  a: (props: React.ComponentProps<'a'>) => (
     <a
       className="md-link"
       target="_blank"
@@ -44,19 +44,19 @@ const mdxComponents = {
       {...props}
     />
   ),
-  hr: (props: any) => <hr className={`${getTailwindClass('border-gray-200')} my-8`} {...props} />,
-  table: (props: any) => (
+  hr: (props: React.ComponentProps<'hr'>) => <hr className={`${getTailwindClass('border-gray-200')} my-8`} {...props} />,
+  table: (props: React.ComponentProps<'table'>) => (
     <div className="overflow-x-auto my-6">
       <table className={`min-w-full divide-y ${getTailwindClass('border-gray-200')}`} {...props} />
     </div>
   ),
-  thead: (props: any) => <thead className={getTailwindClass('bg-gray-50')} {...props} />,
-  tbody: (props: any) => <tbody className={`${getTailwindClass('bg-white')} divide-y ${getTailwindClass('border-gray-200')}`} {...props} />,
-  tr: (props: any) => <tr {...props} />,
-  th: (props: any) => (
+  thead: (props: React.ComponentProps<'thead'>) => <thead className={getTailwindClass('bg-gray-50')} {...props} />,
+  tbody: (props: React.ComponentProps<'tbody'>) => <tbody className={`${getTailwindClass('bg-white')} divide-y ${getTailwindClass('border-gray-200')}`} {...props} />,
+  tr: (props: React.ComponentProps<'tr'>) => <tr {...props} />,
+  th: (props: React.ComponentProps<'th'>) => (
     <th className={`px-6 py-3 text-left text-xs font-medium ${getTailwindClass('text-gray-500')} uppercase tracking-wider`} {...props} />
   ),
-  td: (props: any) => <td className={`px-6 py-4 whitespace-nowrap text-sm ${getTailwindClass('text-gray-900')}`} {...props} />,
+  td: (props: React.ComponentProps<'td'>) => <td className={`px-6 py-4 whitespace-nowrap text-sm ${getTailwindClass('text-gray-900')}`} {...props} />,
 };
 
 export default function ArticlePage({ article, relatedArticles }: ArticlePageProps) {

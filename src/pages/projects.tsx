@@ -1,5 +1,6 @@
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SEOProps } from '@/types';
 import { getProjectsData } from '@/utils/data';
 import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
@@ -79,16 +80,17 @@ export default function Projects() {
                 <div className="relative h-48 overflow-hidden">
                   {project.image && project.image !== '/images/project-placeholder.png' ? (
                     <>
-                      <img 
-                        src={project.image} 
+                      <Image
+                        src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
                           <div className={`w-16 h-16 ${getTailwindClass('bg-red-200')} rounded-lg mx-auto mb-2 flex items-center justify-center overflow-hidden`}>
                             {project.icon ? (
-                              <img src={project.icon} alt={`${project.title} icon`} className="w-full h-full object-contain p-2" />
+                              <Image src={project.icon} alt={`${project.title} icon`} fill className="object-contain p-2" />
                             ) : (
                               <span className={`${getTailwindClass('text-red-600')} text-xl font-bold`}>
                                 {project.title.substring(0, 2).toUpperCase()}
@@ -106,7 +108,7 @@ export default function Projects() {
                       <div className="text-center">
                         <div className={`w-16 h-16 ${getTailwindClass('bg-red-200')} rounded-lg mx-auto mb-2 flex items-center justify-center overflow-hidden`}>
                           {project.icon ? (
-                            <img src={project.icon} alt={`${project.title} icon`} className="w-full h-full object-contain p-2" />
+                            <Image src={project.icon} alt={`${project.title} icon`} fill className="object-contain p-2" />
                           ) : (
                             <span className={`${getTailwindClass('text-red-600')} text-xl font-bold`}>
                               {project.title.substring(0, 2).toUpperCase()}

@@ -6,6 +6,14 @@ import { getSocialIcon } from '@/components/SocialIcons';
 import { getTailwindClass } from '@/presets';
 import { getEmailService } from '@/services/email';
 
+declare global {
+  interface Window {
+    onCaptchaSuccess?: (token: string) => void;
+    onCaptchaExpired?: () => void;
+    hcaptcha?: { reset?: () => void };
+  }
+}
+
 const contactSEO: SEOProps = {
   title: 'Contact - Kalki Eshwar',
   description: 'Get in touch with Kalki Eshwar for collaboration opportunities, project discussions, or professional inquiries.',
@@ -39,12 +47,12 @@ export default function Contact() {
     }
 
     // Global callbacks used by the hCaptcha widget
-    (window as any).onCaptchaSuccess = (token: string) => setCaptchaToken(token);
-    (window as any).onCaptchaExpired = () => setCaptchaToken('');
+    window.onCaptchaSuccess = (token: string) => setCaptchaToken(token);
+    window.onCaptchaExpired = () => setCaptchaToken('');
 
     return () => {
-      (window as any).onCaptchaSuccess = undefined;
-      (window as any).onCaptchaExpired = undefined;
+      window.onCaptchaSuccess = undefined;
+      window.onCaptchaExpired = undefined;
     };
   }, []);
 
@@ -101,7 +109,7 @@ export default function Contact() {
         setFormData({ name: '', email: '', subject: '', message: '' });
         // Reset hCaptcha widget if available
         try {
-          (window as any).hcaptcha?.reset?.();
+          window.hcaptcha?.reset?.();
         } catch (e) {
           // ignore
         }

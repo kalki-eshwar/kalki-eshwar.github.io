@@ -4,14 +4,13 @@
  */
 
 import React from 'react';
-import { 
-  COLORS, 
-  SEMANTIC_COLORS, 
-  COMPONENT_COLORS,
+import {
+  COLORS,
+  SEMANTIC_COLORS,
   COLOR_COMBINATIONS,
   getCardColors,
   getBadgeColors,
-  getTailwindClass 
+  getTailwindClass
 } from '@/presets';
 
 interface ExampleCardProps {

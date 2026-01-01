@@ -1,8 +1,14 @@
 import posthog from 'posthog-js';
 
+interface WindowWithProcess extends Window {
+  process?: {
+    env?: Record<string, string | undefined>;
+  };
+}
+
 export interface Provider {
   init: (opts: { key?: string; host?: string }) => void;
-  trackEvent: (event: string, props?: Record<string, any>) => void;
+  trackEvent: (event: string, props?: Record<string, unknown>) => void;
   pageview: (path: string) => void;
   optIn: () => void;
   optOut: () => void;
@@ -12,8 +18,8 @@ const PostHogProvider: Provider = {
   init({ key, host }) {
     if (!key) return;
 
-    const autocapture = (typeof window !== 'undefined' && (window as any).process?.env?.NEXT_PUBLIC_POSTHOG_AUTOCAPTURE === 'true') || process.env.NEXT_PUBLIC_POSTHOG_AUTOCAPTURE === 'true';
-    const capturePageview = (typeof window !== 'undefined' && (window as any).process?.env?.NEXT_PUBLIC_POSTHOG_CAPTURE_PAGEVIEW === 'true') || process.env.NEXT_PUBLIC_POSTHOG_CAPTURE_PAGEVIEW === 'true';
+    const autocapture = (typeof window !== 'undefined' && (window as WindowWithProcess).process?.env?.NEXT_PUBLIC_POSTHOG_AUTOCAPTURE === 'true') || process.env.NEXT_PUBLIC_POSTHOG_AUTOCAPTURE === 'true';
+    const capturePageview = (typeof window !== 'undefined' && (window as WindowWithProcess).process?.env?.NEXT_PUBLIC_POSTHOG_CAPTURE_PAGEVIEW === 'true') || process.env.NEXT_PUBLIC_POSTHOG_CAPTURE_PAGEVIEW === 'true';
 
     posthog.init(key, {
       api_host: host || 'https://app.posthog.com',

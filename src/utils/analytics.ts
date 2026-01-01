@@ -22,7 +22,7 @@ export function initAnalytics(opts: { key?: string; host?: string }) {
   }
 }
 
-export function trackEvent(event: string, props?: Record<string, any>) {
+export function trackEvent(event: string, props?: Record<string, unknown>) {
   if (!provider) return;
   try {
     provider.trackEvent(event, props);

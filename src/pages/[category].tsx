@@ -185,10 +185,9 @@ console.log('getStaticPaths for [category] called');
     // Get unique categories from articles
     const categories = articles.reduce((acc: Record<string, string>, article) => {
       // Use the categoryDir from the article data to get the original directory name
-      const categoryData = article as any;
-      const categoryDir = categoryData.categoryDir || article.category.toLowerCase().replace(/\s+/g, '-');
+      const categoryDir = article.categoryDir || article.category.toLowerCase().replace(/\s+/g, '-');
       const categoryName = article.category;
-      
+
       acc[categoryDir] = categoryName;
       return acc;
     }, {});
@@ -224,8 +223,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     
     // Filter articles by category directory
     const categoryArticles = allArticles.filter(article => {
-      const articleData = article as any;
-      const articleCategoryDir = articleData.categoryDir || article.category.toLowerCase().replace(/\s+/g, '-');
+      const articleCategoryDir = article.categoryDir || article.category.toLowerCase().replace(/\s+/g, '-');
       return articleCategoryDir === categorySlug;
     });
 

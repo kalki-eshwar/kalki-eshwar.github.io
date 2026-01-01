@@ -9,20 +9,20 @@ import { COLORS, SEMANTIC_COLORS, COMPONENT_COLORS, TAILWIND_COLORS } from './co
  */
 export function getColor(path: string): string {
   const parts = path.split('.');
-  let current: any = COLORS;
-  
+  let current: unknown = COLORS;
+
   for (const part of parts) {
-    if (current && typeof current === 'object' && part in current) {
-      current = current[part];
+    if (current && typeof current === 'object' && current !== null && part in current) {
+      current = (current as Record<string, unknown>)[part];
     } else {
       throw new Error(`Color path '${path}' not found`);
     }
   }
-  
+
   if (typeof current !== 'string') {
     throw new Error(`Color path '${path}' does not resolve to a string value`);
   }
-  
+
   return current;
 }
 
@@ -31,20 +31,20 @@ export function getColor(path: string): string {
  */
 export function getSemanticColor(component: keyof typeof SEMANTIC_COLORS, path: string): string {
   const parts = path.split('.');
-  let current: any = SEMANTIC_COLORS[component];
-  
+  let current: unknown = SEMANTIC_COLORS[component];
+
   for (const part of parts) {
-    if (current && typeof current === 'object' && part in current) {
-      current = current[part];
+    if (current && typeof current === 'object' && current !== null && part in current) {
+      current = (current as Record<string, unknown>)[part];
     } else {
       throw new Error(`Semantic color path '${component}.${path}' not found`);
     }
   }
-  
+
   if (typeof current !== 'string') {
     throw new Error(`Semantic color path '${component}.${path}' does not resolve to a string value`);
   }
-  
+
   return current;
 }
 
@@ -53,20 +53,20 @@ export function getSemanticColor(component: keyof typeof SEMANTIC_COLORS, path: 
  */
 export function getComponentColor(component: keyof typeof COMPONENT_COLORS, path: string): string {
   const parts = path.split('.');
-  let current: any = COMPONENT_COLORS[component];
-  
+  let current: unknown = COMPONENT_COLORS[component];
+
   for (const part of parts) {
-    if (current && typeof current === 'object' && part in current) {
-      current = current[part];
+    if (current && typeof current === 'object' && current !== null && part in current) {
+      current = (current as Record<string, unknown>)[part];
     } else {
       throw new Error(`Component color path '${component}.${path}' not found`);
     }
   }
-  
+
   if (typeof current !== 'string') {
     throw new Error(`Component color path '${component}.${path}' does not resolve to a string value`);
   }
-  
+
   return current;
 }
 

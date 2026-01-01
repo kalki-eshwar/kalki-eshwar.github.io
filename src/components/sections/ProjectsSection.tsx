@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getProjectsData } from '@/utils/data';
 import { getTailwindClass, COLOR_COMBINATIONS } from '@/presets';
 
@@ -51,10 +52,11 @@ export default function ProjectsSection() {
               {/* Project Image */}
               {project.images && project.images.length > 0 ? (
                 <div className="h-32 flex items-center justify-center bg-white">
-                  <img
+                  <Image
                     src={project.images[0].src}
                     alt={project.images[0].alt}
-                    className="object-contain h-full max-h-32 w-auto mx-auto"
+                    fill
+                    className="object-contain"
                   />
                 </div>
               ) : (
