@@ -10,8 +10,7 @@ The email service uses the **Strategy Pattern** to allow easy switching between 
 
 1. **`types.ts`** - Defines interfaces and types used across all email services
 2. **`emailjs.service.ts`** - EmailJS implementation
-3. **`formspree.service.ts`** - Formspree implementation
-4. **`index.ts`** - Factory function that returns the configured service
+3. **`index.ts`** - Factory function that returns the configured service
 
 ### How It Works
 
@@ -38,10 +37,9 @@ if (emailService.isConfigured()) {
 
 ### Service Selection Priority
 
-1. EmailJS (if `NEXT_PUBLIC_EMAILJS_SERVICE_ID` is set)
-2. Formspree (if `NEXT_PUBLIC_FORMSPREE_FORM_ID` is set)
-3. Default to EmailJS (will show configuration error)
+1. EmailJS (default/only provided implementation)
 
+To add a new provider: implement `IEmailService` and update `index.ts`.
 ### Adding New Services
 
 To add a new email service provider:
@@ -95,7 +93,7 @@ export function getEmailService(): IEmailService {
 
 ### Security Considerations
 
-- All email services require hCaptcha verification before sending
+- hCaptcha verification is required client-side for spam protection; the token is not sent to email providers by default — consider server-side verification for stronger protection
 - Environment variables are used for credentials (never hardcode)
 - Client-side only services (no backend required)
 - CORS-friendly services are preferred for static sites

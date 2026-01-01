@@ -9,7 +9,7 @@ Created a flexible, maintainable architecture for handling email services:
 **Files Created:**
 - `src/services/email/types.ts` - Interface definitions
 - `src/services/email/emailjs.service.ts` - EmailJS implementation
-- `src/services/email/formspree.service.ts` - Formspree implementation (alternative)
+- (Formspree support removed)
 - `src/services/email/index.ts` - Service factory
 - `src/services/email/README.md` - Technical documentation
 
@@ -20,7 +20,8 @@ Created a flexible, maintainable architecture for handling email services:
 
 **Changes:**
 - ✅ Integrated EmailJS for sending emails
-- ✅ Kept hCaptcha verification (spam protection)
+- ✅ Kept client-side hCaptcha verification (spam protection) — token not sent to email providers by default
+- ✅ **Subject field is required**: the contact form enforces this client-side and the email service validates it before sending.
 - ✅ Used abstraction layer for easy service switching
 - ✅ Improved error handling and user feedback
 - ✅ Maintained existing form functionality and design
@@ -67,20 +68,7 @@ Created a flexible, maintainable architecture for handling email services:
 
 ### Switching Email Services
 
-To switch from EmailJS to Formspree (or vice versa):
-
-1. Update environment variables in `.env.local`
-2. Restart the development server
-3. No code changes needed!
-
-Example for Formspree:
-```bash
-# Remove or comment out EmailJS vars
-# NEXT_PUBLIC_EMAILJS_SERVICE_ID=...
-
-# Add Formspree var
-NEXT_PUBLIC_FORMSPREE_FORM_ID=your_formspree_id
-```
+To add another email provider, implement the `IEmailService` interface in `src/services/email/` and update `src/services/email/index.ts` to return your implementation. Restart the development server after adding new environment variables.
 
 ## 🏗️ Architecture Highlights
 

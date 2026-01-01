@@ -70,6 +70,12 @@ export default function Contact() {
       return;
     }
 
+    // Subject is required — enforce on client-side as well
+    if (!formData.subject || !formData.subject.trim()) {
+      setErrorMessage('Please select a subject for your message.');
+      return;
+    }
+
     setSubmitting(true);
 
     try {
@@ -88,7 +94,6 @@ export default function Contact() {
         email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        captchaToken: captchaToken,
       });
 
       if (result.success) {
@@ -148,7 +153,7 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* <div>
+                <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email *
                   </label>
@@ -162,7 +167,7 @@ export default function Contact() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent transition-colors duration-200"
                     placeholder="your.email@example.com"
                   />
-                </div> */}
+                </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">

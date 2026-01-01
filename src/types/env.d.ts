@@ -12,8 +12,7 @@ declare namespace NodeJS {
     NEXT_PUBLIC_EMAILJS_TEMPLATE_ID?: string;
     NEXT_PUBLIC_EMAILJS_PUBLIC_KEY?: string;
 
-    // Formspree Configuration (Alternative)
-    NEXT_PUBLIC_FORMSPREE_FORM_ID?: string;
+    // (Removed) Formspree configuration no longer used
 
     // hCaptcha Configuration
     NEXT_PUBLIC_HCAPTCHA_SITEKEY?: string;

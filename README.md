@@ -36,7 +36,7 @@ A sophisticated, modern portfolio website built with Next.js, TypeScript, and Ta
 ### Contact & Communication
 - **EmailJS** - Client-side email sending service
 - **hCaptcha** - Spam protection for contact form
-- **Abstraction Layer** - Easy switching between email providers (EmailJS, Formspree, etc.)
+- **Abstraction Layer** - Easy switching between email providers (EmailJS, etc.)
 
 ### Development Tools
 - **ESLint** - Code linting
@@ -305,7 +305,7 @@ This approach ensures:
 
 ## Contact Form with hCaptcha
 
-The contact form requires hCaptcha verification to prevent spam. Since this site uses static export for GitHub Pages deployment, server-side verification isn't possible. Instead, the form submits to an external service like Formspree.
+The contact form requires hCaptcha verification to prevent spam. The site uses EmailJS to send messages from the client; for stronger verification, add a serverless endpoint to validate the hCaptcha token before sending messages.
 
 ### Setup Instructions
 
@@ -317,14 +317,7 @@ The contact form requires hCaptcha verification to prevent spam. Since this site
    HCAPTCHA_SECRET=your-secret
    ```
 
-3. **Set Up Formspree**:
-   - Sign up at [Formspree.io](https://formspree.io)
-   - Create a new form and enable hCaptcha integration with your hCaptcha secret.
-   - Copy the form endpoint URL (e.g., `https://formspree.io/f/YOUR_FORM_ID`)
-
-4. **Update Contact Form**:
-   - In `src/pages/contact.tsx`, replace `'https://formspree.io/f/YOUR_FORM_ID'` with your actual Formspree URL.
-   - Formspree will handle hCaptcha verification server-side.
+3. **Set Up EmailJS** (recommended): see [docs/EMAIL_SETUP.md](docs/EMAIL_SETUP.md) for step-by-step EmailJS configuration and template setup.
 
 If you prefer server-side rendering, consider deploying to Vercel or Netlify for API route support.
 

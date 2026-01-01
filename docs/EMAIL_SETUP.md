@@ -5,7 +5,6 @@ This portfolio uses an abstraction layer for email services, allowing you to eas
 ## Currently Supported Services
 
 1. **EmailJS** (Primary/Default)
-2. **Formspree** (Alternative)
 
 ## Setting Up EmailJS (Recommended)
 
@@ -72,43 +71,11 @@ NEXT_PUBLIC_HCAPTCHA_SITEKEY=your_hcaptcha_site_key
 3. Fill out the form and complete the hCaptcha
 4. Submit and check your configured email inbox
 
-## Alternative: Setting Up Formspree
+<!-- Formspree support removed. To add another provider, implement `IEmailService` in `src/services/email/` and update `src/services/email/index.ts`. -->
 
-If you prefer to use Formspree instead:
+## Switching/Adding Services
 
-### 1. Create a Formspree Account
-
-1. Go to [Formspree.io](https://formspree.io/)
-2. Sign up for a free account
-
-### 2. Create a Form
-
-1. In your dashboard, click **New Form**
-2. Give it a name (e.g., "Portfolio Contact Form")
-3. Copy the **Form ID** (e.g., `abc123xyz`)
-
-### 3. Set Environment Variables
-
-Update your `.env.local` file:
-
-```bash
-# Formspree Configuration (remove or comment out EmailJS vars)
-NEXT_PUBLIC_FORMSPREE_FORM_ID=abc123xyz
-
-# hCaptcha Configuration
-NEXT_PUBLIC_HCAPTCHA_SITEKEY=your_hcaptcha_site_key
-```
-
-The system will automatically detect Formspree configuration and use it instead of EmailJS.
-
-## Switching Between Services
-
-The email service is automatically selected based on environment variables:
-
-1. **EmailJS** is used if `NEXT_PUBLIC_EMAILJS_SERVICE_ID` is set
-2. **Formspree** is used if EmailJS is not configured but `NEXT_PUBLIC_FORMSPREE_FORM_ID` is set
-
-To switch services, simply update your environment variables and restart the dev server.
+This project currently uses EmailJS. To add a new provider, implement the `IEmailService` interface in `src/services/email/` and update `src/services/email/index.ts` to return the new service. Restart the development server after adding any new environment variables.
 
 ## Adding a New Email Service
 
@@ -151,7 +118,7 @@ export function getEmailService(): IEmailService {
 
 - **Never commit `.env.local` to version control** - it's already in `.gitignore`
 - For production (GitHub Pages), you'll need to use GitHub Secrets or another method to inject environment variables during the build process
-- hCaptcha verification is required before any email can be sent, protecting against spam
+- hCaptcha verification is required client-side for spam protection; we do not send the token to email providers by default. For robust validation, verify the token on a server-side endpoint before sending emails.
 - The abstraction layer keeps your email service credentials separate from your form logic
 
 ## Troubleshooting

@@ -11,8 +11,7 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=xxxxx
 # hCaptcha (Required for spam protection)
 NEXT_PUBLIC_HCAPTCHA_SITEKEY=xxxxx
 
-# Alternative: Formspree (instead of EmailJS)
-# NEXT_PUBLIC_FORMSPREE_FORM_ID=xxxxx
+
 ```
 
 ## EmailJS Template Example
@@ -34,7 +33,6 @@ Message:
 ### Created:
 - `src/services/email/types.ts`
 - `src/services/email/emailjs.service.ts`
-- `src/services/email/formspree.service.ts`
 - `src/services/email/index.ts`
 - `src/services/email/README.md`
 - `docs/EMAIL_SETUP.md`
@@ -44,7 +42,6 @@ Message:
 - `src/pages/contact.tsx`
 - `.env.local.example`
 - `README.md`
-
 ## Testing
 
 ```bash

@@ -32,6 +32,14 @@ export class EmailJSService implements IEmailService {
       };
     }
 
+    // Ensure subject is provided (defensive check)
+    if (!data.subject || !data.subject.trim()) {
+      return {
+        success: false,
+        error: 'Subject is required. Please provide a subject for your message.',
+      };
+    }
+
     try {
       // EmailJS expects template parameters in a specific format
       const templateParams = {
@@ -39,8 +47,6 @@ export class EmailJSService implements IEmailService {
         from_email: data.email || 'No email provided',
         subject: data.subject,
         message: data.message,
-        'g-recaptcha-response': data.captchaToken, // Some EmailJS templates use this field
-        captcha_token: data.captchaToken,
       };
 
       const response = await emailjs.send(
