@@ -4,6 +4,7 @@ import { SEOProps } from '@/types';
 import { getContactInfo } from '@/utils/data';
 import { getSocialIcon } from '@/components/SocialIcons';
 import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
+import { getEmailService } from '@/services/email';
 
 const contactSEO: SEOProps = {
   title: 'Contact - Kalki Eshwar',
@@ -72,25 +73,28 @@ export default function Contact() {
     setSubmitting(true);
 
     try {
-      // Replace with your Formspree or other form service URL
-      const formUrl = 'https://formspree.io/f/YOUR_FORM_ID'; // TODO: Replace with actual Formspree form ID
+      const emailService = getEmailService();
+      
+      // Check if the email service is properly configured
+      if (!emailService.isConfigured()) {
+        setErrorMessage('Email service is not configured. Please contact the administrator.');
+        setSubmitting(false);
+        return;
+      }
 
-      const formDataToSend = new FormData();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email || '');
-      formDataToSend.append('subject', formData.subject);
-      formDataToSend.append('message', formData.message);
-      formDataToSend.append('h-captcha-response', captchaToken);
-
-      const res = await fetch(formUrl, {
-        method: 'POST',
-        body: formDataToSend,
+      // Send the email using the configured service
+      const result = await emailService.sendEmail({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        captchaToken: captchaToken,
       });
 
-      if (res.ok) {
-        setSuccessMessage('Message sent successfully. Thank you!');
+      if (result.success) {
+        setSuccessMessage(result.message || 'Message sent successfully. Thank you!');
         setFormData({ name: '', email: '', subject: '', message: '' });
-        // reset hCaptcha widget if available
+        // Reset hCaptcha widget if available
         try {
           (window as any).hcaptcha?.reset?.();
         } catch (e) {
@@ -98,10 +102,11 @@ export default function Contact() {
         }
         setCaptchaToken('');
       } else {
-        setErrorMessage('Failed to send message. Please try again later.');
+        setErrorMessage(result.error || 'Failed to send message. Please try again later.');
       }
     } catch (err) {
-      setErrorMessage('An error occurred while sending your message. Please try again later.');
+      console.error('Form submission error:', err);
+      setErrorMessage('An unexpected error occurred. Please try again later.');
     }
 
     setSubmitting(false);

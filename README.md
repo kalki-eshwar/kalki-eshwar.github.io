@@ -9,6 +9,8 @@ A sophisticated, modern portfolio website built with Next.js, TypeScript, and Ta
 - **SEO Optimized**: Meta tags, structured data, and performance optimized
 - **Component Architecture**: Reusable, maintainable React components
 - **Article System**: MDX support for rich content creation
+- **Contact Form**: EmailJS integration with hCaptcha spam protection
+- **Abstraction Layer**: Easy switching between email service providers
 - **GitHub Pages Ready**: Automated deployment with GitHub Actions
 - **Static Export**: Compatible with GitHub Pages hosting
 - **Performance First**: Optimized images, fonts, and bundle sizes
@@ -30,6 +32,11 @@ A sophisticated, modern portfolio website built with Next.js, TypeScript, and Ta
 - **Gray-matter** - Frontmatter parsing
 - **Remark/Rehype** - Markdown processing pipeline
 - **Reading Time** - Automatic reading time calculation
+
+### Contact & Communication
+- **EmailJS** - Client-side email sending service
+- **hCaptcha** - Spam protection for contact form
+- **Abstraction Layer** - Easy switching between email providers (EmailJS, Formspree, etc.)
 
 ### Development Tools
 - **ESLint** - Code linting
@@ -119,12 +126,21 @@ portfolio-website/
    npm install
    ```
 
-3. **Start the development server**
+3. **Configure environment variables**
+   ```bash
+   cp .env.local.example .env.local
+   ```
+   Then edit `.env.local` and add your keys:
+   - **EmailJS** credentials for contact form (see [Email Setup Guide](docs/EMAIL_SETUP.md))
+   - **hCaptcha** site key for spam protection
+   - **PostHog** key for analytics (optional)
+
+4. **Start the development server**
    ```bash
    npm run dev
    ```
 
-4. **Open your browser**
+5. **Open your browser**
    Navigate to `http://localhost:3000` to see your website
 
 ### Development Scripts

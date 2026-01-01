@@ -18,6 +18,7 @@
     "deploy": "npm run build && rm -rf docs/* && cp -r out/* docs/ && touch docs/.nojekyll && git add docs && git commit -m 'Deploy to docs' && git push"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "clsx": "^2.0.0",
     "dotenv": "^17.2.3",
     "framer-motion": "^10.16.0",
