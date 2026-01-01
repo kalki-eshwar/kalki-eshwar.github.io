@@ -1,14 +1,14 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { MDXRemote } from 'next-mdx-remote';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
-import { 
-  getArticleSlugs, 
-  getSerializedArticle, 
-  getRelatedArticles, 
+import {
+  getArticleSlugs,
+  getSerializedArticle,
+  getRelatedArticles,
   formatDate,
   SerializedArticle,
-  Article 
+  Article
 } from '@/utils/articles';
 import { SEOProps } from '@/types';
 import { getTailwindClass, COLOR_COMBINATIONS } from '@/presets';

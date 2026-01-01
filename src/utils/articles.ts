@@ -1,4 +1,4 @@
-import { serialize } from 'next-mdx-remote/serialize';
+import { serialize, MDXRemoteSerializeResult } from 'next-mdx-remote/serialize';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -36,7 +36,7 @@ export interface Article extends ArticleMatter {
 
 export interface SerializedArticle extends ArticleMatter {
   slug: string;
-  source: unknown;
+  source: MDXRemoteSerializeResult;
   readingTime: {
     text: string;
     minutes: number;
