@@ -16,6 +16,11 @@
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/kalki-eshwar-9b243a237/",
       "icon": "linkedin"
+    },
+    {
+      "name": "Substack",
+      "url": "https://kalkieshwar.substack.com",
+      "icon": "substack"
     }
   ],
   "contactSubjects": [
