@@ -190,15 +190,15 @@ export default function Articles({ articles, categoryDirs }: ArticlesPageProps) 
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Get notified when I publish new articles about technology, programming, and development insights.
             </p>
-            <div className="max-w-md mx-auto flex gap-2">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent"
-              />
-              <button className="px-6 py-2 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-colors duration-200">
+            <div className="max-w-md mx-auto">
+              <a
+                href="https://kalkieshwar.substack.com/subscribe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full px-6 py-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-colors duration-200"
+              >
                 Subscribe
-              </button>
+              </a>
             </div>
           </div>
         </div>
