@@ -4,12 +4,27 @@ node_modules
 .next/
 out/
 
-# Build outputs - keep built HTML files in root for GitHub Pages
-# but ignore the out folder itself
-!/*.html
-!/_next/
-!/images/
-!/documents/
+# Build outputs
+dist/
+build/
+
+# GitHub Actions builds - don't commit these, let Actions deploy
+/_next/
+/404/
+/achievements/
+/articles/
+/certifications/
+/contact/
+/education/
+/life/
+/projects/
+/publications/
+/support/
+/work/
+/*.html
+!404.html
+/favicon-*.png
+/.nojekyll
 
 # Webpack hot update files
 *.hot-update.*
