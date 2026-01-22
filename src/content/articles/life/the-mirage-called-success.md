@@ -4,11 +4,11 @@ description: "A philosophical exploration of what truly makes a person happy and
 date: "2025-07-09"
 readTime: "8 min read"
 tags: ["Life", "Success", "Happiness", "Philosophy", "Meaning"]
-featured: false
+featured: true
 author: "Kalki Eshwar"
 ---
 
-# The Mirage Called Success
+# Introduction
 
 What makes a person happy? What would qualify a person to be called successful? As a student, I pondered over these thoughts.
 
