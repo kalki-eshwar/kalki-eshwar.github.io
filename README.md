@@ -117,8 +117,8 @@ portfolio-website/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/KalkiEshwarD/KalkiEshwarD.github.io.git
-   cd KalkiEshwarD.github.io
+   git clone https://github.com/kalki-eshwar/kalki-eshwar.github.io.git
+   cd kalki-eshwar.github.io
    ```
 
 2. **Install dependencies**
@@ -555,6 +555,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Built with ❤️ by [KalkiEshwar](https://github.com/KalkiEshwarD)
+Built with ❤️ by [Kalki Eshwar](https://kalkieshward.me)
 
-*For questions or collaboration opportunities, feel free to reach out through the contact page or connect on [LinkedIn](https://linkedin.com/in/kalkieshward).*
+*For questions or collaboration opportunities, feel free to reach out through the contact page or connect on [LinkedIn](https://linkedin.com/in/kalki-eshwar).*

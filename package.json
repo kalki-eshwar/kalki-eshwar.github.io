@@ -2,7 +2,7 @@
   "name": "kalkieshwar-portfolio",
   "version": "1.0.0",
   "description": "Professional portfolio website for KalkiEshwar",
-  "homepage": "https://KalkiEshwarD.github.io/",
+  "homepage": "https://kalkieshward.me/",
   "scripts": {
     "site": "npm run dev -- --port 9000",
     "dev": "npm run article; next dev",
