@@ -106,25 +106,6 @@ export default function Support() {
               ))}
             </div>
 
-            {/* PayPal */}
-            <div className="mt-8 flex justify-center">
-              <a
-                href="https://paypal.com/paypalme/kalkieshwar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center px-5 py-3 rounded-md ${getTailwindClass('bg-blue-600')} ${getTailwindClass('text-white')} hover:opacity-90 transition-opacity`}
-                data-analytics="external_link_click"
-                data-analytics-label="paypal_support"
-                data-analytics-section="support"
-              >
-                <span className="sr-only">Donate with PayPal (opens in a new tab)</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M14.5 7.5c-1.1 0-1.9.2-2.7.4-.8.2-1.6.4-2.6.4-.8 0-1.3-.2-1.6-.4-.5-.4-1.3-.6-2-.6-1.6 0-3.1 1.1-3.6 2.6-.2.6-.3 1.3-.3 2 0 .7.1 1.3.3 1.9.6 1.6 2.3 2.8 4 2.8h.4c.5 0 .9-.1 1.3-.3.5-.2 1-.4 1.6-.4.9 0 1.6.3 2.3.5.5.2 1.2.4 1.9.4 1.6 0 3.1-1.1 3.6-2.6.2-.6.3-1.3.3-2 0-3-2.4-5.5-5.4-5.5z" />
-                </svg>
-                Donate with PayPal
-              </a>
-            </div>
-
             {/* Thank You Message */}
             <div className={`mt-12 p-6 rounded-lg ${getTailwindClass('bg-red-50')} border ${getTailwindClass('border-red-200')}`}>
               <p className={`text-center ${getTailwindClass('text-gray-700')}`}>

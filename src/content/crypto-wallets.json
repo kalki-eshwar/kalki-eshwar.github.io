@@ -1,5 +1,12 @@
 [
   {
+    "name": "PayPal",
+    "symbol": "PP",
+    "address": "@kalkieshwar",
+    "icon": "₿",
+    "image": "/images/crypto/paypal.png"
+  },
+  {
     "name": "Bitcoin",
     "symbol": "BTC",
     "address": "bc1qpd2ze56rjkx9x63tkvklgxumkq5jy0vtde7c3j",
@@ -15,7 +22,7 @@
   },
   {
     "name": "Monero",
-    "symbol": "SOL",
+    "symbol": "XMR",
     "address": "89DPivMDUDaWQGfYUNJ2jAKtuSou2oRsxX5gtD6nvyWjXQXXYRM8Zqe7gbc5pSQUSF4yo4NbqHVSD8WGuRCLsyNwEdTZFhx",
     "icon": "µ",
     "image": "/images/crypto/xmr.png"
