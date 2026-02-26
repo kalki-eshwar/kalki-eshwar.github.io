@@ -1,6 +1,18 @@
 {
   "workExperience": [
     {
+      "title": "Trainee",
+      "company": "Prodapt Solutions",
+      "period": "Feb 2026 - Present",
+      "type": "Internship",
+      "location": "On-site, Chennai, India",
+      "description": "Undergrowing training on Prodapt's technology stack and business fundamentals to transition into a full time employee",
+      "achievements": ["TBU"],
+      "technologies": ["TBU"],
+      "companyWebsite": "https://www.prodapt.com/",
+      "current": true
+    },
+    {
       "title": "Development Intern",
       "company": "Foradian Technologies",
       "period": "May 2025 - July 2025",

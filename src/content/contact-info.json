@@ -1,10 +1,10 @@
 {
   "contactInfo": {
-    "location": "Vellore, Tamil Nadu, India",
-    "availability": "Available for opportunities",
+    "location": "Chennai, Tamil Nadu, India",
+    "availability": "Available for collaboration",
     "responseTime": "Usually within 24-48 hours",
-    "currentlyAvailable": true,
-    "availabilityMessage": "I'm currently open to new opportunities, internships, and exciting projects. Feel free to reach out through my social links below!"
+    "currentlyAvailable": false,
+    "availabilityMessage": "I'm currently open to new opportunities to collaborate on exciting projects. Feel free to send a message or reach out through my social links below!"
   },
   "socialLinks": [
     {

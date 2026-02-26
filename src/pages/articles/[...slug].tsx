@@ -124,7 +124,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
           </div>
 
           {/* Article Footer */}
-          <footer className={`mt-12 pt-8 border-t ${getTailwindClass('border-gray-200')}`}>
+          <footer className="mt-12 pt-8">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
               <div className="mb-4 sm:mb-0">
                 <p className={getTailwindClass('text-gray-600')}>
