@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { NavigationItem } from '@/types';
 import { COLOR_COMBINATIONS, getTailwindClass } from '@/presets';
 import { trackEvent } from '@/utils/analytics';
+import { getPersonalInfo } from '@/utils/data';
 
 const navigation: NavigationItem[] = [
   { label: 'Home', href: '/' },
@@ -35,13 +36,13 @@ export default function Header() {
           <Link href="/" className={`flex items-center space-x-3 text-lg font-medium ${getTailwindClass('text-gray-900')}`}>
             <div className="relative w-8 h-8 rounded-full overflow-hidden">
               <Image
-                src="/images/profile.png"
-                alt="Kalki Eshwar"
+                src={getPersonalInfo().profileImage}
+                alt={getPersonalInfo().name}
                 fill
                 className="object-cover"
               />
             </div>
-            <span>Kalki Eshwar</span>
+            <span>{getPersonalInfo().name}</span>
           </Link>
 
           {/* Desktop Navigation - spread out more */}
